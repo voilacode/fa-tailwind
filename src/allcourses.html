@@ -11,10 +11,10 @@
     </head>
     <body>
         <header>
-            <nav class="fixed w-full z-20 top-0 left-0" style="background-color: #135ca1;">
-                <div class="max-w-screen-xl p-4 sm:px-16 flex flex-wrap items-center justify-between mx-auto">
+            <nav class="fixed w-full z-20 top-0 left-0 bg-gradient-to-b from-blue-900 to-blue-700">
+                <div class="max-w-screen-xl px-4 py-3 sm:px-16 flex flex-wrap items-center justify-between mx-auto">
                 <a href="./index.html" class="flex items-center ">
-                    <img src="../assets/fa_logo.svg" class="logo" width="170px" height="auto"  alt="Logo">
+                    <img src="../assets/fa_logo.svg" class="logo" width="170px" height="30px"  alt="Logo">
                 </a>
                 <div class="flex lg:order-2">
                     <button type="button" class="text-white bg-red-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-md hover:bg-red-800 hover:outline-1 px-2 sm:px-4 lg:py-2 text-center mr-3 lg:mr-0 talk-btn " aria-label="talk ">Talk to us</button>
@@ -26,100 +26,117 @@
                 </button>
                 </div>
                 <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-                    <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:text-md rounded-lg lg:flex-row lg:space-x-4 lg:mt-0 lg:border-0  dark:border-gray-700">
-                        <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                            <a href="./index.html" class="block py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in">Home</a>
-                        </li>
-                    <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in">Courses <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg></button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-80 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400 flex" aria-labelledby="dropdownLargeButton">
-                                    <div>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">All Courses</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">PTE</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">OET</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">SAT</a>
-                                        </li>
-                                    </div>
-                                    
-                                    <div>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">TOEFL</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">DET</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS Band 9 Training</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">PTE Personalised</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Corporate Training</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">English Language Training</a>
-                                        </li>
-                                    </div>
-                                </ul>
-                            </div>
-                    </li>
-                    <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                        <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded md:p-0 md:w-auto transition duration-200 ease-in">Material <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                </svg></button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"    aria-labelledby="dropdownLargeButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS Reading</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE Solutions</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Downloads</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Practice Test</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE Login</a>
-                                </li>
-                                </ul>
+                    <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:text-md rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:border-0  dark:border-gray-700">
+                      <li>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base hover:text-sky-500" aria-current="page">Home</a>
+                      </li>
+                     <li class="">
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0  transition duration-200 ease-in font-serif text-base hover:text-sky-500">Courses</button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-80">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400 flex" aria-labelledby="dropdownLargeButton">
+                                <div>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white ">All Courses</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">IELTS</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">GRE</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">PTE</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">OET</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">SAT</a>
+                                    </li>
+                                </div>
                                 
-                            </div>
-                        </li>
-                    <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in">Blog</a>
+                                <div>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">TOEFL</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">DET</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">IELTS Band 9 Training</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">PTE Personalised</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">Corporate Training</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-white">English Language Training</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        
                     </li>
-                    <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in">Study Abroad</a>
+                                                
+                    <li class="">
+                        <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">Material </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"    aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">IELTS Reading</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">GRE Solutions</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">Downloads</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">Practice Test</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">GRE Login</a>
+                            </li>
+                            </ul>
+                            
+                        </div>
+                         
                     </li>
-                    <li class="hover:bg-blue-500 px-4 py-2 rounded">
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in">About</a>
+                    <li>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Blog</a>
                     </li>
-                    </ul>
+            
+                    <li>
+                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Study Abroad</a>
+                    </li>
+                    <li class="">
+                        <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">About </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">Us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">Team</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">Contact</a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        
+                    </li>
+                    
+                    </ul>                               
                 </div>
-                </div>
-            </nav> 
+                
+              </nav> 
         </header>
 
         
@@ -271,7 +288,7 @@
                         <!--logo and address-->
                         <div class="col-span-4 sm:col-span-1">
                             <div class="">
-                                <img src="../assests/fa_logo.svg" width="180px" height="auto" alt="fa logo" />
+                                <img src="../assets/fa_logo.svg" width="180px" height="auto" alt="fa logo" />
                                 <br>                                 
                                 <a href="#" class="text-white test-sm  mt-5">
                                    
