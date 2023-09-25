@@ -11,14 +11,14 @@
     </head>
     <body>
         <header>
-            <nav class="fixed w-full z-20 top-0 left-0 bg-gradient-to-b from-blue-900 to-blue-700">
-                <div class="max-w-screen-xl px-4 py-3 sm:px-16 flex flex-wrap items-center justify-between mx-auto">
+            <nav class="fixed top-0 left-0 z-20 w-full bg-gradient-to-b from-blue-900 to-blue-700">
+                <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 py-3 mx-auto sm:px-16">
                 <a href="./index.html" class="flex items-center ">
                     <img src="../assets/fa_logo.svg" class="logo" width="170px" height="30px"  alt="Logo">
                 </a>
                 <div class="flex lg:order-2">
-                    <button type="button" class="text-white bg-red-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-md hover:bg-red-800 hover:outline-1 px-2 sm:px-4 lg:py-2 text-center mr-3 lg:mr-0 talk-btn " aria-label="talk ">Talk to us</button>
-                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden  bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" aria-label="talkbtn">
+                    <button type="button" class="px-2 mr-3 font-medium text-center text-white bg-red-600 rounded-lg focus:ring-4 focus:outline-none text-md hover:bg-red-800 hover:outline-1 sm:px-4 lg:py-2 lg:mr-0 talk-btn " aria-label="talk ">Talk to us</button>
+                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm bg-gray-100 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" aria-label="talkbtn">
                     
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -26,15 +26,15 @@
                 </button>
                 </div>
                 <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-                    <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:text-md rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:border-0  dark:border-gray-700">
+                    <ul class="flex flex-col p-4 mt-4 font-medium rounded-lg lg:p-0 lg:text-md lg:flex-row lg:space-x-6 lg:mt-0 lg:border-0 dark:border-gray-700">
                       <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base hover:text-sky-500" aria-current="page">Home</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 font-serif text-base text-white rounded lg:p-0 hover:text-sky-500" aria-current="page">Home</a>
                       </li>
                      <li class="">
-                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0  transition duration-200 ease-in font-serif text-base hover:text-sky-500">Courses</button>
+                        <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-serif text-base text-white transition duration-200 ease-in rounded lg:p-0 hover:text-sky-500">Courses</button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-80">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400 flex" aria-labelledby="dropdownLargeButton">
+                            <ul class="flex py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                 <div>
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-white ">All Courses</a>
@@ -82,7 +82,7 @@
                     </li>
                                                 
                     <li class="">
-                        <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">Material </button>
+                        <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-serif text-base text-white transition duration-200 ease-in rounded lg:p-0 md:w-auto hover:text-sky-500">Material </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"    aria-labelledby="dropdownLargeButton">
@@ -107,14 +107,14 @@
                          
                     </li>
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Blog</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 font-serif text-base text-white rounded lg:p-0 hover:text-sky-500" aria-current="page">Blog</a>
                     </li>
             
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Study Abroad</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 font-serif text-base text-white rounded lg:p-0 hover:text-sky-500" aria-current="page">Study Abroad</a>
                     </li>
                     <li class="">
-                        <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">About </button>
+                        <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-serif text-base text-white transition duration-200 ease-in rounded lg:p-0 md:w-auto hover:text-sky-500">About </button>
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
@@ -148,110 +148,110 @@
         </div>
         
         
-        <div class="bg-red-50 py-12 text-center">
-            <h1 class="text-4xl text-red-500 font-semibold sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Our Courses</h1>
+        <div class="py-12 text-center bg-red-50">
+            <h1 class="text-4xl font-semibold text-red-500 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Our Courses</h1>
         </div>
         
         
-        <section class="container bg-white py-12 max-w-screen-xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_SAT.svg');"></div>
+        <section class="container max-w-screen-xl py-12 mx-auto bg-white">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_SAT.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">SAT</h3>
+                        <h3 class="mb-2 text-lg font-semibold">SAT</h3>
                         <p class="text-gray-600">Our SAT students get ridiculously high scores, without sweating it out. Why? Attend a session of the best SAT coaching to experience the magic!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_gre.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_gre.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">GRE</h3>
+                        <h3 class="mb-2 text-lg font-semibold">GRE</h3>
                         <p class="text-gray-600">Why is ours the best GRE coaching? We help you avoid learning vocabulary! Surprised? Attend a session and prepare to be amazed!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_IELTS.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_IELTS.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">IELTS</h3>
+                        <h3 class="mb-2 text-lg font-semibold">IELTS</h3>
                         <p class="text-gray-600">If using English is not a challenge, you might not need training. Read more to know how our best coaching for IELTS can help you decide!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify col-span-3">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_OET.svg');"></div>
+                <div class="col-span-3 p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_OET.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">OET</h3>
+                        <h3 class="mb-2 text-lg font-semibold">OET</h3>
                         <p class="text-gray-600">OET is the newest and the most specialised kid on the block. It is an English test aimed squarely at the medical professional. It is gaining wide acceptance and fast. If you are a medical professional and want to work in an English speaking country, the chances are, you are required to take the OET test.</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_PTE.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_PTE.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">PTE</h3>
+                        <h3 class="mb-2 text-lg font-semibold">PTE</h3>
                         <p class="text-gray-600">Understanding the pattern and purpose of questions makes all the difference in PTE. Our sessions help you do just this. No more reattempts!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_ieltsonline.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_ieltsonline.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">IELTS Personalised and Online Training</h3>
+                        <h3 class="mb-2 text-lg font-semibold">IELTS Personalised and Online Training</h3>
                         <p class="text-gray-600">Training that is customised to suit your needs. IELTS Like you want it. Online, Classroom, or one-to-one!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_pteonline.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_pteonline.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">PTE Personalised and Online Training</h3>
+                        <h3 class="mb-2 text-lg font-semibold">PTE Personalised and Online Training</h3>
                         <p class="text-gray-600">Fully personalised training. Whether it is online or one-to-one training. Your preparation done your way.</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_toefl.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_toefl.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">TOEFL</h3>
+                        <h3 class="mb-2 text-lg font-semibold">TOEFL</h3>
                         <p class="text-gray-600">The best coaching for TOEFL. Small batch sizes, convenient timings, and excellent trainers make our TOEFL sessions top-notch.</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-56 w-full bg-cover bg-center" style="background-image: url('../assets/file_custom.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full h-56 bg-center bg-cover" style="background-image: url('../assets/file_custom.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">Corporate Training</h3>
+                        <h3 class="mb-2 text-lg font-semibold">Corporate Training</h3>
                         <p class="text-gray-600">Looking for personalised training or online coaching for any English exam or looking for Corporate training for your employees?</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
         
-                <div class="bg-white p-5 shadow-md text-justify">
-                    <div class="h-52 w-full bg-cover bg-center" style="background-image: url('../assets/file_spokenenglish.svg');"></div>
+                <div class="p-5 text-justify bg-white shadow-md">
+                    <div class="w-full bg-center bg-cover h-52" style="background-image: url('../assets/file_spokenenglish.svg');"></div>
                     <div class="mt-4">
-                        <h3 class="text-lg font-semibold mb-2">Language Training</h3>
+                        <h3 class="mb-2 text-lg font-semibold">Language Training</h3>
                         <p class="text-gray-600">English really made easy. Attend a session. Small batches, comfortable atmosphere, stress-free session. Enjoy learning!</p>
                         <br>
-                        <a href="#" class="text-blue-500 hover:underline mt-2">Read more</a>
+                        <a href="#" class="mt-2 text-blue-500 hover:underline">Read more</a>
                     </div>
                 </div>
             </div>
@@ -260,19 +260,19 @@
 
         <footer>
             <!--attend drives-->
-            <div class="text-white p-4 sm:px-16" style="background-color: #135ca1;">
-                <div class="sm:flex justify-between m-4 px-6">
+            <div class="p-4 text-white sm:px-16" style="background-color: #135ca1;">
+                <div class="justify-between px-6 m-4 sm:flex">
 
-                    <div class="col-span-2 sm:col-span-1 sm-text-center my-2">
-                        <h1 class="text-3xl font-semibold pb-4">Take a free test!</h1>
+                    <div class="col-span-2 my-2 sm:col-span-1 sm-text-center">
+                        <h1 class="pb-4 text-3xl font-semibold">Take a free test!</h1>
                         <p class="">Try an evaluated test or attend a free session. Or do both!</p>
                     </div>
                     
-                    <div class="col-span-2 sm:col-span-1 justify-center my-4 ml-auto text-center btn">
-                        <button class="rounded-full bg-blue-200 text-blue-900 font-semibold px-12 py-4 mb-2  translate" aria-label="try">
+                    <div class="justify-center col-span-2 my-4 ml-auto text-center sm:col-span-1 btn">
+                        <button class="px-12 py-4 mb-2 font-semibold text-blue-900 bg-blue-200 rounded-full translate" aria-label="try">
                             <a href="#">Try Now</a>
                         </button>
-                        <button class="rounded-full bg-white text-gray-800 font-semibold px-12 py-4 my-2  translate" aria-label="view">
+                        <button class="px-12 py-4 my-2 font-semibold text-gray-800 bg-white rounded-full translate" aria-label="view">
                             <a href="#">View Courses</a>
                         </button>
                     </div>
@@ -282,15 +282,15 @@
             </div>
 
             <!--links -->
-            <div class="bg-blue-900 text-white p-4">
+            <div class="p-4 text-white bg-blue-900">
                 <div class="max-w-screen-xl mx-auto sm:px-16">
-                    <div class="grid grid-cols-5 gap-4 sm:gap-2 justify-between my-5 pb-2">
+                    <div class="grid justify-between grid-cols-5 gap-4 pb-2 my-5 sm:gap-2">
                         <!--logo and address-->
                         <div class="col-span-4 sm:col-span-1">
                             <div class="">
                                 <img src="../assets/fa_logo.svg" width="180px" height="auto" alt="fa logo" />
                                 <br>                                 
-                                <a href="#" class="text-white test-sm  mt-5">
+                                <a href="#" class="mt-5 text-white test-sm">
                                    
                                     <div class="flex flex-row-2">
                                         <div>
@@ -307,7 +307,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="#" class="text-white test-sm  mt-10">
+                                <a href="#" class="mt-10 text-white test-sm">
                                      
                                     <div class="flex flex-row-2">
                                       <div>
@@ -317,7 +317,7 @@
                                         
                                       </div>
                                       <div>
-                                        <p class="text-sm text-white mt-5">
+                                        <p class="mt-5 text-sm text-white">
                                           +91 98 666 88 666
                                           <br>
                                           +91 99 666 666 33
@@ -328,8 +328,8 @@
                         </div>
     
                         <!--about-->
-                        <div class="col-span-2 sm:col-span-1 my-1">
-                            <h2 class="text-white text-xl font-semibold font-sans mb-4">About</h2> 
+                        <div class="col-span-2 my-1 sm:col-span-1">
+                            <h2 class="mb-4 font-sans text-xl font-semibold text-white">About</h2> 
                             <ol>
                                 <li class="my-2 text-md"><a href="./about.html" class="text-slate-300 hover:text-white">Team</a></li> 
                                 <li class="my-2 text-md"><a href="./review.html" class="text-slate-300 hover:text-white">Reviews</a></li>
@@ -339,8 +339,8 @@
                         </div>
     
                         <!--flagship courses-->
-                        <div class="col-span-2 sm:col-span-1 my-1 justify-end">
-                            <h2 class="text-white text-xl font-semibold font-sans mb-4">Flagship Courses</h2> 
+                        <div class="justify-end col-span-2 my-1 sm:col-span-1">
+                            <h2 class="mb-4 font-sans text-xl font-semibold text-white">Flagship Courses</h2> 
                             <div class="grid grid-cols-2 sm:gap-4">
                                 <ol class="col-span-2 md:col-span-1">
                                     <li class="mb-2 text-md"><a href="#" class="text-slate-300 hover:text-white">IELTS</a></li> 
@@ -358,8 +358,8 @@
                         </div>
     
                         <!--services-->
-                        <div class="col-span-2 sm:col-span-1 my-1">
-                            <h2 class="text-white text-xl font-semibold font-sans mb-4">Services</h2>
+                        <div class="col-span-2 my-1 sm:col-span-1">
+                            <h2 class="mb-4 font-sans text-xl font-semibold text-white">Services</h2>
                             <ol>
                                 <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">UG Admissions</a></li> 
                                 <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">Masters</a></li>
@@ -368,8 +368,8 @@
                         </div>
     
                         <!--material-->
-                        <div class="col-span-2 sm:col-span-1 my-1 justify-end">
-                            <h2 class="text-white text-xl font-semibold font-sans mb-4">Material</h2>
+                        <div class="justify-end col-span-2 my-1 sm:col-span-1">
+                            <h2 class="mb-4 font-sans text-xl font-semibold text-white">Material</h2>
                             <ol>
                                 <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">Test Portal</a></li> 
                                 <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">IELTS Big Book</a></li>
@@ -383,21 +383,21 @@
                     <hr>
     
                     <!--links and policy-->
-                    <div class="md:flex justify-between mt-4">
-                        <div class="sm:w-1/2 grid grid-cols-7 my-2">
+                    <div class="justify-between mt-4 md:flex">
+                        <div class="grid grid-cols-7 my-2 sm:w-1/2">
                             <div class="col-span-2 text-start">
-                                <a href="./policy.html" class="text-sm hover:text-gray-500 duration-200 ease-in">Privacy Policy</a>
+                                <a href="./policy.html" class="text-sm duration-200 ease-in hover:text-gray-500">Privacy Policy</a>
                             </div>
                             <div class="col-span-2">
-                                <a href="./terms.html" class="text-sm hover:text-gray-500 duration-200 ease-in">Terms & Services</a>
+                                <a href="./terms.html" class="text-sm duration-200 ease-in hover:text-gray-500">Terms & Services</a>
                             </div>
                             <div class="col-span-3 pl-8">
-                                <a href="./refund.html" class="text-sm hover:text-gray-500 duration-200 ease-in">Refund & Cancellation</a>
+                                <a href="./refund.html" class="text-sm duration-200 ease-in hover:text-gray-500">Refund & Cancellation</a>
                             </div>
                         </div>
     
-                        <div class="col-span-6 place-content-end flex flex-wrap sm:sm:gap-4 justify-center sm:justify-end my-2">
-                            <a href="#" target="_blank" aria-label="facebook" class="hover:scale-110 duration-200 ease-in-out">
+                        <div class="flex flex-wrap justify-center col-span-6 my-2 place-content-end sm:sm:gap-4 sm:justify-end">
+                            <a href="#" target="_blank" aria-label="facebook" class="duration-200 ease-in-out hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
                                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <path
@@ -405,17 +405,17 @@
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="instagram" class="ms-2  hover:scale-110 duration-200 ease-in-out">
+                            <a href="#" target="_blank" aria-label="instagram" class="duration-200 ease-in-out ms-2 hover:scale-110">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="Telegram" class="ms-2 hover:scale-110 duration-200 ease-in-out">
+                            <a href="#" target="_blank" aria-label="Telegram" class="duration-200 ease-in-out ms-2 hover:scale-110">
                                 <svg style="color: white" xmlns="http://www.w3.org/2000/svg"  height="1.5em"  fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" fill="white"></path> </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="youtube" class="ms-2 hover:scale-110 duration-200 ease-in-out">
+                            <a href="#" target="_blank" aria-label="youtube" class="duration-200 ease-in-out ms-2 hover:scale-110">
                                 <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"> <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" fill="white"></path> </svg>
                             </a>
                         </div>
@@ -423,10 +423,10 @@
                     </div>
                     
                     <!--info-->
-                    <p class="text-center text-gray-200 text-sm font-sans mt-4 mb-2">
+                    <p class="mt-4 mb-2 font-sans text-sm text-center text-gray-200">
                         ©  2021 First Academy. All rights reserved.
                     </p>
-                    <p class="text-sm px-4 sm:px-16 mx-auto text-center">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+                    <p class="px-4 mx-auto text-sm text-center sm:px-16">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
     
                 </div>
             </div>
