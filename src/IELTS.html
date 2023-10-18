@@ -6,7 +6,7 @@
     <link href="../dist/output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://www.fontspace.com/drip-october-font-f85815"></link>
+    <link href="https://www.fontspace.com/drip-october-font-f85815">
     <title>Document</title>
     <style>
         @font-face{
@@ -25,177 +25,202 @@
     </style>
 </head>
 <body>
-    <header class="container-fluid mb-20">
-        <nav class="fixed w-full z-20 top-0 left-0  bg-gradient-to-t  from-blue-900 to-blue-700 lg:px-12" >
-            <div class="max-w-screen-xl p-4 sm:px-16 flex flex-wrap items-center justify-between mx-auto">
-                <a href="" class="flex items-center">
-                    <img src="../assets/fa_logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-                </a>
-                <div class="flex lg:order-2">
-                    <button type="button" class="text-white bg-red-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-md hover:bg-red-800 hover:outline-1 px-2 sm:px-4 lg:py-2 text-center mr-3 lg:mr-0 talk-btn " aria-label="talk ">Talk to us</button>
-                    <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden  bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" aria-label="talkbtn">
-                    
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                        </svg>
-                    </button>
+    <header>
+        <nav class="fixed w-full z-20 top-0 left-0 bg-gradient-to-b from-blue-900 to-blue-700">
+            <div class="max-w-screen-xl px-4 py-3 sm:px-16 flex flex-wrap items-center justify-between mx-auto">
+            <a href="./index.html" class="flex items-center ">
+                <img src="../assets/fa_logo.svg" class="logo" width="170px" height="30px"  alt="Logo">
+            </a>
+            <div class="flex lg:order-2">
+                <button type="button" class="text-white bg-red-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-md hover:bg-red-800 hover:outline-1 px-2 sm:px-4 lg:py-2 text-center mr-3 lg:mr-0 talk-btn " aria-label="talk ">Talk to us</button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden  bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" aria-label="talkbtn">
+                
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
             </div>
             <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  ">
-                    <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Home</a>
-                    </li>
-                    <li class="">
-                        <p id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex cursor-pointer items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded md:p-0  transition duration-200 ease-in font-serif text-base hover:text-sky-500">Courses</p>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownNavbar" class="z-10 hidden font-normal divide-y  border-t-2 border-blue-600 shadow w-96 bg-yellow-500">
-                            <ul class="py-2  text-gray-900 font-medium text-base  flex" aria-labelledby="dropdownLargeButton">
-                                <div>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">All Courses</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">PTE</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">OET</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">SAT</a>
-                                    </li>
-                                </div>
-                                <div>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">TOEFL</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">DET</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS Band 9 Training</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">PTE Personalised</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Corporate Training</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">English Language Training</a>
-                                    </li>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>                            
-                    <li class="">
-                        <p id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex cursor-pointer items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded md:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">Material </p>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownNavbar1" class="z-10 hidden font-medium  bg-blue-200  shadow w-52 border-t-2 border-blue-500 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-base text-gray-900 "    aria-labelledby="dropdownLargeButton">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium lg:text-md rounded-lg lg:flex-row lg:space-x-6 lg:mt-0 lg:border-0  dark:border-gray-700">
+                  <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base hover:text-sky-500" aria-current="page">Home</a>
+                  </li>
+                 <li class="">
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" aria-label="dropdown btn" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0  transition duration-200 ease-in font-serif text-base hover:text-sky-500">Courses</button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-80">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400 flex" aria-labelledby="dropdownLargeButton">
+                            <div>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">IELTS Reading</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white ">All Courses</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE Solutions</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">IELTS</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Downloads</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">GRE</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Practice Test</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">PTE</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">GRE Login</a>
-                                </li>
-                            </ul>   
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Blog</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Study Abroad</a>
-                    </li>
-                    <li class="">
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded md:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">About </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdown" class="z-10 hidden font-medium  bg-blue-200  shadow w-52 border-t-2 border-blue-500 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-base text-gray-900 "    aria-labelledby="dropdownLargeButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">US</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">OET</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Team</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">SAT</a>
+                                </li>
+                            </div>
+                            
+                            <div>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">TOEFL</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600 dark:hover:text-white">Contact</a>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">DET</a>
                                 </li>
-                            </ul>    
-                        </div>
-                    </li>
-                </ul>
-            </div> 
-        </nav>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">IELTS Band 9 Training</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">PTE Personalised</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">Corporate Training</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-white">English Language Training</a>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                </li>
+                                            
+                <li class="">
+                    <button id="dropdownNavbarLink1" data-dropdown-toggle="dropdownNavbar1" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">Material </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"    aria-labelledby="dropdownLargeButton">
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-white">IELTS Reading</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-white">GRE Solutions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-white">Downloads</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-white">Practice Test</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-white">GRE Login</a>
+                        </li>
+                        </ul>
+                        
+                    </div>
+                     
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Blog</a>
+                </li>
+        
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white rounded lg:p-0 font-serif text-base  hover:text-sky-500" aria-current="page">Study Abroad</a>
+                </li>
+                <li class="">
+                    <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" aria-label="dropdown btn 2" class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-white rounded lg:p-0 md:w-auto transition duration-200 ease-in font-serif text-base hover:text-sky-500">About </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-yellow-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">Us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">Team</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-white">Contact</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    
+                </li>
+                
+                </ul>                               
+            </div>
+            
+          </nav> 
+    </header>
         <div class="flex justify-center bg-blue-300 py-1  px-2 gap-1 relative top-16">
             <button class="text-white p-1 text-xs font-bold mt-2 bg-blue-600 px-4 rounded-full" type="submit">LatestPost</button>
             <a href="" class=" text-sm font-bold mt-2">
                 IELTS One-Skill Retake - All your questions answered
             </a>  
         </div>
-    </header>
     <!-- Body -->
-    <div class="grid lg:grid-flow-col  gap-10 py-10 lg:mx-24 mx-16">
-        <div>
-            <h1 class="h1 text-yellow-400 text-8xl">GET BAND 9!</h1>
-            <h1 class="text-blue-600 font-semibold pb-3 text-3xl">The most effective high band score coaching.</h1>
-            <ul class="pb-2">
-                <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
-                  <span class="relative top-1 text-gray-700 text-xl font-serif"> The Best IELTS Coaching</span>
-                </li>
-                <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
-                    <span class="relative top-1 text-gray-700 text-xl font-serif"> Full Colour Reading Material</span>
-                </li>
-                <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
-                    <span class="relative top-1 text-gray-700 text-xl font-serif"> Cambridge Certified Trainers</span>
-                </li>
-                <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
-                    <span class="relative top-1 text-gray-700 text-xl font-serif"> Band 9 Coaching</span>
-                </li>
-                <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
-                    <span class="relative top-1 text-gray-700 text-xl font-serif"> Online and Classroom</span>
-                </li>
-            </ul>
-            <button class="hover-translate-y p-4 rounded-lg bg-green-600 text-white font-bold text-3xl" style="background-color: #00c785;">Get Started</button>
-            <span class="text-blue-700 md:block cursor-pointer pl-5 text-2xl font-semibold">Session Plan
-                <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-            </span>
-        </div>
-        <div>
-            <img src="../assets/IELTSHero.svg" class="lg:w-full" alt="">
-        </div>
-    </div>
-    <div class="max-w-screen-xl mb-5  py-4 rounded lg:mx-24 mx-16  text-center text-xl font-semibold bg-gradient-to-t from-pink-300 to-pink-200">IELTS Examination Fee: ₹16,250 (as on 1st April 2023)</div>
-
-    <div class="bg-green-400 lg:px-24 md:px-16 py-3 grid grid-flow-col gap-16">
-        <div>
-            <h1 class="text-3xl pb-5 font-bold">Best IELTS Material</h1>
-            <p>Our IELTS coaching is the best, a part of the reason is our material. Here is IELTS Big Book - exclusive IELTS material only at First Academy!</p>
-            <!-- Image slider has to come here.. -->
-        </div>
-        <div>
-            <h1 class="text-3xl pb-5 font-bold">IELTS Writing</h1>
-            <p>Get Band 8+ in IELTS. Our IELTS coaching comes with examiner style exam-grade writing corrections and writing hacks. Exclusively available at First Academy</p>
-            <!-- Image slider has to come here.. -->
+    <div class="items-center justify-between max-w-screen-xl px-1 pt-24 pb-8 mx-auto sm:px-16 sm:flex">
+        <div class="grid lg:grid-flow-col  gap-10 ">
+            <div>
+                <h1 class="h1 text-yellow-400 text-8xl">GET BAND 9!</h1>
+                <h1 class="text-blue-600 font-semibold pb-3 text-3xl">The most effective high band score coaching.</h1>
+                <ul class="pb-2">
+                    <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
+                    <span class="relative top-1 text-gray-700 text-xl font-serif"> The Best IELTS Coaching</span>
+                    </li>
+                    <li class="pb-2">
+                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g>
+                        </svg>
+                        <span class="relative top-1 text-gray-700 text-xl font-serif"> Full Colour Reading Material</span>
+                    </li>
+                    <li class="pb-2">
+                    <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g>
+                    </svg>
+                        <span class="relative top-1 text-gray-700 text-xl font-serif"> Cambridge Certified Trainers</span>
+                    </li>
+                    <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
+                        <span class="relative top-1 text-gray-700 text-xl font-serif"> Band 9 Coaching</span>
+                    </li>
+                    <li class="pb-2"><svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z" fill="#6b6b6b"></path> </g></svg>
+                        <span class="relative top-1 text-gray-700 text-xl font-serif"> Online and Classroom</span>
+                    </li>
+                </ul>
+                <button class="hover-translate-y p-4 rounded-lg bg-green-600 text-white font-bold text-3xl" style="background-color: #00c785;">Get Started</button>
+                <span class="text-blue-700 lg:inline md:block cursor-pointer pl-5 text-2xl font-semibold">Session Plan
+                    <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </span>
+            </div>
+            <div>
+                <img src="../assets/IELTSHero.svg" class="lg:w-full" alt="">
+            </div>
         </div>
     </div>
+   
+    <!--
+        items-center justify-between max-w-screen-xl px-1 pt-10 pb-8 mx-auto sm:px-32 rounded-lg sm:flex bg-gradient-to-t from-pink-300 to-pink-200 text-center
+    -->
+    <!-- max-w-screen-xl px-4 py-2 mx-auto sm:px-16 -->
+    <div class="max-w-screen-xl px-4 py-4 mx-auto sm:px-16 ">
+        <div class="font-semibold text-center bg-gradient-to-t from-pink-300 to-pink-200 text-xl px-4 py-4 rounded">IELTS Examination Fee: ₹16,250 (as on 1st April 2023)</div>
+    </div>
 
-    <div class="max-w-screen-xl mb-5  py-4 rounded lg:mx-24 mx-16">
+    <div class="bg-green-400">
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16 grid grid-flow-col gap-16">
+            <div>
+                <h1 class="text-3xl pb-5 font-bold">Best IELTS Material</h1>
+                <p>Our IELTS coaching is the best, a part of the reason is our material. Here is IELTS Big Book - exclusive IELTS material only at First Academy!</p>
+                <!-- Image slider has to come here.. -->
+            </div>
+            <div>
+                <h1 class="text-3xl pb-5 font-bold">IELTS Writing</h1>
+                <p>Get Band 8+ in IELTS. Our IELTS coaching comes with examiner style exam-grade writing corrections and writing hacks. Exclusively available at First Academy</p>
+                <!-- Image slider has to come here.. -->
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
         <h1 class="text-4xl font-bold pb-4">Why is our IELTS Coaching the Best?</h1>
         <div class="grid lg:grid-flow-col gap-5">
             <div class="rounded-lg border border-blue-500 p-5 bg-blue-100 lg:items-center flex flex-col">
@@ -244,7 +269,8 @@
             </div>
         </div>
     </div>
-    <div class="max-w-screen-xl mb-5  pb-4 rounded lg:mx-24 mx-16">
+    <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
+
         <div class="grid lg:grid-flow-col gap-5">
             <div class="bg-gray-200 grid grid-flow-col rounded-lg p-6">
                 <div>
@@ -269,7 +295,8 @@
         </div>
     </div>
     
-    <div class="flex lg:flex-row  md:flex-col md:justify-center md:items-center lg:justify-between md:px-10 max-w-screen-xl lg:h-32 md:h-44 mb-5 gap-5 rounded lg:mx-24 mx-16 bg-gradient-to-r from-green-300 via-green-200 to-yellow-200 overflow-hidden"> 
+    
+    <!-- <div class="flex lg:flex-row  md:flex-col md:justify-center md:items-center lg:justify-between md:px-10 max-w-screen-xl lg:h-32 md:h-44 mb-5 gap-5 rounded lg:mx-24 mx-16 bg-gradient-to-r from-green-300 via-green-200 to-yellow-200 overflow-hidden"> 
             <div class="relative hidden md:block bottom-10">
                 <img src="../assets/communication.svg" width="250px" alt="">
             </div>
@@ -290,12 +317,12 @@
                 <span class="font-bold text-white">Join Now!</span>
             </button>
         </div>
-    </div>
+    </div> -->
 
     <h2 class="text-center text-3xl pb-3 font-bold">Training Details</h2>
     <p class="text-center text-lg font-serif pb-5">Timings mentioned here are subject to change</p>
-    <div class="flex lg:flex-row mg:flex-col gap-96 max-w-screen-xl  pb-10 mb-10 rounded lg:mx-44 md:mx-16">
-        <div>
+    <div class="lg:flex grid lg:gap-20 gap-10 max-w-screen-xl px-4 py-2 mx-auto lg:justify-around sm:px-16">
+        <div class=" ">
             <h3 class="text-3xl font-bold pb-4">Session Timings</h3>
             <ul>
                 <li class="pb-5"><svg width="35px" height="35px" class="inline" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#6b9cff"></path> <path d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z" fill="#3275fb"></path> </g></svg><p class="inline text-lg pl-2 font-serif "> 07:00am – 08:30am</p></li>
@@ -305,8 +332,8 @@
                 <li class="pb-5"><svg width="35px" height="35px" class="inline" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#6b9cff"></path> <path d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z" fill="#3275fb"></path> </g></svg><p class="inline text-lg pl-2 font-serif "> 07:00pm – 08:30pm</p></li>
             </ul>
         </div>
-        <div class="relative">
-            <div class=" flex rounded-lg  absolute top-10 right-10   px-10 py-5 bg-blue-300 z-10" style="width: 400px;">
+        <div class="">
+            <div class=" flex rounded-lg  px-10 py-5 w-full bg-blue-300">
                 <div class="felx flex-col items-center justify-center">
                     <div class="pb-4 flex items-center justify-center"><svg  version="1.1" id="svg2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="quotes.svg" inkscape:version="0.48.4 r9939" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve" fill="#f36899" stroke="#f36899"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="path17923" inkscape:connector-curvature="0" d="M518.474,105.344C305.831,120.286,0.168,154.236,0,570.687v523.97h474.504 v-560.61H316.946C306.965,384.354,430.23,345.701,564.274,316.03L518.474,105.344z M1154.198,105.344 c-212.643,14.942-518.306,48.893-518.473,465.343v523.97h474.505v-560.61H952.672C942.689,384.354,1065.956,345.701,1200,316.03 L1154.198,105.344L1154.198,105.344z"></path> </g></svg></div>
                     <div class="flex justify-center"><h2 class="text-2xl    font-bold pb-4">Regular Course Duration</h2></div>
@@ -315,165 +342,167 @@
                     <div class="flex items-center justify-center"><button class="bg-gray-400 hover:bg-black hover:text-white p-4 rounded-lg font-bold">Attend A Session</button></div>
                 </div>
             </div>
-            <div class="relative hidden lg:block bottom-5 left-20 ">
+            <!-- <div class="relative hidden lg:block bottom-5 left-20 ">
                 <img class=" w-48 " src="../assets/dots-2.svg" alt="Your Picture">
-            </div>
+            </div> -->
         </div>
     </div>
-    <section class="max-w-screen-xl mb-5  py-8 bg-blue-100 lg:px-16 md:px-16">
-        <h1 class="text-3xl font-semibold my-4 sm:mx-14 title">❤ by testtakers across the globe.</h1>
-
-        <div class="grid md:grid-cols-8 lg:grid-cols-12 mt-8  sm:mx-14">
-            <!--first-->
-            <div class="col-span-4 rounded-lg shadow-xl p-8 mx-4 my-2 bg-white transform hover:scale-110 duration-200 ease-in" >
-                <div class="d-flex" style="width: 100%; display: inline-block;">
-                    <div class="pa-8 my-4 d-flex flex-column justify-space-between rounded-lg">
-                        <div class="flex flex-row my-2">
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <!-- <div class="text-rose-200 text-9xl" style="transform: translateX(270%);">❞</div> -->
-                        </div>
-                        <p class="mt-2  font-serif font-weight-light py-4">
-                            <i>
-                                Teaching was really good. I performanced better after every class. The tips and tricks given by the institute really helped me well to score well. Mock tests are really helpful. It is the best institution for Ielts preparation. The faculty and the study material is really supportive                        
-                            </i>
-                        </p>
-                        <div  class="my-2 flex gap-2">
-                            <div>
-                                <img src="../assets/file_priyavarshini.png" alt="">
+    <!-- Reviews -->
+    <div class="bg-blue-100">
+        <section class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
+            <h1 class="text-3xl font-semibold my-4  title">❤ by testtakers across the globe.</h1>
+            <div class="grid md:grid-cols-8 gap-10 lg:grid-cols-12 mt-8  sm:mx-14">
+                <!--first-->
+                <div class="col-span-4 rounded-lg shadow-xl p-8 my-2 bg-white transform hover:scale-110 duration-200 ease-in" >
+                    <div class="d-flex" style="width: 100%; display: inline-block;">
+                        <div class="pb-8 my-4 d-flex flex-column justify-space-between rounded-lg">
+                            <div class="flex flex-row my-2">
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <!-- <div class="text-rose-200 text-9xl" style="transform: translateX(270%);">❞</div> -->
                             </div>
-                            <div>
-                                <p class="text-blue-600 font-bold">Priyavarshini</p>
-                                <i class="font-serif my-0">Original Google Review</i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--second-->
-            <div class="col-span-4 rounded-lg shadow-xl p-8 mx-4 bg-blue-600 text-white relative my-2 test transform hover:scale-110 duration-200 ease-in">
-                <div class="d-flex" style="width: 100%; display: inline-block;">
-                    <div class="pa-8 my-4 d-flex flex-column justify-space-between rounded-lg ">
-                        <div class="flex flex-row my-2">
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            
-                        </div>
-                        <p class="mt-2  font-serif font-weight-light py-4">
-                            <i>One of the most engaging & dedicated faculty I found for IELTS. The teaching staff has very deep understanding of exam pattern & correction style that not only helps in getting a good score in exam but also in effectively communicating beyond exam. Highly recommended for those who are targeting higher bands or score.</i>
-                        </p>
-                        <div  class="my-2 flex gap-2">
-                            <div>
-                                <img src="../assets/file_sandeeppavuluri.png" alt="">
-                            </div>
-                            <div>
-                                <p class="text-white font-bold">Sandeep Pavuluri</p>
-                                <i class="font-serif my-0">Original Google Review</i>
+                            <p class="mt-2  font-serif font-weight-light py-4">
+                                <i>
+                                    Teaching was really good. I performanced better after every class. The tips and tricks given by the institute really helped me well to score well. Mock tests are really helpful. It is the best institution for Ielts preparation. The faculty and the study material is really supportive                        
+                                </i>
+                            </p>
+                            <div  class="my-2 flex gap-2">
+                                <div>
+                                    <img src="../assets/file_priyavarshini.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-blue-600 font-bold">Priyavarshini</p>
+                                    <i class="font-serif my-0">Original Google Review</i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!--third-->
-            <div class="col-span-4 rounded-lg shadow-xl p-8 mx-4 my-2 bg-white transform hover:scale-110 duration-200 ease-in" >
-                <div class="d-flex" style="width: 100%; display: inline-block;">
-                    <div class="pa-8 my-4 d-flex flex-column justify-space-between rounded-lg">
-                        <div class="flex flex-row my-2">
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                                <path
-                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                            </svg>
-                            <!-- <div class="text-rose-200 text-9xl" style="transform: translateX(270%);">❞</div> -->
-                        </div>
-                        <p class="mt-2  font-serif font-weight-light py-4">
-                            <i>
-                                I am very happy to share this news that my visa is approved today.This all happened because of first academy. With continues support from start to end. We are very much happy to share this review.This might be helpful for whom they are searching for right consultancy. Thank you soon much.                            
-                            </i>
-                        </p>
-                        <div  class="my-2 flex gap-2">
-                            <div>
-                                <img src="../assets/file_suvarchalayuktha.png" alt="">
+                <!--second-->
+                <div class="col-span-4 rounded-lg shadow-xl p-8  bg-blue-600 text-white relative my-2 test transform hover:scale-110 duration-200 ease-in">
+                    <div class="d-flex" style="width: 100%; display: inline-block;">
+                        <div class="pa-8 my-4 d-flex flex-column justify-space-between rounded-lg ">
+                            <div class="flex flex-row my-2">
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                
                             </div>
-                            <div>
-                                <p class="text-blue-600 font-bold">Suvarchala Yuktha</p>
-                                <i class="font-serif my-0">Original Google Review</i>
+                            <p class="mt-2  font-serif font-weight-light py-4">
+                                <i>One of the most engaging & dedicated faculty I found for IELTS. The teaching staff has very deep understanding of exam pattern & correction style that not only helps in getting a good score in exam but also in effectively communicating beyond exam. Highly recommended for those who are targeting higher bands or score.</i>
+                            </p>
+                            <div  class="my-2 flex gap-2">
+                                <div>
+                                    <img src="../assets/file_sandeeppavuluri.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold">Sandeep Pavuluri</p>
+                                    <i class="font-serif my-0">Original Google Review</i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-    </section>
+
+                <!--third-->
+                <div class="col-span-4 rounded-lg shadow-xl p-8  my-2 bg-white transform hover:scale-110 duration-200 ease-in" >
+                    <div class="d-flex" style="width: 100%; display: inline-block;">
+                        <div class="pa-8 my-4 d-flex flex-column justify-space-between rounded-lg">
+                            <div class="flex flex-row my-2">
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-amber-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <!-- <div class="text-rose-200 text-9xl" style="transform: translateX(270%);">❞</div> -->
+                            </div>
+                            <p class="mt-2  font-serif font-weight-light py-4">
+                                <i>
+                                    I am very happy to share this news that my visa is approved today.This all happened because of first academy. With continues support from start to end. We are very much happy to share this review.This might be helpful for whom they are searching for right consultancy. Thank you soon much.                            
+                                </i>
+                            </p>
+                            <div  class="my-2 flex gap-2">
+                                <div>
+                                    <img src="../assets/file_suvarchalayuktha.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="text-blue-600 font-bold">Suvarchala Yuktha</p>
+                                    <i class="font-serif my-0">Original Google Review</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
     <!-- Telegram -->
-    <div class="max-w-screen-xl mb-5  pb-4 rounded lg:mx-24 mx-16">
+    <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
         <h1 class="text-4xl font-bold"><svg class="inline" width="45px" height="45px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 4C10.4178 4 8.87103 4.46919 7.55544 5.34824C6.23985 6.22729 5.21447 7.47672 4.60897 8.93853C4.00347 10.4003 3.84504 12.0089 4.15372 13.5607C4.4624 15.1126 5.22433 16.538 6.34315 17.6569C7.46197 18.7757 8.88743 19.5376 10.4393 19.8463C11.9911 20.155 13.5997 19.9965 15.0615 19.391C16.5233 18.7855 17.7727 17.7602 18.6518 16.4446C19.5308 15.129 20 13.5823 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM15.93 9.48L14.62 15.67C14.52 16.11 14.26 16.21 13.89 16.01L11.89 14.53L10.89 15.46C10.8429 15.5215 10.7824 15.5715 10.7131 15.6062C10.6438 15.6408 10.5675 15.6592 10.49 15.66L10.63 13.66L14.33 10.31C14.5 10.17 14.33 10.09 14.09 10.23L9.55 13.08L7.55 12.46C7.12 12.33 7.11 12.03 7.64 11.83L15.35 8.83C15.73 8.72 16.05 8.94 15.93 9.48Z" fill="#000000"></path> </g></svg>Browse our Posts</h1>
         <p class="pb-3">
             <p class="pr-1 inline"><svg class="inline " width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11.25 13.5V8.25H12.75V13.5H11.25ZM11.25 15.75V14.25H12.75V15.75H11.25Z" fill="#f773ac"></path> </g></svg></p>
@@ -546,7 +575,7 @@
         </div>
     </div>
 
-    <div class="flex max-w-screen-xl lg:h-32 p-10 mb-5 gap-5 rounded lg:mx-24 mx-16 bg-gradient-to-r from-purple-700 to-blue-700 overflow-hidden">
+    <!-- <div class="flex max-w-screen-xl lg:h-32 p-10 mb-5 gap-5 rounded lg:mx-24 mx-16 bg-gradient-to-r from-purple-700 to-blue-700 overflow-hidden">
         <div class="relative hidden lg:block bottom-14">
             <img src="../assets/communication.svg" width="250px" alt="">
         </div>
@@ -561,29 +590,30 @@
                 </button>
             </div>
         </div>
-    </div>
-
-    <div class="max-w-screen-xl mb-5  py-8 bg-pink-100 px-24">
-        <div class="lg:flex md:grid gap-5">
-            <div class="w-full">
-                <h1 class="text-3xl font-bold pb-3">IELTS Exam Fees for 2022/2023</h1>
-                <p class="text-lg font-serif pb-3">The IELTS exam fees for 2022 and 2023 have been announced. The test will now cost INR 15500 in India. IELTS is now solely being delivered by IDP in India.</p>
-                <h2 class="text-3xl font-bold pb-3">General Information about IELTS Exam Fee</h2>
-                <p class="text-lg font-serif pb-3">The IELTS examination fee has increased by approximately 8000 rupees since 2007. This means that the total cost of an IELTS exam will now be Rupees 15500 (up from 7200 in 2007).</p>
+    </div> -->
+    <div class="bg-pink-100">
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
+            <div class="lg:flex md:grid gap-5">
+                <div class="w-full">
+                    <h1 class="text-3xl font-bold pb-3">IELTS Exam Fees for 2022/2023</h1>
+                    <p class="text-lg font-serif pb-3">The IELTS exam fees for 2022 and 2023 have been announced. The test will now cost INR 15500 in India. IELTS is now solely being delivered by IDP in India.</p>
+                    <h2 class="text-3xl font-bold pb-3">General Information about IELTS Exam Fee</h2>
+                    <p class="text-lg font-serif pb-3">The IELTS examination fee has increased by approximately 8000 rupees since 2007. This means that the total cost of an IELTS exam will now be Rupees 15500 (up from 7200 in 2007).</p>
+                </div>
+                <div class="w-full">
+                    <h1 class="text-xl font-bold pb-3">IELTS Test Registration Fee</h1>
+                    <p class="text-lg font-serif pb-3">The IELTS test fee for Indian students has consistently been increasing. Students who wish to take the IELTS exam in India must pay Rs. 15500 as the application fee. However, there is no additional charge for registering for the IELTS at First Academy.</p>
+                    <h2 class="text-lg text-pink-500 text-center bg-pink-200 font-serif font-bold p-3">Isn’t that convenient?</h2>
+                    <p class="text-lg font-serif py-3 pb-5">We would love for you to attend a session and see for yourself!</p>
+                    <button class="hover-translate-y bg-blue-900 text-white font-semibold px-5 py-4 hover:bg-black rounded-lg">Attend a Free Session</button>
+                </div>
+                <div class="w-full"><img src="../assets/file_winners.svg" class="w-full" alt=""></div>
             </div>
-            <div class="w-full">
-                <h1 class="text-xl font-bold pb-3">IELTS Test Registration Fee</h1>
-                <p class="text-lg font-serif pb-3">The IELTS test fee for Indian students has consistently been increasing. Students who wish to take the IELTS exam in India must pay Rs. 15500 as the application fee. However, there is no additional charge for registering for the IELTS at First Academy.</p>
-                <h2 class="text-lg text-pink-500 text-center bg-pink-200 font-serif font-bold p-3">Isn’t that convenient?</h2>
-                <p class="text-lg font-serif py-3 pb-5">We would love for you to attend a session and see for yourself!</p>
-                <button class="hover-translate-y bg-blue-900 text-white font-semibold px-5 py-4 hover:bg-black rounded-lg">Attend a Free Session</button>
-            </div>
-            <div class="w-full"><img src="../assets/file_winners.svg" class="w-full" alt=""></div>
-        </div>
-    </div>    
+        </div>  
+    </div>  
 
     <section  class="bg-emerald-100 my-4">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
             <h1 class="py-2 text-3xl font-bold text-center text-emerald-600 md:text-4xl">Try Some Quick Tests</h1>
             <p class="font-semibold text-center">Before you join the best coaching centre!</p>
 
@@ -656,52 +686,54 @@
             </div>
         </div>
     </section>
-    <div class="max-w-screen-xl mb-5  py-10 bg-gradient-to-b from-pink-300 via-teal-200 to-teal-300 lg:px-24 px-16">
-        <div class="text-center font-bold text-4xl pb-10">Things You Might Be Interested In</div>
-        <div class="grid gap-4  lg:grid-cols-3">
-            <div class="rounded-lg bg-white border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <h2 class="text-2xl font-bold pb-5">140+ IELTS Mock Tests</h2>
-                <p class="text-lg text-gray-500 font-serif">A full set of practice material that will get you exam ready. Tests that closely match the real IELTS exam.</p>
-            </div>
-            <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <div><img src="../assets/c1.png" width="250px" alt=""></div>
-                <div>
-                   <h2  class="text-2xl font-bold pb-5"> Writing Evaluation</h2>
-                    <p class="text-lg text-gray-500 font-serif">A line by line evaluation of your writing tasks. The evaluations will help you understand why you scored what you scored. Free with the IELTS Coaching program at First Academy</p>
+    <div class="bg-gradient-to-b from-pink-300 via-teal-200 to-teal-300">
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
+            <div class="text-center font-bold text-4xl pb-10">Things You Might Be Interested In</div>
+            <div class="grid gap-4  lg:grid-cols-3">
+                <div class="rounded-lg bg-white border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <h2 class="text-2xl font-bold pb-5">140+ IELTS Mock Tests</h2>
+                    <p class="text-lg text-gray-500 font-serif">A full set of practice material that will get you exam ready. Tests that closely match the real IELTS exam.</p>
                 </div>
-            </div>
-            <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <div><img src="../assets/c2.png" width="250px" alt=""></div>
-                <div>
-                   <h2  class="text-2xl font-bold pb-5"> IELTS Speaking Evaluation</h2>
-                    <p class="text-lg text-gray-500 font-serif">Experience how the actual speaking test is like, and also get instant feedback! Free with our IELTS Coaching. Talk to the trainer, and get tips on how to improve.</p>
+                <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <div><img src="../assets/c1.png" width="250px" alt=""></div>
+                    <div>
+                    <h2  class="text-2xl font-bold pb-5"> Writing Evaluation</h2>
+                        <p class="text-lg text-gray-500 font-serif">A line by line evaluation of your writing tasks. The evaluations will help you understand why you scored what you scored. Free with the IELTS Coaching program at First Academy</p>
+                    </div>
                 </div>
-            </div>
-            <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <div><img src="../assets/c3.png" width="250px" alt=""></div>
-                <div>
-                   <h2  class="text-2xl font-bold pb-5"> The GRE</h2>
-                    <p class="text-lg text-gray-500 font-serif">If you are planning to study in the USA, the GRE might be a test that you might want to consider. Get more information about the test and the coaching details.</p>
+                <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <div><img src="../assets/c2.png" width="250px" alt=""></div>
+                    <div>
+                    <h2  class="text-2xl font-bold pb-5"> IELTS Speaking Evaluation</h2>
+                        <p class="text-lg text-gray-500 font-serif">Experience how the actual speaking test is like, and also get instant feedback! Free with our IELTS Coaching. Talk to the trainer, and get tips on how to improve.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <div><img src="../assets/c4.png" width="250px" alt=""></div>
-                <div>
-                   <h2  class="text-2xl font-bold pb-5"> Free Band 9 Writing Samples</h2>
-                    <p class="text-lg text-gray-500 font-serif">A huge list of Band 9 writing responses to help you understand how successful test takers write their essays!</p>
+                <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <div><img src="../assets/c3.png" width="250px" alt=""></div>
+                    <div>
+                    <h2  class="text-2xl font-bold pb-5"> The GRE</h2>
+                        <p class="text-lg text-gray-500 font-serif">If you are planning to study in the USA, the GRE might be a test that you might want to consider. Get more information about the test and the coaching details.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
-                <div><img src="../assets/c5.png" width="250px" alt=""></div>
-                <div>
-                   <h2  class="text-2xl font-bold pb-5"> Free IELTS Vocabulary Test</h2>
-                    <p class="text-lg text-gray-500 font-serif">Do you know all the four letter words IELTS expects you to know? Take the test and you will be surprised at how many simple words you do not know!</p>
+                <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <div><img src="../assets/c4.png" width="250px" alt=""></div>
+                    <div>
+                    <h2  class="text-2xl font-bold pb-5"> Free Band 9 Writing Samples</h2>
+                        <p class="text-lg text-gray-500 font-serif">A huge list of Band 9 writing responses to help you understand how successful test takers write their essays!</p>
+                    </div>
+                </div>
+                <div class="rounded-lg flex bg-white gap-4 border cursor-pointer duration-700 hover:border-blue-400 p-5">
+                    <div><img src="../assets/c5.png" width="250px" alt=""></div>
+                    <div>
+                    <h2  class="text-2xl font-bold pb-5"> Free IELTS Vocabulary Test</h2>
+                        <p class="text-lg text-gray-500 font-serif">Do you know all the four letter words IELTS expects you to know? Take the test and you will be surprised at how many simple words you do not know!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Recent Stories -->
-    <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
+    <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
         <div class="flex gap-3 pb-3">
             <p class="inline"><img width="40px" src="../assets/badge-1361.svg" alt=""></p>
             <p class="inline text-4xl font-bold ">Recent Stories</p>
@@ -713,86 +745,87 @@
             <p class=" text-center pb-2 text-md font-serif ">Kiran Nallapareddy</p>
         </div>
     </div>
-
-    <div class="max-w-screen-xl mb-5  py-10 bg-blue-200 lg:px-24 px-16">
-        <div class="text-center font-bold text-4xl text-purple-500 pb-10">Our Latest IELTS Blogs</div>
-        <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <span>
-                    <svg class="inline" fill="#3289fb" width="20px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M208,32H48A16.01833,16.01833,0,0,0,32,48V208a16.01833,16.01833,0,0,0,16,16H208a16.01833,16.01833,0,0,0,16-16V48A16.01833,16.01833,0,0,0,208,32ZM123.88184,112.002A35.99912,35.99912,0,1,1,98.35449,173.4668a7.99985,7.99985,0,1,1,11.291-11.33594,20.20173,20.20173,0,0,0,28.47461-.001,19.91646,19.91646,0,0,0-.001-28.25976,20.20412,20.20412,0,0,0-28.47461.001,7.99971,7.99971,0,0,1-13.541-6.95214l7.835-48.20215A8.00076,8.00076,0,0,1,111.835,72H152a8,8,0,0,1,0,16H118.63965L114.542,113.21094A36.413,36.413,0,0,1,123.88184,112.002Z"></path> </g></svg>
-                </span>
-                <h2 class="inline text-lg font-serif font-semibold  pb-5">Tips for a Great Band Score</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">Tips and Tricks</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Read this post on how to help yourself get better!</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Read Full Post
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    <div class="bg-blue-200">
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-16">
+            <div class="text-center font-bold text-4xl text-purple-500 pb-10">Our Latest IELTS Blogs</div>
+            <div class="grid gap-4 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3">
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <span>
+                        <svg class="inline" fill="#3289fb" width="20px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M208,32H48A16.01833,16.01833,0,0,0,32,48V208a16.01833,16.01833,0,0,0,16,16H208a16.01833,16.01833,0,0,0,16-16V48A16.01833,16.01833,0,0,0,208,32ZM123.88184,112.002A35.99912,35.99912,0,1,1,98.35449,173.4668a7.99985,7.99985,0,1,1,11.291-11.33594,20.20173,20.20173,0,0,0,28.47461-.001,19.91646,19.91646,0,0,0-.001-28.25976,20.20412,20.20412,0,0,0-28.47461.001,7.99971,7.99971,0,0,1-13.541-6.95214l7.835-48.20215A8.00076,8.00076,0,0,1,111.835,72H152a8,8,0,0,1,0,16H118.63965L114.542,113.21094A36.413,36.413,0,0,1,123.88184,112.002Z"></path> </g></svg>
                     </span>
-                </p>
-            </div>
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <span>
-                    <svg class="inline" fill="#3289fb" width="20px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M208,32H48A16.01833,16.01833,0,0,0,32,48V208a16.01833,16.01833,0,0,0,16,16H208a16.01833,16.01833,0,0,0,16-16V48A16.01833,16.01833,0,0,0,208,32ZM159.58984,86.53027l-32,96a8.0005,8.0005,0,1,1-15.17968-5.06054L140.90039,92H104a8,8,0,0,1,0-16h48a8.00022,8.00022,0,0,1,7.58984,10.53027Z"></path> </g></svg>
-                </span>
-                <h2 class="inline text-lg font-serif font-semibold  pb-5">Reason for a Mock Test</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">Why Take a Mock?</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Unsure about the right mock? This post will help.</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Read Full Post
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <h2 class="inline text-lg font-serif font-semibold  pb-5">Tips for a Great Band Score</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">Tips and Tricks</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Read this post on how to help yourself get better!</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Read Full Post
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <span>
+                        <svg class="inline" fill="#3289fb" width="20px" height="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M208,32H48A16.01833,16.01833,0,0,0,32,48V208a16.01833,16.01833,0,0,0,16,16H208a16.01833,16.01833,0,0,0,16-16V48A16.01833,16.01833,0,0,0,208,32ZM159.58984,86.53027l-32,96a8.0005,8.0005,0,1,1-15.17968-5.06054L140.90039,92H104a8,8,0,0,1,0-16h48a8.00022,8.00022,0,0,1,7.58984,10.53027Z"></path> </g></svg>
                     </span>
-                </p>
-            </div>
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <span>
-                    <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M118.09375,111.89063a14,14,0,1,1,19.79687.01562A14.318,14.318,0,0,1,118.09375,111.89063ZM128,132a17.99808,17.99808,0,0,0-12.73438,30.71875,18.43511,18.43511,0,0,0,25.45313.01563A18,18,0,0,0,128,132Zm96-84V208a16.02085,16.02085,0,0,1-16,16H48a16.02085,16.02085,0,0,1-16-16V48A16.02085,16.02085,0,0,1,48,32H208A16.02085,16.02085,0,0,1,224,48ZM162,150a33.71971,33.71971,0,0,0-9.95313-24.03125,30.83637,30.83637,0,0,0-3.12207-2.52148c.08692-.085.19239-.14258.27832-.22852a29.98906,29.98906,0,0,0,.01563-42.42187c-11.32813-11.34375-31.125-11.32813-42.42188-.01563a29.98908,29.98908,0,0,0-.01562,42.42188c.09082.09082.20215.15234.29395.24218a30.89715,30.89715,0,0,0-3.10645,2.50782A33.99637,33.99637,0,1,0,162,150Z"></path> </g></svg>                
-                </span>
-                <h2 class="inline text-lg font-serif font-semibold  pb-5">Band Essay</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">8 in Writing</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Some easy tips to help you start on an 8 band essay</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Get Full Details
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <h2 class="inline text-lg font-serif font-semibold  pb-5">Reason for a Mock Test</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">Why Take a Mock?</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Unsure about the right mock? This post will help.</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Read Full Post
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <span>
+                        <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M118.09375,111.89063a14,14,0,1,1,19.79687.01562A14.318,14.318,0,0,1,118.09375,111.89063ZM128,132a17.99808,17.99808,0,0,0-12.73438,30.71875,18.43511,18.43511,0,0,0,25.45313.01563A18,18,0,0,0,128,132Zm96-84V208a16.02085,16.02085,0,0,1-16,16H48a16.02085,16.02085,0,0,1-16-16V48A16.02085,16.02085,0,0,1,48,32H208A16.02085,16.02085,0,0,1,224,48ZM162,150a33.71971,33.71971,0,0,0-9.95313-24.03125,30.83637,30.83637,0,0,0-3.12207-2.52148c.08692-.085.19239-.14258.27832-.22852a29.98906,29.98906,0,0,0,.01563-42.42187c-11.32813-11.34375-31.125-11.32813-42.42188-.01563a29.98908,29.98908,0,0,0-.01562,42.42188c.09082.09082.20215.15234.29395.24218a30.89715,30.89715,0,0,0-3.10645,2.50782A33.99637,33.99637,0,1,0,162,150Z"></path> </g></svg>                
                     </span>
-                </p>
-            </div>
-             
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <span>
-                    <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M148,112a20,20,0,1,1-20-20A20.02229,20.02229,0,0,1,148,112Zm76-64V208a16.01833,16.01833,0,0,1-16,16H48a16.01833,16.01833,0,0,1-16-16V48A16.01833,16.01833,0,0,1,48,32H208A16.01833,16.01833,0,0,1,224,48Zm-60,64a36,36,0,1,0-36,36q.91626,0,1.82129-.04614l-16.68945,27.9436a8.00015,8.00015,0,1,0,13.73632,8.20508l32.249-53.99512c.09668-.16162.178-.32812.262-.49341A35.76746,35.76746,0,0,0,164,112Z"></path> </g></svg>                
-                </span>
-                <h2 class="inline text-lg font-serif font-semibold  pb-5">in Speaking</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">Cue Card Tips</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">This is what most successful scorers do!</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Get 9 in speaking
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <h2 class="inline text-lg font-serif font-semibold  pb-5">Band Essay</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">8 in Writing</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Some easy tips to help you start on an 8 band essay</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold">Get Full Details
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <span>
+                        <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M148,112a20,20,0,1,1-20-20A20.02229,20.02229,0,0,1,148,112Zm76-64V208a16.01833,16.01833,0,0,1-16,16H48a16.01833,16.01833,0,0,1-16-16V48A16.01833,16.01833,0,0,1,48,32H208A16.01833,16.01833,0,0,1,224,48Zm-60,64a36,36,0,1,0-36,36q.91626,0,1.82129-.04614l-16.68945,27.9436a8.00015,8.00015,0,1,0,13.73632,8.20508l32.249-53.99512c.09668-.16162.178-.32812.262-.49341A35.76746,35.76746,0,0,0,164,112Z"></path> </g></svg>                
                     </span>
-                </p>
-            </div>
-            
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <span>
-                    <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M148,112a20,20,0,1,1-20-20A20.02229,20.02229,0,0,1,148,112Zm76-64V208a16.01833,16.01833,0,0,1-16,16H48a16.01833,16.01833,0,0,1-16-16V48A16.01833,16.01833,0,0,1,48,32H208A16.01833,16.01833,0,0,1,224,48Zm-60,64a36,36,0,1,0-36,36q.91626,0,1.82129-.04614l-16.68945,27.9436a8.00015,8.00015,0,1,0,13.73632,8.20508l32.249-53.99512c.09668-.16162.178-.32812.262-.49341A35.76746,35.76746,0,0,0,164,112Z"></path> </g></svg>                
-                </span>
-                <h2 class="inline text-lg font-serif font-semibold  pb-5">Band Vocabulary</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">Sample Essay</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">How to effectively use vocabulary for a great score!</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Read the Essay
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <h2 class="inline text-lg font-serif font-semibold  pb-5">in Speaking</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">Cue Card Tips</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">This is what most successful scorers do!</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Get 9 in speaking
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <span>
+                        <svg class="inline" fill="#3289fb" width="20px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M148,112a20,20,0,1,1-20-20A20.02229,20.02229,0,0,1,148,112Zm76-64V208a16.01833,16.01833,0,0,1-16,16H48a16.01833,16.01833,0,0,1-16-16V48A16.01833,16.01833,0,0,1,48,32H208A16.01833,16.01833,0,0,1,224,48Zm-60,64a36,36,0,1,0-36,36q.91626,0,1.82129-.04614l-16.68945,27.9436a8.00015,8.00015,0,1,0,13.73632,8.20508l32.249-53.99512c.09668-.16162.178-.32812.262-.49341A35.76746,35.76746,0,0,0,164,112Z"></path> </g></svg>                
                     </span>
-                </p>
-            </div>
-            <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
-                <h2 class=" text-lg font-serif font-semibold  pb-5">2023 Expected Essays</h2>
-                <h3 class="text-3xl text-pink-500 font-bold">List of Essays</h3>
-                <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Here is a list of commonly asked questions with answers!</p>
-                <p class="pt-5">
-                    <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Get Full Details
-                        <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    </span>
-                </p>
+                    <h2 class="inline text-lg font-serif font-semibold  pb-5">Band Vocabulary</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">Sample Essay</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">How to effectively use vocabulary for a great score!</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Read the Essay
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
+                <div class="rounded-lg bg-white border shadow-lg  duration-700 hover:border-blue-400 p-5">
+                    <h2 class=" text-lg font-serif font-semibold  pb-5">2023 Expected Essays</h2>
+                    <h3 class="text-3xl text-pink-500 font-bold">List of Essays</h3>
+                    <p class="inline text-lg font-serif font-semibold  pb-10 mb-5">Here is a list of commonly asked questions with answers!</p>
+                    <p class="pt-5">
+                        <span class="text-blue-600 cursor-pointer hover:text-blue-800 duration-700 text-2xl font-semibold"> Get Full Details
+                            <svg class="inline" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 17L11 12L6 7M13 17L18 12L13 7" stroke="#2665f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -1214,5 +1247,8 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
