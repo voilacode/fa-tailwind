@@ -10,4 +10,8 @@
 # grelogin https://voilacode.github.io/fa-tailwind/src/grelogin
 # IELTSReading https://voilacode.github.io/fa-tailwind/src/IELTSReading
 # index https://voilacode.github.io/fa-tailwind/src/index
-# 
+# oet https://voilacode.github.io/fa-tailwind/src/oet
+# pte https://voilacode.github.io/fa-tailwind/src/pte
+# sat https://voilacode.github.io/fa-tailwind/src/sat
+# team https://voilacode.github.io/fa-tailwind/src/team
+# TOEFL https://voilacode.github.io/fa-tailwind/src/TOEFL
