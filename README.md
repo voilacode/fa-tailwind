@@ -1,4 +1,5 @@
 # fa-tailwind
+<<<<<<< HEAD
 # About-US https://voilacode.github.io/fa-tailwind/src/AboutUs
 # allcourses https://voilacode.github.io/fa-tailwind/src/allcourses
 # college https://voilacode.github.io/fa-tailwind/src/college
@@ -15,3 +16,6 @@
 # sat https://voilacode.github.io/fa-tailwind/src/sat
 # team https://voilacode.github.io/fa-tailwind/src/team
 # TOEFL https://voilacode.github.io/fa-tailwind/src/TOEFL
+=======
+# hire  -   
+>>>>>>> b850bcb (updated index)
