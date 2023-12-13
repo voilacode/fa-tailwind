@@ -15,3 +15,12 @@ function closeModal() {
     document.getElementById('modal').classList.add('hidden');
     document.querySelector('.modal-content').classList.remove('scale-100');
 }
+
+//pop up
+function openPopUp() {
+    document.getElementById('popup').classList.remove('hidden');
+}
+
+function closePopUp() {
+    document.getElementById('popup').classList.add('hidden');
+}

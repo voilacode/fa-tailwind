@@ -196,8 +196,8 @@
                 <nav>
                   <ul>
                     <li class="flex items-center gap-2">
-                      <a href="#" class="items-center hidden px-3 py-2 font-semibold bg-red-700 rounded-full w-36 sm:flex group">
-                        <span class="px-2 mr-2">Talk To Us</span>
+                      <a href="#" class="items-center hidden px-5 py-2 font-semibold bg-red-600 rounded-full sm:flex group">
+                        <span class="mr-2">Chat</span>
                         <svg class="stroke-current" width="10" height="10" stroke-width="2" viewBox="0 0 10 10" aria-hidden="true">
                           <g fill-rule="evenodd">
                             <path class="transition duration-200 ease-in-out opacity-0 group-hover:opacity-100" d="M0 5h7"></path>
@@ -249,10 +249,10 @@
                             </ul>
 
                             <div class="my-4 sm:flex sm:space-x-4">
-                                <button class="w-full p-3 mt-2 font-semibold text-center text-white duration-200 ease-in transform bg-blue-700 rounded-lg shadow-xl text-md hover:bg-blue-600 hover:scale-110 sm:w-2/3" aria-label="attend session" onclick="openModal()">Attend a Free Session</button>
+                                <button class="w-full p-3 mt-2 font-semibold text-center text-white duration-200 ease-in transform bg-blue-700 rounded-lg shadow-xl text-md hover:bg-blue-600 hover:scale-105 sm:w-2/3" aria-label="attend session" onclick="openModal()">Attend a Free Session</button>
 
 
-                                <button class="w-full p-3 mt-2 font-semibold text-center text-white duration-200 ease-in transform bg-yellow-700 rounded-lg shadow-xl text-md hover:bg-yellow-600 hover:scale-110 sm:w-2/3" aria-label="try test">Try a Free Test</button>
+                                <button class="w-full p-3 mt-2 font-semibold text-center text-white duration-200 ease-in transform bg-yellow-700 rounded-lg shadow-xl text-md hover:bg-yellow-600 hover:scale-105 sm:w-2/3" aria-label="try test">Try a Free Test</button>
                             </div>
                             
                             <!-- Modal -->
@@ -303,7 +303,7 @@
                                                 <label class="ml-2" for="gre">PTE</label>
                                             </div>                                            
                                         </div>
-                                        <div class="flex justify-center p-3 mb-3 space-x-4rounded-lg">
+                                        <div class="flex justify-center p-3 mb-3 space-x-4 rounded-lg">
                                             
                                             <div class="flex items-center">
                                                 <input class="form-checkbox" type="checkbox" value="gre" id="gre" name="settings_course[]">
@@ -329,7 +329,6 @@
                             
                         </div>
                         
-                        <!-- Image have to come here.... -->
                         <div class="hidden my-auto ml-auto sm:block md:block">
                             <img src="../assets/hero.svg" alt="laptop" width="600px" height="360px">
                         </div>
@@ -377,7 +376,12 @@
                                     <p>
                                         We have <span class="italic text-pink-900">the best</span> sessions on the planet. Attend one and see for yourself!
                                     </p>
-                                    <button class="px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform bg-pink-600 rounded hover:bg-pink-500 hover:-translate-y-1" aria-label="view">View Our Courses ></button>
+                                    <button class="flex px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform bg-pink-600 rounded hover:bg-pink-500 hover:-translate-y-1" aria-label="view">
+                                        <span class="my-auto">View Our Courses</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
 
                                 <div class="hidden mt-auto sm:block">
@@ -394,7 +398,14 @@
                                     <p>
                                         Get into top universities! We are <i class="text-emerald-900"> the only</i> place you need!
                                     </p>
-                                    <button class="px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform rounded bg-emerald-700 hover:bg-emerald-500 hover:-translate-y-1" aria-label="admission">Admission Advice ></button>
+                                    <button class="flex px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform rounded bg-emerald-700 hover:bg-emerald-500 hover:-translate-y-1" aria-label="admission">
+                                        <span class="my-auto">Admission Advice</span>
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
 
                                 <div class="hidden mt-auto sm:block">
@@ -423,14 +434,28 @@
                                     <h2 class="my-2 text-2xl font-bold text-center">Exclusive Material</h2>
                                     <p class="my-4 text-center">By Cambridge certified authors, <br>
                                         exclusively for First Academy</p>
-                                    <button class="block px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="view">View Material ></button>
+                                    <button class="flex px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="view">
+                                        <span class="my-auto">View Material</span> 
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
                                 <div class="col-span-2 p-4 rounded md:col-span-1 md:mt-1">
                                     <img src="../assets/file_interview2.webp" class="block mx-auto my-2 text-center " alt="interview" width="100px" height="100px">
                                     <h2 class="my-2 text-2xl font-bold text-center">Personalised Inputs
                                     </h2>
                                     <p class="my-4 text-center">Individual, personalised feedback <br> for the work you submit!</p>
-                                    <button class="block px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white">View Feedback ></button>
+                                    <button class="flex px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="view">
+                                        <span class="my-auto">View Feedback</span> 
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
 
@@ -439,14 +464,29 @@
                                     <img src="../assets/file_software.webp" class="block mx-auto my-2 text-center " alt="software" width="100px" height="100px">
                                     <h2 class="my-2 text-2xl font-bold text-center">Practice Software</h2>
                                     <p class="my-4 text-center">Practice where you want, when you want. Get results on the fly</p><br>
-                                    <button class="block px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="login">Login ></button>
+                                    <button class="flex px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="view">
+                                        <span class="my-auto">Login</span> 
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
                                 <div class="col-span-2 p-4 rounded md:col-span-1 md:mt-1">
                                     <img src="../assets/file_grade.webp" class="block mx-auto my-2 text-center " alt="grade" width="100px" height="100px">
                                     <h2 class="my-2 text-2xl font-bold text-center">Trainer Recommendations
                                     </h2>
                                     <p class="my-4 text-center">Our super focused training will put you <br> on your way to a fantastic score!</p>
-                                    <button class="block px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="look">Take a Look ></button>
+                                    <br>
+                                    <button class="flex px-4 py-2 mx-auto my-2 duration-200 ease-in bg-gray-100 rounded shadow-xl hover:bg-black hover:text-white" aria-label="view">
+                                        <span class="my-auto">Take a Look</span> 
+                                        
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -459,7 +499,7 @@
                                     <iframe class="block mx-auto sm:w-80 md:w-75 lg:w-72 lg:h-200" src="https://www.youtube.com/embed/QNr-147tmv8" title="YouTube video player" allowfullscreen=""></iframe>
                                 </div>
                                 <br>
-                                <a href="#" class="font-semibold duration-200 ease-in hover:scale-110">View our Courses ></a>
+                                <a href="#" class="font-semibold duration-200 ease-in hover:scale-105">View our Courses ></a>
                             </div>
                         </div>                        
                          
@@ -626,42 +666,84 @@
                             <p class="text-2xl font-bold text-pink-700">IELTS</p>
                             <p class="font-bold">Best Sessions | Get 8+ Band | Get PR | Go Anywhere</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                         <div class="col-span-12 p-5 my-2 duration-200 ease-in border-2 border-blue-300 rounded-lg shadow-xl sm:col-span-6 lg:col-span-4 hover:border-blue-500 sm:my-0">
                             <p class="font-bold">The Best GRE Coaching - Online | Classroom</p>
                             <p class="text-2xl font-bold text-pink-700">GRE</p>
                             <p class="font-bold">Targeting a 320+? You are at the right place!</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                         <div class="col-span-12 p-5 my-2 duration-200 ease-in border-2 border-blue-300 rounded-lg shadow-xl sm:col-span-6 lg:col-span-4 hover:border-blue-500 sm:my-0">
                             <p class="font-bold">The Best DET Coaching - Exclusively at First Academy</p>
                             <p class="text-2xl font-bold text-pink-700">Duolingo Test</p>
                             <p class="font-bold">The only DET coaching program in India. Get a 130+</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                         <div class="col-span-12 p-5 my-2 duration-200 ease-in border-2 border-blue-300 rounded-lg shadow-xl sm:col-span-6 lg:col-span-4 hover:border-blue-500 sm:my-0">
                             <p class="font-bold">The Best PTE Coaching - Online | Classroom</p>
                             <p class="text-2xl font-bold text-pink-700">PTE</p>
                             <p class="font-bold">Hello Australia! 79+ in PTE - the best coaching!</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                         <div class="col-span-12 p-5 my-2 duration-200 ease-in border-2 border-blue-300 rounded-lg shadow-xl sm:col-span-6 lg:col-span-4 hover:border-blue-500 sm:my-0">
                             <p class="font-bold">The Best SAT Coaching - Online | Classroom</p>
                             <p class="text-2xl font-bold text-pink-700">SAT</p>
                             <p class="font-bold">Our SAT heroes average a 1500. Why? Attend a session!</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                         <div class="col-span-12 p-5 my-2 duration-200 ease-in border-2 border-blue-300 rounded-lg shadow-xl sm:col-span-6 lg:col-span-4 hover:border-blue-500 sm:my-0">
                             <p class="font-bold">The Best OET Coaching - Online | Classroom</p>
                             <p class="text-2xl font-bold text-pink-700">OET</p>
                             <p class="font-bold">An easy path to B+ in all sections. 100% Results!</p>
                             <br>
-                            <a href="#" class="py-2 font-semibold text-blue-900 hover:text-blue-700">Get Full Details ></a>
+                            <a href="#" class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600" aria-label="view">
+                                <span class="my-auto">Get Full Details</span> 
+                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -676,7 +758,7 @@
                     <div class="flex flex-wrap justify-center mt-6 space-x-2 ">
                         <div class="inline my-5 shadow-xl">
                             <p class="inline">
-                                <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">Some Simple Words</a> 
+                                <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap " onclick="openPopUp()">Some Simple Words</a> 
                             </p>
                         </div>
                         <div class="inline my-5 shadow-xl">
@@ -736,6 +818,17 @@
                         </div>
                     </div>
 
+                    <!--pop up-->
+                    <div id="popup" class="flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50 ">
+                        <div class="bg-white ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onclick="closePopUp()">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                              
+                            <p>Sample popup</p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -744,7 +837,7 @@
                 <h1 class="my-4 mt-8 text-2xl font-bold text-center text-pink-600 md:text-3xl">Frequently Asked Questions</h1>
 
                 <!--first-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div> How soon can I retake the IELTS?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
@@ -759,7 +852,7 @@
                 </div>
 
                 <!--second-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div>What about the GRE?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
@@ -771,7 +864,7 @@
                 </div>
 
                 <!--third-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div>Will you help me register for the test? What do you charge?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
@@ -783,29 +876,36 @@
                 </div>
 
                 <!--fourth-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div>Can I get some free tests and material?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
                 <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
                      <p class="mb-2 text-gray-500 dark:text-gray-400">Yes! Our Blog and our Prep Site have several free tests, practice tests, sample responses, full length <span class="text-red-600">DET practice tests</span> and more. You can also request for an evaluated practice test for more popular tests too.
 <br><br>
-                                If you have any specific requests, you can always place a request and we will see what we can do for you! Most requests are given serious consideration!</p>
-                                <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="free resources">Free Resources ></button>                   
+                    If you have any specific requests, you can always place a request and we will see what we can do for you! Most requests are given serious consideration!</p>
+                    <button class="flex px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="free resources">
+                        <span class="my-auto">Free Resources </span>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 my-auto font-bold ms-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>                   
                 </div>
 
                 <!--fifth-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div>Do you do personalized training / corporate training for other stuff too?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
                 <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
                     <p class="mb-2 text-gray-500 dark:text-gray-400">Absolutely! We have a large repertoire of skills. If there a particular training requirement related to English, Life Skills, Aptitude, Mathematics, Vocabulary or other related areas, we would love to work with you. Do contact us and we will reach out to you</p>
-                                <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="need">Tell Us What You Need!</button>                   
+                    <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="need">Tell Us What You Need!</button>                   
                 </div>
 
                 <!--sixth-->
-                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 rounded-t-lg outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
+                <button class="flex justify-between w-full p-5 text-left text-gray-700 duration-300 ease-in-out bg-gray-100 border-b border-gray-500 outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white focus:border-white">
                     <div>Will your training help in getting a Band 8?</div>
                     <div class="text-xl font-bold">+</div>
                 </button>
@@ -971,18 +1071,18 @@
                     <div class="justify-between mt-4 md:flex">
                         <div class="grid grid-cols-7 my-2 sm:w-1/2">
                             <div class="col-span-2 text-start">
-                                <a href="./policy.html" class="text-sm duration-200 ease-in hover:text-gray-500">Privacy Policy</a>
+                                <a href="./policy.html" class="text-sm duration-200 ease-in hover:text-gray-300">Privacy Policy</a>
                             </div>
                             <div class="col-span-2">
-                                <a href="./terms.html" class="text-sm duration-200 ease-in hover:text-gray-500">Terms & Services</a>
+                                <a href="./terms.html" class="text-sm duration-200 ease-in hover:text-gray-300">Terms & Services</a>
                             </div>
                             <div class="col-span-3 pl-8">
-                                <a href="./refund.html" class="text-sm duration-200 ease-in hover:text-gray-500">Refund & Cancellation</a>
+                                <a href="./refund.html" class="text-sm duration-200 ease-in hover:text-gray-300">Refund & Cancellation</a>
                             </div>
                         </div>
     
                         <div class="flex flex-wrap justify-center col-span-6 my-2 place-content-end sm:sm:gap-4 sm:justify-end">
-                            <a href="#" target="_blank" aria-label="facebook" class="duration-200 ease-in-out hover:scale-110">
+                            <a href="#" target="_blank" aria-label="facebook" class="duration-200 ease-in-out hover:scale-105">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
                                     viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                     <path
@@ -990,17 +1090,17 @@
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="instagram" class="duration-200 ease-in-out ms-2 hover:scale-110">
+                            <a href="#" target="_blank" aria-label="instagram" class="duration-200 ease-in-out ms-2 hover:scale-105">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
                                     <path
                                         d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="Telegram" class="duration-200 ease-in-out ms-2 hover:scale-110">
+                            <a href="#" target="_blank" aria-label="Telegram" class="duration-200 ease-in-out ms-2 hover:scale-105">
                                 <svg style="color: white" xmlns="http://www.w3.org/2000/svg"  height="1.5em"  fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16"> <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" fill="white"></path> </svg>
                             </a>
-                            <a href="#" target="_blank" aria-label="youtube" class="duration-200 ease-in-out ms-2 hover:scale-110">
+                            <a href="#" target="_blank" aria-label="youtube" class="duration-200 ease-in-out ms-2 hover:scale-105">
                                 <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16"> <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" fill="white"></path> </svg>
                             </a>
                         </div>
