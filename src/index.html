@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <nav class="text-white bg-no-repeat bg-gradient-to-b from-blue-900 to-blue-700 shadow-md">
-        <div class="lg:flex items-center justify-between max-w-screen-xl px-4 py-2  mx-auto sm:px-16 ">
+    <nav class="text-white bg-no-repeat shadow-md bg-gradient-to-b from-blue-900 to-blue-700">
+        <div class="items-center justify-between max-w-screen-xl px-4 py-2 mx-auto lg:flex sm:px-16 ">
             <div class="flex justify-between">
                 <div>
                     <a href="#" class="inline-flex p-2 text-xl font-bold tracking-wider text-white uppercase">
@@ -31,7 +31,7 @@
                     <nav>
                         <ul>
                             <li class="flex items-center gap-2">
-                                <a href="#" class="flex items-center px-5 py-2 font-semibold bg-red-600 rounded-full group text-white" id="chatButton">
+                                <a href="#" class="flex items-center px-5 py-2 font-semibold text-white bg-red-600 rounded-full group" id="chatButton">
                                     <span class="mr-2">Chat</span>
                                     <svg class="stroke-current" width="10" height="10" stroke-width="2" viewBox="0 0 10 10"
                                         aria-hidden="true" class="hidden sm:flex">
@@ -51,11 +51,11 @@
                 </div>
             </div>
     
-            <div class="my-auto items-center nav-links w-full mt-2 lg:inline-flex lg:w-auto lg:mt-0 hidden"  id="mainMenu">
+            <div class="items-center hidden w-full my-auto mt-2 nav-links lg:inline-flex lg:w-auto lg:mt-0"  id="mainMenu">
                 <div class="w-full mt-2 lg:inline-flex lg:w-auto lg:mt-0" id="mainMenu">
                     <ul class="flex flex-col w-full space-y-2 lg:w-auto lg:flex-row lg:space-y-0 lg:space-x-2 mt-1.5">
                       <li>
-                        <a href="./index.html" class="flex px-4 py-2 font-medium text-white rounded-md hover:text-sky-500 duration-300 ease-in-out">
+                        <a href="./index.html" class="flex px-4 py-2 font-medium text-white duration-300 ease-in-out rounded-md hover:text-sky-500">
                           Home
                         </a>
                       </li>
@@ -63,8 +63,8 @@
                         <button class="flex w-full px-4 py-2 font-medium text-white rounded-md outline-none focus:outline-none hover:text-sky-500" id="dropdownToggle1">
                             Courses
                         </button>
-                        <div class="right-0 p-2 rounded-md lg:absolute dropdown-menu hidden w-full lg:w-96 "  id="dropdownMenu1">
-                            <div class="grid grid-cols-2 gap-6 space-y-2 transform lg:translate-x-40 bg-white shadow p-4 rounded-lg border-t-4 border-yellow-500">
+                        <div class="right-0 hidden w-full p-2 rounded-md lg:absolute dropdown-menu lg:w-96 "  id="dropdownMenu1">
+                            <div class="grid grid-cols-2 gap-6 p-4 space-y-2 transform bg-white border-t-4 border-yellow-500 rounded-lg shadow lg:translate-x-40">
                                 <div class="grid-cols-1 md:grid-cols-2">
                                     <p class="uppercase tracking-wider text-gray-500 font-medium text-[13px] pt-2">
                                         Get started</p>
@@ -155,8 +155,8 @@
                         <button href="#" class="flex w-full px-4 py-2 font-medium text-white rounded-md outline-none focus:outline-none hover:text-sky-500" id="dropdownToggle">
                             Material
                         </button>
-                        <div class="right-0 p-2 lg:absolute dropdown-menu hidden" id="dropdownMenu">
-                            <div class="space-y-2 transform lg:translate-x-28 bg-white shadow p-4 rounded-lg border-t-4 border-yellow-500">
+                        <div class="right-0 hidden p-2 lg:absolute dropdown-menu" id="dropdownMenu">
+                            <div class="p-4 space-y-2 transform bg-white border-t-4 border-yellow-500 rounded-lg shadow lg:translate-x-28">
                                 <ul class="mt-3 text-[15px] space-y-2 lg:w-48">
                                     <li>
                                         <a href="./reading.html"
@@ -206,8 +206,8 @@
                         <button href="#" class="flex w-full px-4 py-2 font-medium text-white rounded-md outline-none focus:outline-none hover:text-sky-500" id="dropdownToggle2">
                             About
                         </button>
-                        <div class="right-0 p-2 lg:absolute dropdown-menu hidden" id="dropdownMenu2">
-                            <div class="space-y-2 transform lg:translate-x-28 bg-white shadow p-4 rounded-lg border-t-4 border-yellow-500">
+                        <div class="right-0 hidden p-2 lg:absolute dropdown-menu" id="dropdownMenu2">
+                            <div class="p-4 space-y-2 transform bg-white border-t-4 border-yellow-500 rounded-lg shadow lg:translate-x-28">
                                 <ul class="space-y-2 lg:w-48">
                                     <li>
                                         <a href="#" class="block py-1 font-normal text-blue-600 hover:text-blue-800">
@@ -233,11 +233,11 @@
                   </div>
             </div>
     
-            <div class="items-center my-auto hidden lg:block">
+            <div class="items-center hidden my-auto lg:block">
                 <nav>
                     <ul>
                         <li class="flex items-center gap-2">
-                            <a href="#" class="flex items-center px-5 py-2 font-semibold bg-red-600 rounded-full group text-white" id="chatButton">
+                            <a href="#" class="flex items-center px-5 py-2 font-semibold text-white bg-red-600 rounded-full group" id="chatButton">
                                 <span class="mr-2">Chat</span>
                                 <svg class="stroke-current" width="10" height="10" stroke-width="2" viewBox="0 0 10 10"
                                     aria-hidden="true" class="hidden sm:flex">
@@ -504,23 +504,23 @@
             <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
                 <h1 class="text-xl font-bold text-center text-pink-600 sm:text-3xl">The Best Coaching</h1>
                 <div class="flex flex-wrap justify-center my-4 space-x-2 sm:space-x-4">
-                    <a href="#"
+                    <a href="./ielts.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">IELTS</a>
-                    <a href="#"
+                    <a href="./gre.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">GRE</a>
-                    <a href="#"
+                    <a href="./oet.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">OET</a>
-                    <a href="#"
+                    <a href="./det.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">DET</a>
-                    <a href="#"
+                    <a href="./sat.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">SAT</a>
-                    <a href="#"
+                    <a href="./pte.html"
                         class="px-4 py-3 my-1 font-semibold text-pink-600 duration-200 ease-in transform rounded shadow-xl bg-pink-50 hover:-translate-y-1 hover:bg-pink-600 hover:text-white">PTE</a>
                 </div>
 
                 <h1 class="pt-4 text-xl font-bold text-center text-emerald-500 sm:text-3xl">Popular Pages</h1>
                 <div class="flex flex-wrap justify-center my-4 space-x-4">
-                    <a href="#"
+                    <a href="./reading.html"
                         class="px-4 py-3 my-1 font-semibold duration-200 ease-in transform rounded shadow-xl bg-emerald-50 text-emerald-600 hover:-translate-y-1 hover:bg-emerald-600 hover:text-white">IELTS
                         Reading</a>
                     <a href="#"
@@ -549,8 +549,8 @@
                                     We have <span class="italic text-pink-900">the best</span> sessions on the planet.
                                     Attend one and see for yourself!
                                 </p>
-                                <button
-                                    class="flex px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform bg-pink-600 rounded hover:bg-pink-500 hover:-translate-y-1"
+                                <a href="./courses.html"
+                                     class="flex w-48 px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform bg-pink-600 rounded hover:bg-pink-500 hover:-translate-y-1"
                                     aria-label="view">
                                     <span class="my-auto">View Our Courses</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -558,7 +558,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                     </svg>
-                                </button>
+                                </a>
                             </div>
 
                             <div class="hidden mt-auto sm:block">
@@ -577,8 +577,8 @@
                                     Get into top universities! We are <i class="text-emerald-900"> the only</i> place
                                     you need!
                                 </p>
-                                <button
-                                    class="flex px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform rounded bg-emerald-700 hover:bg-emerald-500 hover:-translate-y-1"
+                                <a href="./studyabroad.html"
+                                    class="flex w-48 px-4 py-2 my-4 font-semibold text-center text-white duration-200 ease-in transform rounded bg-emerald-700 hover:bg-emerald-500 hover:-translate-y-1"
                                     aria-label="admission">
                                     <span class="my-auto">Admission Advice</span>
 
@@ -589,7 +589,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                     </svg>
-                                </button>
+                                </a>
                             </div>
 
                             <div class="hidden mt-auto sm:block">
@@ -707,15 +707,15 @@
                         <div class="p-4 py-6 bg-gray-100 rounded shadow-2xl sm:p-8">
                             <h3 class="py-2 font-semibold text-center">This is Us!</h3>
                             <p class="py-2 text-center">A short video of beautiful people of First Academy.</p>
-                            <!-- <div class="mt-3 youtube-lite block mx-auto sm:w-80 md:w-75 lg:w-72 lg:h-200">
-                                <div class=" w-full" data-id="QNr-147tmv8"></div>
+                            <!-- <div class="block mx-auto mt-3 youtube-lite sm:w-80 md:w-75 lg:w-72 lg:h-200">
+                                <div class="w-full " data-id="QNr-147tmv8"></div>
                             </div> -->
 
                             <iframe class="block mx-auto sm:w-80 md:w-75 lg:w-72 lg:h-200" src="https://www.youtube.com/embed/QNr-147tmv8" title="YouTube video player"
                                     allowfullscreen=""></iframe>
                             
                             <br>
-                            <a href="#" class="font-semibold duration-200 ease-in hover:text-blue-600 flex">
+                            <a href="#" class="flex font-semibold duration-200 ease-in hover:text-blue-600">
                                 <span>View our Courses </span>
                                 
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -912,7 +912,7 @@
                         <p class="text-2xl font-bold text-pink-700">IELTS</p>
                         <p class="font-bold">Best Sessions | Get 8+ Band | Get PR | Go Anywhere</p>
                         <br>
-                        <a href="#"
+                        <a href="./ielts.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -930,7 +930,7 @@
                         <p class="text-2xl font-bold text-pink-700">GRE</p>
                         <p class="font-bold">Targeting a 320+? You are at the right place!</p>
                         <br>
-                        <a href="#"
+                        <a href="./gre.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -948,7 +948,7 @@
                         <p class="text-2xl font-bold text-pink-700">Duolingo Test</p>
                         <p class="font-bold">The only DET coaching program in India. Get a 130+</p>
                         <br>
-                        <a href="#"
+                        <a href="./det.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -966,7 +966,7 @@
                         <p class="text-2xl font-bold text-pink-700">PTE</p>
                         <p class="font-bold">Hello Australia! 79+ in PTE - the best coaching!</p>
                         <br>
-                        <a href="#"
+                        <a href="./pte.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -984,7 +984,7 @@
                         <p class="text-2xl font-bold text-pink-700">SAT</p>
                         <p class="font-bold">Our SAT heroes average a 1500. Why? Attend a session!</p>
                         <br>
-                        <a href="#"
+                        <a href="./sat.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -1002,7 +1002,7 @@
                         <p class="text-2xl font-bold text-pink-700">OET</p>
                         <p class="font-bold">An easy path to B+ in all sections. 100% Results!</p>
                         <br>
-                        <a href="#"
+                        <a href="./oet.html"
                             class="flex pt-2 mt-2 font-semibold text-blue-900 duration-200 ease-in hover:text-blue-600"
                             aria-label="view">
                             <span class="my-auto">Get Full Details</span>
@@ -1024,13 +1024,13 @@
                 <h1 class="py-2 text-3xl font-bold text-center text-blue-600 md:text-4xl">Try Some Quick Tests</h1>
                 <p class="font-semibold text-center">Before you join the best coaching centre!</p>
                     <!--POP UP-->
-                    <div id="popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden items-center justify-center">
+                    <div id="popup" class="fixed inset-0 items-center justify-center hidden bg-gray-900 bg-opacity-50">
 
                         <!-- Modal content -->
-                        <div class="bg-white p-8 rounded shadow-md w-4/5 sm:w-1/2">
-                          <p class="text-2xl font-bold mb-4">Modal Title</p>
+                        <div class="w-4/5 p-8 bg-white rounded shadow-md sm:w-1/2">
+                          <p class="mb-4 text-2xl font-bold">Modal Title</p>
                           <p>This is some modal content. You can add any HTML content here.</p>
-                          <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="closePopUp()">
+                          <button class="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700" onclick="closePopUp()">
                             Close Modal
                           </button>
                         </div>
@@ -1418,7 +1418,7 @@
                     <button
                         class="px-12 py-4 my-2 font-semibold text-gray-800 duration-200 ease-in transform bg-white rounded-full hover:-translate-y-2"
                         aria-label="view">
-                        <a href="#">View Courses</a>
+                        <a href="./courses.html">View Courses</a>
                     </button>
                 </div>
 
@@ -1537,7 +1537,7 @@
                         <ol>
                             <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">Test Portal</a>
                             </li>
-                            <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">IELTS Big
+                            <li class="my-2 text-md"><a href="./reading.html" class="text-slate-300 hover:text-white">IELTS Big
                                     Book</a></li>
                             <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white"> GRE
                                     Reading</a></li>
