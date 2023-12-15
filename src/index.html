@@ -14,12 +14,12 @@
     <link rel="shortcut icon" href="https://piofx.s3.ap-south-1.amazonaws.com/themes/53/file_FA.svg">
     <link href="../dist/output.css" rel="stylesheet">
     <link href="./css/lite-youtube.css" rel="stylesheet">    
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <title>First Academy - The Best There Is</title>
+    
 </head>
 
 <body>
-    <nav class="text-white bg-no-repeat shadow-md bg-gradient-to-b from-blue-900 to-blue-700">
+    <nav class="text-white bg-no-repeat shadow-md bg-gradient-to-b from-blue-900 to-blue-700 transition-all duration-500 ease-in-out ">
         <div class="items-center justify-between max-w-screen-xl px-4 py-2 mx-auto lg:flex sm:px-16 ">
             <div class="flex justify-between">
                 <div>
@@ -45,7 +45,11 @@
                                         </g>
                                     </svg>
                                 </a>
-                                <ion-icon name="menu" class="text-3xl lg:hidden hover:cursor-pointer" onclick="toggleMobileMenu()"></ion-icon>
+                                <!--menu bar-->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8" id="menuIcon" onclick="toggleMobileMenu()">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                                  </svg>
+                                  
                             </li>
                         </ul>
                     </nav>
@@ -54,7 +58,7 @@
     
             <div class="items-center hidden w-full my-auto mt-2 nav-links lg:inline-flex lg:w-auto lg:mt-0"  id="mainMenu">
                 <div class="w-full mt-2 lg:inline-flex lg:w-auto lg:mt-0" id="mainMenu">
-                    <ul class="flex flex-col w-full space-y-2 lg:w-auto lg:flex-row lg:space-y-0 lg:space-x-2 mt-1.5">
+                    <ul class="flex flex-col w-full space-y-2 lg:w-auto lg:flex-row lg:space-y-0 lg:space-x-2 mt-1.5 transition-all duration-300 ease-in-out">
                       <li>
                         <a href="./index.html" class="flex px-4 py-2 font-medium text-white duration-300 ease-in-out rounded-md hover:text-sky-500">
                           Home
@@ -250,7 +254,8 @@
                                             d="M1 1l4 4-4 4"></path>
                                     </g>
                                 </svg>
-                            </a>
+                            </a>        
+                            
                             <ion-icon name="menu" class="text-3xl lg:hidden" onclick="toggleMobileMenu()"></ion-icon>
                         </li>
                     </ul>
@@ -258,7 +263,7 @@
             </div>
             
         </div>
-      </nav>
+    </nav>
     <!--Latest Post-->
     <div class="flex items-center justify-center bg-sky-300">
         <div class="flex items-center my-1 space-x-2 overflow-hidden text-center">
