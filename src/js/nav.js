@@ -1,9 +1,7 @@
 function toggleMobileMenu() {
     const mainMenu = document.getElementById('mainMenu');
     const menuIcon = document.getElementById('menuIcon');
-
     mainMenu.classList.toggle('hidden');
-
     // Toggle between icons
     if (mainMenu.classList.contains('hidden')) {
         menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />';
