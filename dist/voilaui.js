@@ -66,18 +66,28 @@ document.addEventListener('click', function (event) {
 });
 
 // modal
-function openModal() {
-    document.getElementById('modal').classList.remove('hidden');
-    document.querySelector('.modal-content').classList.add('scale-100');
-}
+document.addEventListener('click', function (event) {
+    const target = event.target;
 
-function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
-    document.querySelector('.modal-content').classList.remove('scale-100');
-}
+    // Open popup when trigger button is clicked
+    if (target.hasAttribute('data-popup')) {
+        const popupId = target.getAttribute('data-popup');
+        const popup = document.getElementById(popupId);
+        if (popup) {
+            popup.classList.remove('hidden');
+        }
+    }
 
+    // Close popup when close button is clicked
+    if (target.hasAttribute('data-popup-close')) {
+        const popupId = target.getAttribute('data-popup-close');
+        const popup = document.getElementById(popupId);
+        if (popup) {
+            popup.classList.add('hidden');
+        }
+    }
 
-
+});
 
 /** 
  * Accordion script to handle multiple accordions 
@@ -106,5 +116,3 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
-
-
