@@ -338,10 +338,10 @@
             </div>
             <div class="py-3 md:flex">
                 <button class="py-4 text-xl font-bold text-white bg-teal-400 md:
-      px-7 tracking-[1px] rounded">Attend a Session</button>
-                <div class="flex mx-3 mt-4">
-                    <p class="font-serif text-lg font-semibold text-blue-600">Session Plan </p>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="mt-2 ml-1 ont-bold ptext-xl "
+      px-7 tracking-[1px] rounded" data-popup="popup">Attend a Session</button>
+                <div class="flex items-center gap-1 mx-3 mt-4" >
+                    <button data-popup="popup1" class="font-serif text-lg font-semibold text-blue-600">Session Plan </button>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" class=" ont-bold ptext-xl"
                         viewBox="0 0 512 512">
                         <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
@@ -355,6 +355,404 @@
                 width="500px">
         </div>
     </section>
+
+        <!-- Modal -->
+        <div id="popup"
+        class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
+
+        <div class="p-4 m-8 bg-white rounded-lg sm:p-8 w-92 sm:w-3/5">
+            <div class="flex justify-between p-4 mb-0 text-blue-800 bg-blue-200 rounded">
+
+                <div class=" w-[97%]" role="alert">
+                    Do enter the country code of your phone number.<br> Ex: <kbd>+91</kbd> for
+                    India, <kbd>+1</kbd> for the USA.
+                </div>
+
+                <button class="relative top-0 left-0 mb-4 text-3xl text-gray-500 w-[3%] ms-auto hover:text-gray-700"
+                    data-popup-close="popup">&times;</button>
+            </div>
+
+            <br>
+            <h3 class="text-blue-900">Where would you want to attend a demo</h3>
+            <div class="flex justify-center p-3 my-3 space-x-4 bg-blue-100 rounded-lg">
+                <div class="flex items-center">
+                    <input class="form-checkbox" type="radio" name="settings_location" id="Ameerpet"
+                        value="ameerpet">
+                    <label class="ml-2" for="Ameerpet">Ameerpet</label>
+                </div>
+                <div class="flex items-center">
+                    <input class="form-checkbox" type="radio" name="settings_location" id="Madhapur"
+                        value="madhapur">
+                    <label class="ml-2" for="Madhapur">Madhapur</label>
+                </div>
+                <div class="flex items-center">
+                    <input class="form-checkbox" type="radio" name="settings_location" id="Online"
+                        value="online">
+                    <label class="ml-2" for="Online">Online</label>
+                </div>
+            </div>
+            <h3 class="text-blue-900">Which session would you like to try?</h3>
+            <div class="bg-blue-100">
+                <div class="flex justify-center p-3 mt-3 space-x-4 rounded-lg">
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">GRE</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">IELTS</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">TOEFL</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">PTE</label>
+                    </div>
+                </div>
+                <div class="flex justify-center p-3 mb-3 space-x-4 rounded-lg">
+
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">OET</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">SAT</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input class="form-checkbox" type="checkbox" value="gre" id="gre"
+                            name="settings_course[]">
+                        <label class="ml-2" for="gre">OTHERS</label>
+                    </div>
+                </div>
+            </div>
+
+            <input type="text" class="block w-full p-4 mt-2 form-input " placeholder="Name"
+                name="name">
+            <input type="email" class="block w-full p-4 mt-2 form-input " placeholder="Email"
+                name="email">
+            <input type="text" class="block w-full p-4 mt-2 form-input " placeholder="Phone Number"
+                name="phone">
+            <button type="button"
+                class="block w-full p-4 mt-3 text-white bg-blue-900 btn btn-block transition-3d-hover contact_button">Submit</button>
+        </div>
+    </div> 
+    
+    
+
+     <!--pop ups-->
+     <div>
+        <div id="popup1"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 1 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup2"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 2 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup3"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 3 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup4"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 4 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup5"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 5 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup6"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 6 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup7"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup7">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 7 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup8"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 8 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup9"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup9">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 9 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup10"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 10 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup11"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup11">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 11 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup12"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 12 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+
+        <div id="popup13"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup13">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 13 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+
+        <div id="popup14"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup14">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 14 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+        <div id="popup15"
+            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+            <div class="p-4 bg-white rounded shadow-md popup-content">
+                <div class="flex justify-end">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                        data-popup-close="popup15">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+
+                </div>
+                <p>Popup 15 Content
+                    <br>
+                    This is the dummy content for pop up modal boxes
+                </p>
+                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+            </div>
+        </div>
+
+    </div>
 
     <!--Section 2-->
     <section class="mx-2 mt-10 mb-5 rounded md:mx-48"
@@ -486,6 +884,10 @@
                     help both beginners and advanced learners alike. Those who hate maths will be pleased to know that
                     GRE does not have any mathematics that one would not have done in school.</p>
 
+
+                    <button data-popup="popup" class="py-4 text-xl font-bold text-white bg-teal-400 md:
+                    px-7 tracking-[1px] rounded">Attend a Session</button>
+
                 
             </section>
         </div>
@@ -494,55 +896,439 @@
 
 
     <!--Vocabulary Enthusiast?-->
-    <section class="py-3 bg-sky-200">
-        <h1 class="pt-3 text-3xl font-bold text-center opacity-75 md:pt-8 md:text-4xl">Vocabulary Enthusiast?</h1>
-        <p class="text-xl font-bold text-center text-sky-500">You will love these tiny tests</p>
-        <div class="flex flex-wrap items-center justify-center gap-1 px-2 my-3 md:gap-2 md:mx-52">
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🥏 Does it Fit?</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🐲 This is not going to be easy!</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                👻 Which is correct?</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                💬Some more words</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                👔 Will this work?</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🦸🏼‍♂️ Are you an action man?</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                ⚔️ Make them agree!</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🖼 Change Them!</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🚁 Get them to the right place</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🥂 Better Together!</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                👩‍🏫 Attend a session</p>
-            <p
-                class="px-3 py-2 my-2 text-xs font-bold rounded-full opacity-50 cursor-pointer md:text-base hover:bg-gray-500 hover:text-white hover:opacity-100 bg-slate-400">
-                🙌 More Tests</p>
+   
+    <section class="bg-cyan-100">
+
+        <div class="items-center justify-between max-w-screen-xl px-4 py-8 mx-auto sm:px-16 ">
+            <p class="text-xl font-bold text-center md:text-4xl">Vocabulary Enthusiast?</p>
+            <p class="py-2 text-lg font-bold text-center text-teal-700">You will love these tiny tests</p>
+
+            <!-- <div class="flex flex-wrap justify-center mt-6 space-x-2 ">
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "  onclick="openPopUp()">🥏 Does it Fit?</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🐲 This is not going to be easy!</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">👻 Which is correct?</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">💬Some more words</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">👔 Will this work?</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🦸🏼‍♂️ Are you an action man?</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">⚔️ Make them agree!</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🖼 Change Them!</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🚁 Get them to the right place</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🥂 Better Together!</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">👩‍🏫 Attend a session</a> 
+                    </p>
+                </div>
+                <div class="inline my-5 shadow-xl">
+                    <p class="inline">
+                        <a href="#" class="w-full p-3 px-0 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap ">🙌 More Tests</a> 
+                    </p>
+                </div>
+            </div> -->
+
+            
+        <!--pop ups-->
+        <div>
+            <div id="popup1"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 1 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup2"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 2 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup3"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 3 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup4"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 4 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup5"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 5 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup6"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 6 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup7"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup7">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 7 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup8"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 8 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup9"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup9">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 9 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup10"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 10 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup11"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup11">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 11 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+            <div id="popup12"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup12">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 12 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
+
+            <div id="popup13"
+                class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+
+                <div class="p-4 bg-white rounded shadow-md popup-content">
+                    <div class="flex justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
+                            data-popup-close="popup13">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                    </div>
+                    <p>Popup 13 Content
+                        <br>
+                        This is the dummy content for pop up modal boxes
+                    </p>
+                    <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+                </div>
+            </div>
+
         </div>
 
+        <!-- simple test buttons-->
+        <div class="flex flex-wrap justify-center mt-6 space-x-2 ">
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap"
+                        data-popup="popup1">🥏 Does it Fit?</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup2">🐲 This is not going to be easy!</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup3">👻 Which is correct?</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup4">💬Some more words</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup5"> 👔 Will this work?</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup6">🦸🏼‍♂️ Are you an action man?</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup7">⚔️ Make them agree!</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup8">🖼 Change Them!</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup9">🚁 Get them to the right place</a>
+                </p>
+            </div>
+            
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup11">🥂 Better Together!</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup12">👩‍🏫 Attend a session</a>
+                </p>
+            </div>
+            <div class="inline my-5 shadow-xl">
+                <p class="inline">
+                    <a href="#"
+                        class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
+                        data-popup="popup13">🙌 More Tests</a>
+                </p>
+            </div>
+        </div>
+        </div>
     </section>
 
+
     <!--Training Details-->
-    <div class="md:mx-36">
-        <h1 class="py-2 text-3xl font-bold text-center">Training Details</h1>
-        <p class="font-serif text-xl text-center">Timings mentioned here are subject to change</p>
-        <div class="justify-between md:mt-10 md:flex">
+    <div class="px-4 md:mx-36">
+        <h1 class="py-2 text-2xl font-bold text-center md:text-3xl">Training Details</h1>
+        <p class="font-serif text-center tezt-lg md:text-xl">Timings mentioned here are subject to change</p>
+        <div class="flex flex-col justify-around md:mt-10 md:flex-row">
             <div >
                 <h1 class="text-2xl font-bold">Session Timings</h1>
                 <div class="flex items-center gap-2 py-3">
@@ -586,17 +1372,17 @@
             <!--Regular Course Duration-->
             <div >
                 <img src="../assets/dots-2.webp" alt="dotts" width="180px" class="absolute hidden ml-72 md:block">
-                <div class="relative px-10 bg-blue-300 rounded-lg mt-7 py-7">
+                <div class="relative items-center px-4 bg-blue-300 rounded-lg md:px-10 mt-7 py-7">
                     <?xml version="1.0" ?><svg height="40" viewBox="0 0 1792 1792" width="40"
                         class="mx-auto fill-pink-500" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M832 960v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136zm896 0v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136z" />
                     </svg>
-                    <h1 class="text-3xl font-bold">Regular Course Duration</h1>
+                    <h1 class="text-xl font-bold md:text-3xl">Regular Course Duration</h1>
                     <p class="pt-1 text-xl font-semibold text-center text-pink-500 ">Regular Term – 8 weeks</p>
                     <p class="text-xl font-semibold text-center text-pink-500 ">Short Term – 4 weeks</p>
                     <div class="my-3">
-                        <button
+                        <button data-popup="popup"
                             class="px-5 py-3 font-bold rounded opacity-50 hover:opacity-100 hover:text-white md:mx-20 bg-slate-400">Attend
                             a session</button>
                     </div>
@@ -606,7 +1392,7 @@
     </div>
 
     <!--See the ♥ our GRE sessions get-->
-    <section class="py-5 mt-5 mb-10 md:mt-20 bg-pink-50 ">
+    <section class="py-5 mt-5 md:mt-20 bg-pink-50 ">
         <div class="md:mx-48">
             <h1 class="py-5 mx-3 text-2xl font-bold md:text-3xl ">See the ♥ our GRE sessions get</h1>
             <div class=" md:flex">
@@ -762,9 +1548,10 @@
 
 
     <!--What's Awesome-->
-    <section class="md:mx-48">
-        <h1 class="text-3xl font-bold text-center md:text-5xl opacity-40">What's Awesome</h1>
-        <div class="items-center py-10 md:grid-cols-3 md:grid">
+    <div class="bg-gradient-to-b from-gray-100 to-gray-50">
+    <section class="md:mx-48 ">
+        <h1 class="py-2 text-3xl font-bold text-center md:text-5xl opacity-40">What's Awesome</h1>
+        <div class="grid items-start gap-8 py-10 md:grid-cols-3">
             <div class="flex flex-col items-center justify-center mx-5">
                 <?xml version="1.0" ?><svg viewBox="0 0 512 512" class="mx-auto w-14 h-14 fill-pink-400"
                     xmlns="http://www.w3.org/2000/svg">
@@ -776,7 +1563,7 @@
                     call back.
                     We will come up with a plan that fits your time, your style, and your needs.</p>
                 <div class="my-3 ">
-                    <button class="px-3 py-3 my-3 font-semibold text-white bg-pink-400 rounded">Leave a message</button>
+                    <button data-popup="popup2" class="px-3 py-3 my-3 font-semibold text-white bg-pink-400 rounded">Leave a message</button>
                 </div>
             </div>
             <div class="flex flex-col items-center justify-center mx-5 ">
@@ -788,7 +1575,7 @@
                 <h1 class="py-3 text-3xl font-semibold text-center">Your learning, Your pace</h1>
                 <p class="text-center text-[19px] font-serif">Our top notch training, at your convenience!</p>
                 <div class="my-3 ">
-                    <button class="px-3 py-3 my-3 font-semibold text-white rounded bg-cyan-400">Attend a demo</button>
+                    <button data-popup="popup" class="px-3 py-3 my-3 font-semibold text-white rounded bg-cyan-400">Attend a demo</button>
                 </div>
             </div>
             <div class="flex flex-col items-center justify-center mx-5">
@@ -802,7 +1589,7 @@
                     session. Our
                     sessions are really good and we are not afraid to shout it out to the world!</p>
                 <div class="my-3 ">
-                    <button class="px-3 py-3 my-3 font-semibold text-white bg-pink-400 rounded">Take a free
+                    <button data-popup="popup3" class="px-3 py-3 my-3 font-semibold text-white bg-pink-400 rounded">Take a free
                         test</button>
                 </div>
             </div>
@@ -990,9 +1777,30 @@
         
 
             <!--Nine-->
-                       
+            <div class="mb-4">
+                <button
+                    class="flex justify-between w-full p-3 mb-[2px] text-left text-black duration-300 ease-in-out bg-white cursor-pointer accordion hover:text-blue-500 rounded">
+                    <div class="font-semibold">GRE Coaching Hyderabad - All the information you need.</div>
+                    <div class="text-xl font-bold text-blue-500">+</div>
+                </button>
+                <div class="hidden p-5 mb-4 overflow-hidden bg-white shadow-xl panel">
+                    <h1 class="text-3xl font-bold">Course Duration and Hours</h1>
+                    <p class="py-2 font-serif text-base text-black dark:text-gray-400">
+                        First Academy’s GRE Coaching in Hyderabad is offered at two locations Ameerpet and Madhapur. You are free to choose which centre you wish to attend. Added to this there is also online coaching that can either supplement, complement, or supplant your regular GRE training. For those looking for GRE training in Hyderabad but are not able to attend the sessions at the First Academy premises, we also offer fully online training modules that are absolutely on par with our excellent and most reviewed classroom-based GRE training. Those who wish to do both can take advantage of attending any classes (online or offline) at any time they are available.</p>
+                        <p class="py-2 font-serif text-base text-black dark:text-gray-400">Our GRE coaching in Hyderabad is for a duration of 8 weeks. The same is the case for online training too. The training involves attending quantitative, verbal, and Analytical Writing assessment training. If you wish to complete you coaching classes in a shorter duration you also have the option of attending both classes in parallel. This will shorten the coaching duration by half! This will ensure that you can plan your exam and preparation based on when you wish to apply for universities.</p>
+                        
+                        <p class="py-2 font-serif text-base text-black dark:text-gray-400">
+                            For more information on GRE coaching in Hyderabad, we have our counsellors on stand-by to answer any questions you might have. Our training is comprehensive, adaptive, and intuitive. The trainers focus on long-term learning and techniques that are designed to enhance your understanding of the test along with imbuing you with a natural ability to unravel the purpose of the question and plan your response and solving techniques based on what you glean from the questions.</p>
+    
+                            
+                            <p class="py-2 font-serif text-base text-black dark:text-gray-400">We invite all prospective test takers to attend a session for free to experience how different we are from the others! The session may be attended either online or in class depending on what you prefer the most or do both and see what suits you best!</p>
+                            <p class="py-2 font-serif text-base text-black dark:text-gray-400">Should you wish to look at how our sessions are, we would love to accommodate you.  Whatsapp and you can experience the how the best GRE preparation course is conducted by attending a live session – either online or offline.</p>
+                           
+        
+                </div>
+                </div>     
     </section>
-
+</div>
 
     <footer class="mb-10">
         <!--attend drives-->
