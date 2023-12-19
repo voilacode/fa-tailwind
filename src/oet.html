@@ -706,7 +706,7 @@
         </div>
 
 
-        <div id="popup14" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+        <div id="popup14"  class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full overflow-y-auto bg-black bg-opacity-50">
 
             <div class="p-8 bg-white rounded shadow-md popup-content">
                 <div class="flex justify-end">
@@ -718,8 +718,8 @@
                 </div>
         
                 <form class="js-validate" action="/admin/contact" data-otp="1" novalidate="novalidate">
-                    <div class="px-4 py-4 text-center border-0 card-header bg-light">
-                        <h2 class="mb-0 text-green-600 h2">Request for a Free Test</h2>
+                    <div class="px-4 py-4 border-0 text-start card-header bg-light">
+                        <h2 class="mb-0 text-2xl font-bold text-green-600">Request for a Free Test</h2>
                     </div>
                     <div class="p-4 card-body">
                         <div class="alert alert-soft-primary alert_block" style="display:none">
@@ -738,25 +738,25 @@
                             </div>
                         </div>
                         <div class="contact_block">
-                            <div class="alert alert-soft-success" role="alert"> Please include the country code with the
-                                number. (Eg: <kbd>+91</kbd> for India; <kbd>+65</kbd> For Singapore). </div>
+                            <div class="p-2 px-4 font-serif text-xl text-teal-500 bg-teal-100 alert alert-soft-success" role="alert"> Please include the country code with the
+                                number. (Eg: <span class="p-1 text-sm text-white bg-black rounded">+91</span> for India; <span class="p-1 text-sm text-white bg-black rounded">+65</span> For Singapore). </div>
                             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                                <div class="js-form-message form-group">
-                                    <label for="firstNameExample1" class="input-label">Name</label>
-                                    <input type="text" class="form-control" name="name" id="firstNameExample1"
+                                <div class="">
+                                    <label for="firstNameExample1" class="block font-serif input-label">Name</label>
+                                    <input type="text" class="p-1 border border-gray-200 rounded form-control" name="name" id="firstNameExample1"
                                         placeholder="Full name" aria-label="Nataly" required=""
                                         data-msg="Please enter your name">
                                 </div>
-                                <div class="js-form-message form-group">
-                                    <label for="lastNameExample1" class="input-label">Phone</label>
-                                    <input type="text" class="form-control" name="phone" id="lastNameExample1"
+                                <div class="">
+                                    <label for="lastNameExample1" class="block font-serif input-label">Phone</label>
+                                    <input type="text" class="p-1 border border-gray-200 rounded form-control" name="phone" id="lastNameExample1"
                                         placeholder="Phone number" aria-label="Gaga" required=""
                                         data-msg="Please enter phone number">
                                 </div>
                                 <div class="col-span-2">
                                     <div class="js-form-message form-group">
-                                        <label for="emailAddressExample1" class="input-label">Email address</label>
-                                        <input type="email" class="form-control" name="email" id="emailAddressExample1"
+                                        <label for="emailAddressExample1" class="font-serif input-label">Email address</label>
+                                        <input type="email" class="w-full p-1 border border-gray-200 rounded form-control" name="email" id="emailAddressExample1"
                                             placeholder="your email id" required=""
                                             data-msg="Please enter a valid email address">
                                         <input type="hidden" class="form-control" name="message"
@@ -765,10 +765,10 @@
                                             value="ieltstest">
                                     </div>
                                     <div class="js-form-message form-group">
-                                        <label for="message" class="input-label">Which Test(s) do you wish to
+                                        <label for="message" class="font-serif input-label ">Which Test(s) do you wish to
                                             take?</label>
                                         <div class="input-group">
-                                            <textarea class="form-control" rows="4" name="message" id="message"
+                                            <textarea class="w-full p-1 border border-gray-200 rounded form-control" rows="4" name="message" id="message"
                                                 placeholder="Clearly mention the name of test(s). Ex: IELTS General"
                                                 aria-label="Hi there, I would like to ..." required=""
                                                 data-msg="Please enter a reason."></textarea>
@@ -777,7 +777,7 @@
                                 </div>
                             </div>
                             <button type="button"
-                                class="btn btn-block transition-3d-hover contact_button"
+                                class="p-2 rounded btn btn-block transition-3d-hover contact_button"
                                 style="background-color: #059862; color: #fff;">Submit</button>
                         </div>
                     </div>
@@ -788,25 +788,64 @@
         </div>
         
 
-        <div id="popup15"
-            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+        <div id="popup15" class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
 
-            <div class="p-4 bg-white rounded shadow-md popup-content">
+            <div class="p-4 bg-white rounded popup-content">
                 <div class="flex justify-end">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
                         data-popup-close="popup15">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-
                 </div>
-                <p>Popup 15 Content
-                    <br>
-                    This is the dummy content for pop up modal boxes
-                </p>
-                <button class="w-full p-2 px-6 my-4 mt-8 text-white rounded bg-emerald-600">Submit</button>
+        
+                <form class="p-4 mb-0 shadow-lg js-validate card" id="ge" action="/admin/contact" data-otp="1" novalidate="novalidate">
+                    <div class="m-3 alert alert-soft-success alert_block" style="display:none">
+                        <div class="alert_message"></div>
+                    </div>
+                    <div class="m-3 otp_block" style="display:none">
+                        <h5>OTP Verification</h5>
+                        <input type="text" class="form-control otp_input" placeholder="Enter the 4 digit OTP sent to you phone" data-otp="">
+                        <small id="emailHelp" class="form-text text-muted">Kindly wait for 5secs before retrying.</small>
+                        <div class="mt-2 alert alert-soft-success otp_message" role="alert" style="display:none"> Invalid OTP. Kindly refresh the page and retry. </div>
+                        <button type="button" class="mt-3 btn btn-primary otp_button">Verify</button>
+                        <div class="mt-3 ml-2 spinner-border" role="status" style="display:none">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    <div class="contact_block">
+                        <div class="mb-0 font-serif text-lg font-semibold text-teal-300 bg-teal-100 alert alert-soft-success" role="alert"> Do enter the country code with your phone number.<br> Ex: <span class="p-1 text-sm text-white bg-black rounded">+91</span> for India, <span class="p-1 text-sm text-white bg-black rounded">+1</span> for the USA. </div>
+                        <h4 class="mt-3 mb-2 text-lg font-semibold text-center text-black">Talk to us!</h4>
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                            <div class="js-form-message form-group">
+                                <label for="firstNameExample1" class="block font-serif input-label">Name</label>
+                                <input type="text" class="px-1 py-2 border border-gray-200 rounded form-control" name="name" id="firstNameExample1" placeholder="Full Name" aria-label="Nataly" required="" data-msg="Please enter your name">
+                            </div>
+                            <div class="js-form-message form-group">
+                                <label for="lastNameExample1" class="block font-serif input-label">Phone</label>
+                                <input type="text" class="px-1 py-2 border border-gray-200 rounded form-control" name="phone" id="lastNameExample1" placeholder="Phone Number" aria-label="Gaga" required="" data-msg="Please enter phone number">
+                            </div>
+                            <div class="col-span-2">
+                                <div class="js-form-message form-group">
+                                    <label for="emailAddressExample1" class="block font-serif text-center input-label">Email address</label>
+                                    <input type="email" class="w-full px-1 py-2 border border-gray-200 rounded form-control" name="email" id="emailAddressExample1" placeholder="E-mail ID" aria-label="alex@pixeel.com" required="" data-msg="Please enter a valid email address">
+                                </div>
+                                <div class="js-form-message form-group">
+                                    <label for="message" class="block font-serif text-center input-label">Message</label>
+                                    <div class="input-group">
+                                        <textarea class="w-full px-1 py-2 border border-gray-200 rounded form-control" rows="4" name="message" id="message" placeholder="Type your message here..." aria-label="Hi there, I would like to ..." required="" data-msg="Please enter a reason."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" class="mt-2 form-control" placeholder="Name" name="category" value="contact">
+                        <input type="hidden" class="mt-2 form-control" placeholder="Name" name="settings_request" value="General Enquiry">
+                        <button type="button" class="p-2 mt-3 font-semibold text-white bg-teal-400 rounded contact_button ">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
+        
 
     </div>
 
@@ -1149,87 +1188,87 @@
 
         <!-- simple test buttons-->
         <div class="flex flex-wrap justify-center mt-6 space-x-2 ">
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap"
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap"
                         data-popup="popup1">🤷&zwj;♂️ Do you know these?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup2">🤏 Are you professional?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup3">🤏🤏 Professional too?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup4">👁 Anatomy 101</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup5"> 👔 Will this work?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup6">🦚 Are you an action man?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup7">⚔️ Make them agree!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup8">🖼 Change Them!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup9">🚁 Get them to the right place</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup10">🥂 Better Together!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup11">👩&zwj;🏫 Attend a session</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
-                        class="w-full p-3 ml-3 text-lg font-bold text-blue-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
+                        class="w-full p-3 ml-3 text-sm font-bold text-teal-500 duration-200 ease-in bg-teal-200 rounded-full hover:bg-teal-500 hover:text-white px-7 text-wrap "
                         data-popup="popup12">🙌 More Tests</a>
                 </p>
             </div>

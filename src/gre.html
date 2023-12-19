@@ -301,11 +301,11 @@
     <!--Hero section-->
     <section>
 
-        <div class="items-center justify-between max-w-screen-xl px-1 py-8 mx-auto sm:px-16 sm:flex">
+        <div class="items-center justify-between max-w-screen-xl px-1 mx-auto sm:px-16 sm:flex">
 
             <!--text-->
-            <div class="grid py-10 m-5 lg:grid-cols-2 md:grid-cols-1 lg:m-0 md:sm:gap-10">
-                <div class="md:ml-16">
+            <div class="grid py-4 m-5 lg:grid-cols-2 md:grid-cols-1 lg:m-0 md:sm:gap-10">
+                <div class="">
                     <h1 class="py-4 text-3xl font-bold md:text-7xl">Target 330+</h1>
                     <div class="w-10 py-2 my-2 bg-teal-400 rounded md:w-24"></div>
                     <div class="flex gap-2 py-1 md:gap-0">
@@ -341,7 +341,7 @@
                         <p class="md:mx-2 text-xl font-semibold opacity-75 tracking-[1px]">One-to-One Sessions!</p>
                     </div>
                     <div class="py-3 md:flex">
-                        <button class="py-4 text-2xl font-bold text-white bg-teal-400 md:
+                        <button class="py-4 text-lg font-bold text-white bg-teal-400 md:
               px-7 tracking-[1px] rounded" data-popup="popup">Attend a Session</button>
                         <div class="flex mx-3 mt-4">
                             <p class="font-serif text-xl font-bold text-blue-600">Session Plan </p>
@@ -355,7 +355,7 @@
                     </div>
                 </div>
 
-                <div class="hidden my-auto ml-auto sm:block md:block">
+                <div class="my-auto ml-auto sm:block md:block">
                     <img src="https://piofx.s3.ap-south-1.amazonaws.com/themes/53/file_GREHeroBanner.svg" alt="laptop" width="600px" height="360px">
                 </div>
             </div>
@@ -520,55 +520,88 @@
             </div>
         </div>
 
-        <div id="popup3"
-            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+        <div id="popup3"  class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full overflow-y-auto bg-black bg-opacity-50">
 
-            <div class="p-4 bg-white rounded shadow-md popup-content">
+            <div class="p-8 bg-white rounded shadow-md popup-content">
                 <div class="flex justify-end">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:cursor-pointer"
                         data-popup-close="popup3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-
                 </div>
-                <div id="request_free_test" class="fixed inset-0 flex items-center justify-center overflow-y-auto" style="display: block; padding-right: 17px;">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-close">
-                                <button type="button" class="btn btn-icon btn-sm btn-ghost-success" data-dismiss="modal" aria-label="Close">
-                                    <svg width="16" height="16" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill="#000"
-                                            d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <form class="js-validate" action="/admin/contact" data-otp="1" novalidate="novalidate">
-                                <div class="px-4 py-4 text-center border-0 card-header bg-light">
-                                    <h2 class="mb-0 h2" style="color: #059862">Request for a Free Test</h2>
-                                </div>
-                                <div class="p-4 card-body">
-                                    <div class="alert alert-soft-primary alert_block" style="display:none">
-                                        <div class="alert_message"></div>
-                                    </div>
-                                    <div class="otp_block" style="display:none">
-                                        <!-- ... (OTP block content) ... -->
-                                    </div>
-                                    <div class="contact_block">
-                                        <!-- ... (Contact block content) ... -->
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="modal fade contact_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <!-- ... (modal content) ... -->
+        
+                <form class="js-validate" action="/admin/contact" data-otp="1" novalidate="novalidate">
+                    <div class="px-4 py-4 border-0 text-start card-header bg-light">
+                        <h2 class="mb-0 text-2xl font-bold text-green-600">Request for a Free Test</h2>
+                    </div>
+                    <div class="p-4 card-body">
+                        <div class="alert alert-soft-primary alert_block" style="display:none">
+                            <div class="alert_message"></div>
+                        </div>
+                        <div class="otp_block" style="display:none">
+                            <h5>OTP Verification</h5>
+                            <input type="text" class="form-control otp_input"
+                                placeholder="Enter the 4 digit OTP sent to you phone" data-otp="">
+                            <small id="emailHelp" class="form-text text-muted">Kindly wait for 5secs before retrying.</small>
+                            <div class="mt-2 alert alert-soft-success otp_message" role="alert"
+                                style="display:none"> Invalid OTP. Kindly refresh the page and retry. </div>
+                            <button type="button" class="mt-3 btn btn-primary otp_button">Verify</button>
+                            <div class="mt-3 ml-2 spinner-border" role="status" style="display:none">
+                                <span class="sr-only">Loading...</span>
                             </div>
                         </div>
+                        <div class="contact_block">
+                            <div class="p-2 px-4 font-serif text-xl text-teal-500 bg-teal-100 alert alert-soft-success" role="alert"> Please include the country code with the
+                                number. (Eg: <span class="p-1 text-sm text-white bg-black rounded">+91</span> for India; <span class="p-1 text-sm text-white bg-black rounded">+65</span> For Singapore). </div>
+                            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                                <div class="">
+                                    <label for="firstNameExample1" class="block font-serif input-label">Name</label>
+                                    <input type="text" class="p-1 border border-gray-200 rounded form-control" name="name" id="firstNameExample1"
+                                        placeholder="Full name" aria-label="Nataly" required=""
+                                        data-msg="Please enter your name">
+                                </div>
+                                <div class="">
+                                    <label for="lastNameExample1" class="block font-serif input-label">Phone</label>
+                                    <input type="text" class="p-1 border border-gray-200 rounded form-control" name="phone" id="lastNameExample1"
+                                        placeholder="Phone number" aria-label="Gaga" required=""
+                                        data-msg="Please enter phone number">
+                                </div>
+                                <div class="col-span-2">
+                                    <div class="js-form-message form-group">
+                                        <label for="emailAddressExample1" class="font-serif input-label">Email address</label>
+                                        <input type="email" class="w-full p-1 border border-gray-200 rounded form-control" name="email" id="emailAddressExample1"
+                                            placeholder="your email id" required=""
+                                            data-msg="Please enter a valid email address">
+                                        <input type="hidden" class="form-control" name="message"
+                                            value="Request for a free ielts test">
+                                        <input type="hidden" class="form-control" name="category"
+                                            value="ieltstest">
+                                    </div>
+                                    <div class="js-form-message form-group">
+                                        <label for="message" class="font-serif input-label ">Which Test(s) do you wish to
+                                            take?</label>
+                                        <div class="input-group">
+                                            <textarea class="w-full p-1 border border-gray-200 rounded form-control" rows="4" name="message" id="message"
+                                                placeholder="Clearly mention the name of test(s). Ex: IELTS General"
+                                                aria-label="Hi there, I would like to ..." required=""
+                                                data-msg="Please enter a reason."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button"
+                                class="p-2 rounded btn btn-block transition-3d-hover contact_button"
+                                style="background-color: #059862; color: #fff;">Submit</button>
+                        </div>
                     </div>
-                </div>
-                
+                </form>
+        
+               
             </div>
         </div>
+        
+        
 
         <div id="popup4"
             class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
@@ -940,12 +973,12 @@
                         </div>
                     </div>
                 </div>
-                <p class="py-3  text-[18px] font-serif ">Our Quantitative Aptitude exercises are designed to
+                <p class="py-4  text-[18px] font-serif ">Our Quantitative Aptitude exercises are designed to
                     help both beginners and advanced learners alike. Those who hate maths will be pleased to know that
                     GRE does not have any mathematics that one would not have done in school.</p>
 
 
-                    <button data-popup="popup" class="py-4 text-xl font-bold text-white bg-teal-400 md:
+                    <button data-popup="popup" class="py-4 text-lg font-bold text-white bg-teal-400 md:
                     px-7 tracking-[1px] rounded">Attend a Session</button>
 
                 
@@ -1294,63 +1327,63 @@
 
         <!-- simple test buttons-->
         <div class="flex flex-wrap justify-center mt-6 space-x-2 ">
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap"
                         data-popup="popup1">🥏 Does it Fit?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup2">🐲 This is not going to be easy!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup3">👻 Which is correct?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup4">💬Some more words</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup5"> 👔 Will this work?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup6">🦸🏼‍♂️ Are you an action man?</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup7">⚔️ Make them agree!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup8">🖼 Change Them!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
@@ -1358,21 +1391,21 @@
                 </p>
             </div>
             
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup11">🥂 Better Together!</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
                         data-popup="popup12">👩‍🏫 Attend a session</a>
                 </p>
             </div>
-            <div class="inline my-5 shadow-xl">
+            <div class="inline my-5 ">
                 <p class="inline">
                     <a href="#"
                         class="w-full p-3 ml-3 text-sm font-bold text-blue-500 duration-200 ease-in rounded-full bg-sky-200 hover:bg-blue-500 hover:text-white px-7 text-wrap "
@@ -1386,8 +1419,8 @@
 
     <!--Training Details-->
     <div class="md:mx-10">
-        <h1 class="py-2 text-3xl font-bold text-center">Training Details</h1>
-        <p class="font-serif text-xl text-center">Timings mentioned here are subject to change</p>
+        <h1 class="text-3xl font-bold text-center md:py-2">Training Details</h1>
+        <p class="px-4 font-serif text-xl text-center">Timings mentioned here are subject to change</p>
         <div id="popup"
                             class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
 
@@ -1477,7 +1510,7 @@
                             </div>
                         </div>
         <div class="max-w-screen-xl px-4 mx-auto sm:px-16">
-            <div class="grid grid-cols-1 gap-10 pt-12 lg:grid-cols-2">
+            <div class="grid grid-cols-1 gap-10 pt-4 lg:grid-cols-2">
                 <div class="my-auto">
                     <p class="pb-6 text-3xl font-bold">Session Timings</p>
                     <ul>
@@ -1494,7 +1527,7 @@
                         <p class="text-3xl font-semibold ">Course Duration</p>
                         <p>4 Weeks – One module per week</p>
                         <p>Customised Training Available</p>
-                        <button class="px-8 py-2 mt-4 font-semibold text-white bg-green-700 rounded-md md:text-lg hover:bg-sky-500 hover:scale-105 duration-300 ease-in-out" data-popup="popup">Attend a Session</button>
+                        <button class="px-8 py-2 mt-4 font-semibold text-white duration-300 ease-in-out bg-green-700 rounded-md md:text-lg hover:bg-sky-500 hover:scale-105" data-popup="popup">Attend a Session</button>
                     </div>
                 
                 </div>
@@ -1670,7 +1703,7 @@
                         d="M256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512zM232 256C232 264 236 271.5 242.7 275.1L338.7 339.1C349.7 347.3 364.6 344.3 371.1 333.3C379.3 322.3 376.3 307.4 365.3 300L280 243.2V120C280 106.7 269.3 96 255.1 96C242.7 96 231.1 106.7 231.1 120L232 256z" />
                 </svg>
                 <h1 class="py-3 text-3xl font-semibold text-center">Your timings, Our sessions</h1>
-                <p class="text-center text-[19px] font-serif">Walk into our office. Call us. Leave a message. Request a
+                <p class="font-serif text-lg text-center">Walk into our office. Call us. Leave a message. Request a
                     call back.
                     We will come up with a plan that fits your time, your style, and your needs.</p>
                 <div class="my-3 ">
@@ -1684,7 +1717,7 @@
                         d="M1518 836l18 316q4 69-82 128t-235 93.5-323 34.5-323-34.5-235-93.5-82-128l18-316 574 181q22 7 48 7t48-7zm530-324q0 23-22 31l-1120 352q-4 1-10 1t-10-1l-652-206q-43 34-71 111.5t-34 178.5q63 36 63 109 0 69-58 107l58 433q2 14-8 25-9 11-24 11h-192q-15 0-24-11-10-11-8-25l58-433q-58-38-58-107 0-73 65-111 11-207 98-330l-333-104q-22-8-22-31t22-31l1120-352q4-1 10-1t10 1l1120 352q22 8 22 31z" />
                 </svg>
                 <h1 class="py-3 text-3xl font-semibold text-center">Your learning, Your pace</h1>
-                <p class="text-center text-[19px] font-serif">Our top notch training, at your convenience!</p>
+                <p class="font-serif text-lg text-center">Our top notch training, at your convenience!</p>
                 <div class="my-3 ">
                     <button data-popup="popup" class="px-3 py-3 my-3 font-semibold text-white rounded bg-cyan-400">Attend a demo</button>
                 </div>
@@ -1696,7 +1729,7 @@
                         d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"
                         fill-rule="evenodd" /></svg>
                 <h1 class="py-3 text-3xl font-semibold text-center">Exactly what you want</h1>
-                <p class="text-center text-[19px] font-serif">You can still take the free test and attend a free
+                <p class="font-serif text-lg text-center">You can still take the free test and attend a free
                     session. Our
                     sessions are really good and we are not afraid to shout it out to the world!</p>
                 <div class="my-3 ">
