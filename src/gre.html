@@ -304,7 +304,7 @@
         <div class="items-center justify-between max-w-screen-xl px-1 mx-auto sm:px-16 sm:flex">
 
             <!--text-->
-            <div class="grid py-4 m-5 lg:grid-cols-2 md:grid-cols-1 lg:m-0 md:sm:gap-10">
+            <div class="grid m-5 md:py-4 lg:grid-cols-2 md:grid-cols-1 lg:m-0 md:sm:gap-10">
                 <div class="">
                     <h1 class="py-4 text-3xl font-bold md:text-7xl">Target 330+</h1>
                     <div class="w-10 py-2 my-2 bg-teal-400 rounded md:w-24"></div>
@@ -342,7 +342,7 @@
                     </div>
                     <div class="py-3 md:flex">
                         <button class="py-4 text-lg font-bold text-white bg-teal-400 md:
-              px-7 tracking-[1px] rounded" data-popup="popup">Attend a Session</button>
+              px-7 tracking-[1px] rounded hover:translate-y-1 duration-300 ease-in-out" data-popup="popup">Attend a Session</button>
                         <div class="flex mx-3 mt-4">
                             <p class="font-serif text-xl font-bold text-blue-600">Session Plan </p>
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="mt-2 ml-1 ont-bold ptext-xl "
@@ -478,7 +478,7 @@
         </div>
 
         <div id="popup2"
-            class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full bg-black bg-opacity-50">
+            class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
 
             <div class="p-4 bg-white rounded shadow-md popup-content">
                 <div class="flex justify-end">
@@ -520,7 +520,7 @@
             </div>
         </div>
 
-        <div id="popup3"  class="fixed top-0 left-0 flex items-center justify-center hidden w-full h-full overflow-y-auto bg-black bg-opacity-50">
+        <div id="popup3"  class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
 
             <div class="p-8 bg-white rounded shadow-md popup-content">
                 <div class="flex justify-end">
@@ -1419,7 +1419,7 @@
 
     <!--Training Details-->
     <div class="md:mx-10">
-        <h1 class="text-3xl font-bold text-center md:py-2">Training Details</h1>
+        <h1 class="py-1 text-3xl font-bold text-center md:py-2">Training Details</h1>
         <p class="px-4 font-serif text-xl text-center">Timings mentioned here are subject to change</p>
         <div id="popup"
                             class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
