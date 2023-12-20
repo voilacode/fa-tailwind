@@ -1761,11 +1761,12 @@
 
     <section class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
         <div class="flex flex-col justify-center max-w-screen-xl mx-auto">
-
-            <h1 class="px-2 pb-4 text-3xl font-bold text-center md:text-5xl">Training Details</h1>
+            <div class="py-1">
+            <h1 class="px-2 py-1 text-3xl font-bold text-center md:text-5xl">Training Details</h1>
             <p class="font-serif text-xl text-center text-gray-900 lg:text-xl">Personalised and Online Training details are
                 available here</p>
-            <div class="grid my-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
+            </div>
+            <div class="grid items-center my-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
 
                 <div>
                     <h1 class="px-2 py-4 text-3xl font-bold ">Session Timings</h1>
@@ -1811,7 +1812,7 @@
 
                 </div>
 
-                <div class="relative p-8 text-center bg-teal-100 rounded-lg">
+                <div class="relative py-6 text-center bg-teal-100 rounded-lg">
                     
                    
                     <img src="../assets/icon2.svg" alt="hi" width="80px" height="80px" class="mx-auto">
@@ -1838,134 +1839,157 @@
 
 
 
-      <!--faq-->
-      <section class="max-w-screen-xl p-4 mx-auto md:mb-12 sm:px-16">
-        <h1 class="text-2xl font-bold text-pink-600 md:my-4 md:mt-8 text-start md:text-3xl">Frequently Asked Questions
+       <!--faq-->
+       <section class="max-w-screen-xl p-4 mx-auto mb-12 sm:px-16">
+        <h1 class="my-4 mt-8 text-2xl font-bold text-pink-600 text-start md:text-3xl">Frequently Asked Questions
         </h1>
 
         <!--first-->
         <button
-            class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400">
-            <div class="font-semibold hover:text-blue-600"> For how long are OET results Valid?</div>
-            <div class="text-xl font-bold">+</div>
+            class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+            <div class="font-semibold hover:text-blue-400">For how long are OET Results Valid?</div>
+            <div class="text-xl font-bold icon hover:text-blue-400">+</div>
         </button>
         <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-            <p class="mb-2 font-serif text-black ">
-                The validity of the results is decided by the authorities that recognise OET. OET does not determine the validity. Each institute has a different set of requirements that are usually published on their respective websites.</p>
+            <p class="mb-2 font-serif text-lg">
+                The validity of the results is decided by the authorities that recognise OET. OET does not determine the validity. Each institute has a different set of requirements that are usually published on their respective websites.
+            </p>
+            
 
         </div>
 
         <!--second-->
         <button
-            class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-            <div class="font-semibold hover:text-blue-600">Can i Apply for revaluation?</div>
-            <div class="text-xl font-bold">+</div>
-        </button>
-        <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-            <p class="mb-2 font-serif text-black ">
-                Yes, you may apply for revaluation. However, in OET revaluation could result in decreased scores too. Unlike IELTS where your scores do not come down.</p>
+        class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+        <div class="font-semibold hover:text-blue-400">Can i apply for revaluation?</div>
+        <div class="text-xl font-bold icon hover:text-blue-400">+</div>
+    </button>
+    <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
+        <p class="mb-2 font-serif text-lg">
+            Yes, you may apply for revaluation. However, in OET revaluation could result in decreased scores too. Unlike IELTS where your scores do not come down.
+        </p>
+        
 
-        </div>
+    </div>
 
 
         <!--third-->
         <button
-            class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-            <div class="font-semibold hover:text-blue-600">How soon should i apply for remarking?</div>
-            <div class="text-xl font-bold">+</div>
-        </button>
-        <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-            <p class="mb-2 font-serif text-black ">
-                You must apply for revaluation within 72 hours of your results being published.</p>
+        class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+        <div class="font-semibold hover:text-blue-400">How soon should i apply for remarking?</div>
+        <div class="text-xl font-bold icon hover:text-blue-400">+</div>
+    </button>
+    <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
+        <p class="mb-2 font-serif text-lg">
+            You must apply for revaluation within 72 hours of your results being published.
+           
+        </p>
+        
 
-        </div>
-
+    </div>
 
         <!--fourth-->
         <button
-        class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-        <div class="font-semibold hover:text-blue-600">Is there a 'General' version of the OET?</div>
-        <div class="text-xl font-bold">+</div>
+        class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+        <div class="font-semibold hover:text-blue-400">Is there a general version of the OET?</div>
+        <div class="text-xl font-bold icon hover:text-blue-400">+</div>
     </button>
     <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-        <p class="mb-2 font-serif text-black ">
-            No, OET does not provide a generic test. If your profession is not one of the 12 listed, you may choose to sit the OET test for the profession which is closest to your own.</p>
-
+        <p class="mb-2 font-serif text-lg">
+            No, OET does not provide a generic test. If your profession is not one of the 12 listed, you may choose to sit the OET test for the profession which is closest to your own.
+        </p>
+        
     </div>
-    
 
         <!--fifth-->
         <button
-            class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-            <div class="font-semibold hover:text-blue-600">Do you have Online OET training in Noida?</div>
-            <div class="text-xl font-bold">+</div>
-        </button>
-        <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-            <p class="mb-2 font-serif text-black ">
-                Our online OET coaching is attended by medical professionals from all over the world. From India in particular, our OET online coaching is popular in Noida, Chandigarh, Mumbai, Ludhiana, and Jaipur.</p>
-                <p class="mb-2 font-serif text-black ">
-                    Internationally we have OET learners from Vietnam, the Middle East, the UK, Australia, several countries from Africa among many others!</p>
+        class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+        <div class="font-semibold hover:text-blue-400">Do you have online OET training in Noida?</div>
+        <div class="text-xl font-bold icon hover:text-blue-400">+</div>
+    </button>
+    <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
+        <p class="mb-2 font-serif text-lg">
+            Our online OET coaching is attended by medical professionals from all over the world. From India in particular, our OET online coaching is popular in Noida, Chandigarh, Mumbai, Ludhiana, and Jaipur.
+        </p>
+        <p class="mb-2 font-serif text-lg">
+            Internationally we have OET learners from Vietnam, the Middle East, the UK, Australia, several countries from Africa among many others!
+        </p>
+        
 
-        </div>
-
+    </div>
 
         <!--sixth-->
         <button
-        class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-        <div class="font-semibold hover:text-blue-600">The Best OET Coaching Centers-More Information</div>
-        <div class="text-xl font-bold">+</div>
+        class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+        <div class="font-semibold hover:text-blue-400">The Best OET Coaching Centers-More Information</div>
+        <div class="text-xl font-bold icon hover:text-blue-400">+</div>
     </button>
     <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-        <p class="mb-2 font-serif text-black ">
-            When most people look for an OET Coaching Centre, they do not really know what they ‘should’ actually look for. For instance, great <span class="p-1 text-sm bg-yellow-200 border border-yellow-500 rounded-lg hover:bg-yellow-800 hover:cursor-pointer">google reviews</span> are the first step. But that is not all. Great reviews are only one half of the picture. And we should also remember that all halves are not really equal. Some halves are more important than the others. So, which half is more important here? The half that cannot always be evaluated by learners – the quality of trainers. This is the half that can make all the difference. That is the area that First Academy excels at.</p>
-            
-            <p class="mb-2 font-serif text-black">
-                First Academy’s OET Coaching Centre has the most enviable track record of all – 100% success rate of OET candidates. This means that all of our OET learners have scored at least a Grade B in all modules of OET – and with over 20 years of experience – that is a record that almost no one else can boast of. We owe this success to our trainers – who are also India’s only author cum trainers of OET. This is why, our training is not just widely reviewed but also wildly successful. At First Academy – success is serious business.</p>
+        <p class="mb-2 font-serif text-lg">
+            When most people look for an OET Coaching Centre, they do not really know what they ‘should’ actually look for. For instance, great <span class="inline-flex px-1 text-sm text-yellow-800 bg-yellow-200 border border-yellow-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">google reviews</span> are the first step. But that is not all. Great reviews are only one half of the picture. And we should also remember that all halves are not really equal. Some halves are more important than the others. So, which half is more important here? The half that cannot always be evaluated by learners – the quality of trainers. This is the half that can make all the difference. That is the area that First Academy excels at.
+        </p>
 
-                <p  class="mb-2 font-serif text-black">Our OET Coaching centres are located in Hyderabad. You may visit any of our two training centres in <span class="p-1 text-sm bg-yellow-200 border border-yellow-500 rounded-lg hover:bg-yellow-800 hover:cursor-pointer">Ameerpet</span> or <span class="p-1 text-sm bg-yellow-200 border border-yellow-500 rounded-lg hover:bg-yellow-800 hover:cursor-pointer">Madhapur</span>. Both our centres are centrally located and easily accessible – they are close to or in the middle of thriving student and or commercial hubs. They are also bang beside major bus stops or subway stations. All our coaching centres allow first time learners to sit in a session to experience how the training is. Learners can also interact with the trainers and go through our material before enrolling for the best OET training program on the planet.</p>
-    
+        <p class="mb-2 font-serif text-lg">
+            First Academy’s OET Coaching Centre has the most enviable track record of all – 100% success rate of OET candidates. This means that all of our OET learners have scored at least a Grade B in all modules of OET – and with over 20 years of experience – that is a record that almost no one else can boast of. We owe this success to our trainers – who are also India’s only author cum trainers of OET. This is why, our training is not just widely reviewed but also wildly successful. At First Academy – success is serious business.
+        </p>
+        <p class="mb-2 font-serif text-lg">
+            Our OET Coaching centres are located in Hyderabad. You may visit any of our two training centres in <span class="inline-flex px-1 text-sm text-yellow-800 bg-yellow-200 border border-yellow-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">Ameerpet</span> or <span class="inline-flex px-1 text-sm text-yellow-800 bg-yellow-200 border border-yellow-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">Madhapur</span>. Both our centres are centrally located and easily accessible – they are close to or in the middle of thriving student and or commercial hubs. They are also bang beside major bus stops or subway stations. All our coaching centres allow first time learners to sit in a session to experience how the training is. Learners can also interact with the trainers and go through our material before enrolling for the best OET training program on the planet.
+        </p>
+
+
     </div>
 
+    <!--seven-->
+
+    <button
+    class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+    <div class="font-semibold hover:text-blue-400">Which is the best online Coaching center?</div>
+    <div class="text-xl font-bold icon hover:text-blue-400">+</div>
+</button>
+<div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
+    <p class="mb-2 font-serif text-lg">
+        Looking for <span class="inline-flex px-1 text-sm text-yellow-800 bg-yellow-200 border border-yellow-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">OET Online Coaching</span> that is both interactive and intensive? First Academy’s sessions strike the perfect balance of both. Handled by one of India’s first OET authors, the sessions are detailed and are finely calibrated to the needs of the learners. These sessions have a limited number of seats to ensure that individual needs are taken care of, and learner experiences exceeded. This is one of the reasons why our OET sessions are consistently highly rated and reviewed. To experience these sessions, as our counsellors to arrange a free session for you where you can not only interact with the trainer but also with your fellow learners.
 
 
-        <!--seventh-->
-        <button
-        class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-        <div class="font-semibold hover:text-blue-600">Which is the best OET online Coaching Center</div>
-        <div class="text-xl font-bold">+</div>
-    </button>
-    <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-        <p class="mb-2 font-serif text-black ">
-            Looking for OET <span class="p-1 text-sm bg-yellow-200 border border-yellow-500 rounded-lg hover:bg-yellow-800 hover:cursor-pointer">Online Coaching</span> that is both interactive and intensive? First Academy’s sessions strike the perfect balance of both. Handled by one of India’s first OET authors, the sessions are detailed and are finely calibrated to the needs of the learners. These sessions have a limited number of seats to ensure that individual needs are taken care of, and learner experiences exceeded. This is one of the reasons why our OET sessions are consistently highly rated and reviewed. To experience these sessions, as our counsellors to arrange a free session for you where you can not only interact with the trainer but also with your fellow learners.</p>
-            
-            <p class="mb-2 font-serif text-black">
-                Another feature of our OET online coaching is the validity. Though the sessions can be completed in as little as two weeks, each of our sessions comes with extended validity that allows you to reattend any session any number of times within the duration of the validity. No questions asked. You can also interact with the trainers during the sessions since all our sessions are both live and trainer led. This will give you the opportunity to glean never-before insights into the test and how it is marked – giving you the opportunity to learn more, learn more easily and score better.</p>
+    </p>
+    <p class="mb-2 font-serif text-lg">
+        Another feature of our OET online coaching is the validity. Though the sessions can be completed in as little as two weeks, each of our sessions comes with extended validity that allows you to reattend any session any number of times within the duration of the validity. No questions asked. You can also interact with the trainers during the sessions since all our sessions are both live and trainer led. This will give you the opportunity to glean never-before insights into the test and how it is marked – giving you the opportunity to learn more, learn more easily and score better.
+    </p>
+    <p class="mb-2 font-serif text-lg">
+        All our training program including the OET online coaching come with our exclusive and unique <span class="inline-flex px-1 text-sm text-yellow-800 bg-yellow-200 border border-yellow-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">Writing Evaluations</span>. In these, the trainers individually evaluate each learner’s writing tasks and provide them with valuable feedback and comments to help them understand not just where to improve but also how to improve. In addition to this, there are also one-to-one sessions with the trainer which the learner can take advantage of anytime during the period of the validity irrespective of whether the learner has completed his training.
 
-                <p  class="mb-2 font-serif text-black">All our training program including the OET online coaching come with our exclusive and unique <span class="p-1 text-sm bg-yellow-200 border border-yellow-500 rounded-lg hover:bg-yellow-800 hover:cursor-pointer">Writing Evaluations</span>. In these, the trainers individually evaluate each learner’s writing tasks and provide them with valuable feedback and comments to help them understand not just where to improve but also how to improve. In addition to this, there are also one-to-one sessions with the trainer which the learner can take advantage of anytime during the period of the validity irrespective of whether the learner has completed his training.
 
-                </p>
+    </p>
     
-    </div>
+
+</div>
+
+<!--eight-->
+
+<button
+class="flex justify-between w-full p-3 mb-2 text-left duration-300 ease-in-out bg-teal-100 rounded outline-none cursor-pointer accordion hover:bg-teal-300 ">
+<div class="font-semibold hover:text-blue-400">How is the OET Preparation Course</div>
+<div class="text-xl font-bold icon hover:text-blue-400">+</div>
+</button>
+<div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
+    <p class="mb-2 font-serif text-lg">
+        Welcome to First Academy’s OET Preparation course. Our preparation course comes in two flavours – Online and Classroom training. Both these programs are equally interactive, and equally excellent. Both flavours of our our OET course are widely acclaimed to be the best courses in India. No matter which course you choose, all the additional benefits will continue to remain the same along with the ancillary features remaining on par. This is one of many unique benefits you will have when you enrol with us. That our trainers are also authors is just the icing on the already delicious cake!
+
+    </p>
+    <p class="mb-2 font-serif text-lg">
+        The OET preparation course at First Academy comes with four features that can be found nowhere else! One is that you are trained by OET authors. We are India’s only training institute that are able to offer such quality. The second is that every learner get to have his or her personal time with the trainer that is over and above the regular classroom or online training that is offered. The third is OET writing evaluations – where the learners can submit writing tasks and each of those tasks is evaluated and commented upon by the trainers. This is in addition to the personal speaking sessions the candidates can take with their trainers.
 
 
-     <!--eight-->
-     <button
-     class="flex justify-between w-full p-3 my-2 text-left text-black duration-300 ease-in-out bg-teal-100 outline-none cursor-pointer accordion hover:bg-text-400 ">
-     <div class="font-semibold hover:text-blue-600">How is the OET Preparation Course</div>
-     <div class="text-xl font-bold">+</div>
- </button>
- <div class="hidden p-5 overflow-hidden border border-gray-200 shadow-xl panel">
-     <p class="mb-2 font-serif text-black ">
-        Welcome to First Academy’s OET Preparation course. Our preparation course comes in two flavours – Online and Classroom training. Both these programs are equally interactive, and equally excellent. Both flavours of our our OET course are widely acclaimed to be the best courses in India. No matter which course you choose, all the additional benefits will continue to remain the same along with the ancillary features remaining on par. This is one of many unique benefits you will have when you enrol with us. That our trainers are also authors is just the icing on the already delicious cake!</p>
-         
-         <p class="mb-2 font-serif text-black">
-            The OET preparation course at First Academy comes with four features that can be found nowhere else! One is that you are trained by OET authors. We are India’s only training institute that are able to offer such quality. The second is that every learner get to have his or her personal time with the trainer that is over and above the regular classroom or online training that is offered. The third is OET writing evaluations – where the learners can submit writing tasks and each of those tasks is evaluated and commented upon by the trainers. This is in addition to the personal speaking sessions the candidates can take with their trainers.</p>
+    </p>
+    <p class="mb-2 font-serif text-lg">
+        These are what make our OET preparation course awesome. The course caters to all levels or leaners and caters to all forms of learning. There is the opportunity to be a part of a group where you can learn from the questions and the queries of your co-leaners and then there is also the opportunity to ask questions and discuss problems that are unique to you. You get the best of both worlds. Anytime you wish to <span class="inline-flex px-1 text-sm text-white bg-teal-400 rounded cursor-pointer hover:translate-y-[-3px] duration-300 transform">attend a session</span> – we will be happy to help you  attend a session that too for free. This will help you understand how our sessions and trainers are before you enrol for a program of your choice.
 
-             <p  class="mb-2 font-serif text-black">These are what make our OET preparation course awesome. The course caters to all levels or leaners and caters to all forms of learning. There is the opportunity to be a part of a group where you can learn from the questions and the queries of your co-leaners and then there is also the opportunity to ask questions and discuss problems that are unique to you. You get the best of both worlds. Anytime you wish to attend a session – we will be happy to help you  attend a session that too for free. This will help you understand how our sessions and trainers are before you enrol for a program of your choice.
 
-             </p>
- 
- </div>
+    </p>
+
+
+</div>
+
     </section>
 
 </main>
@@ -1975,7 +1999,7 @@
     <div class="p-4 text-white" style="background-color: #135ca1;">
         <div class="max-w-screen-xl mx-auto sm:px-16 sm:flex">
 
-            <div class="col-span-2 my-2 sm:col-span-1 sm-text-center">
+            <div class="col-span-2 my-auto sm:col-span-1 sm-text-center">
                 <h1 class="pb-4 text-3xl font-semibold">Take a free test!</h1>
                 <p class="">Try an evaluated test or attend a free session. Or do both!</p>
             </div>
@@ -1997,198 +2021,199 @@
 
     </div>
 
-    <!--links -->
+    <!--links-->
     <div class="p-4 text-white bg-blue-900">
         <div class="max-w-screen-xl mx-auto sm:px-16">
-            <div class="grid justify-between grid-cols-5 gap-4 pb-2 my-5 sm:gap-2">
-                <!--logo and address-->
-                <div class="col-span-4 sm:col-span-1">
-                    <div class="">
-                        <img src="../assets/fa_logo.svg" width="180px" height="35px" alt="fa logo" />
-                        <br>
-                        <a href="#" class="mt-5 text-white test-sm">
+          <div class="space-y-6">
+            <div class="justify-between py-4 md:flex md:py-8">
+              <div class="mb-4 md:w-1/4 md:mb-0 me-4">
+                <div class="">
+                    <img src="../assets/fa_logo.svg" width="180px" height="35px" alt="fa logo" />
+                    <br>
+                    <a href="#" class="mt-5 text-white test-sm">
 
-                            <div class="flex flex-row-2">
-                                <div>
-                                    <svg xmlns="https://g.page/packetprepjobs" viewBox="0 0 20 20"
-                                        fill="currentColor" class="w-5 h-5 mr-1">
-                                        <path fill-rule="evenodd"
-                                            d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
-                                            clip-rule="evenodd" />
-                                    </svg>
+                        <div class="flex flex-row-2">
+                            <div>
+                                <svg xmlns="https://g.page/packetprepjobs" viewBox="0 0 20 20"
+                                    fill="currentColor" class="w-5 h-5 mr-1">
+                                    <path fill-rule="evenodd"
+                                        d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.062.029.018.008.006.003zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
 
-                                </div>
-                                <div>
-                                    <p class="text-sm text-white">Ameerpet | Madhapur
-                                        <br>
-                                        Hyderabad, Telangana
-                                    </p>
-                                </div>
                             </div>
-                        </a>
-                        <a href="#" class="mt-10 text-white test-sm">
-
-                            <div class="flex flex-row-2">
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                        class="w-6 h-4 mt-5">
-                                        <path fill-rule="evenodd"
-                                            d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-
-                                </div>
-                                <div>
-                                    <p class="mt-5 text-sm text-white">
-                                        +91 98 666 88 666
-                                        <br>
-                                        +91 99 666 666 33
-                                </div>
+                            <div>
+                                <p class="text-sm text-white">Ameerpet | Madhapur
+                                    <br>
+                                    Hyderabad, Telangana
+                                </p>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                        </div>
+                    </a>
+                    <a href="#" class="mt-10 text-white test-sm">
 
-                <!--about-->
-                <div class="col-span-2 my-1 sm:col-span-1">
-                    <h2 class="mb-4 font-sans text-xl font-semibold text-white">About</h2>
-                    <ol>
-                        <li class="my-1 text-md"><a href="./about.html"
-                                class="text-slate-300 hover:text-white">Team</a></li>
-                        <li class="my-1 text-md"><a href="./review.html"
-                                class="text-slate-300 hover:text-white">Reviews</a></li>
-                        <li class="my-1 text-md"><a href="./testimonials.html"
-                                class="text-slate-300 hover:text-white"> About Us</a></li>
-                        <li class="my-1 text-md"><a href="./contact.html" class="text-slate-300 hover:text-white">
-                                Contact Us </a></li>
+                        <div class="flex flex-row-2">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="w-6 h-4 mt-5">
+                                    <path fill-rule="evenodd"
+                                        d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                <p class="mt-5 text-sm text-white">
+                                    +91 98 666 88 666
+                                    <br>
+                                    +91 99 666 666 33
+                            </div>
+                        </div>
+                    </a>
+                </div>
+              </div>
+              
+              <div class="grid w-3/4 grid-cols-2 gap-x-16 md:gap-4 md:grid-cols-4 place-content-between">
+                <div class="mb-4">
+                  <h5 class="mb-4 text-lg font-bold text-white">About</h5>
+                  <ul class="flex flex-col space-y-1 text-white">
+                    <li class="text-md"><a href="./about.html"
+                        class="text-slate-300 hover:text-white">Team</a></li>
+                <li class="my-2 text-md"><a href="./review.html"
+                        class="text-slate-300 hover:text-white">Reviews</a></li>
+                <li class="my-2 text-md"><a href="./testimonials.html"
+                        class="text-slate-300 hover:text-white"> About Us</a></li>
+                <li class="my-2 text-md"><a href="./contact.html" class="text-slate-300 hover:text-white">
+                        Contact Us </a></li>
+                  </ul>
+                </div>
+        
+                <div class="mx-2 mb-4 sm:mx-12 md:mx-0">
+                  <h5 class="mb-4 text-lg font-bold text-white">Flagship Courses</h5>
+                  <div class="grid grid-cols-2 md:gap-x-4">
+                    <ol class="col-span-2 md:col-span-1">
+                        <li class="mb-1 text-md"><a href="./ielts.html"
+                            class="text-slate-300 hover:text-white">IELTS</a></li>
+                    <li class="my-1 text-md"><a href="./gre.html"
+                            class="text-slate-300 hover:text-white">GRE</a></li>
+                    <li class="my-1 text-md"><a href="./pte.html"
+                            class="text-slate-300 hover:text-white"> PTE</a></li>
+                    <li class="my-1 text-md"><a href="./oet.html"
+                            class="text-slate-300 hover:text-white"> OET</a></li>
                     </ol>
-                </div>
-
-                <!--flagship courses-->
-                <div class="col-span-2 my-1 sm:col-span-1">
-                    <h2 class="mb-4 font-sans text-xl font-semibold text-white">Flagship Courses</h2>
-                    <div class="grid grid-cols-2 sm:gap-4">
-                        <ol class="col-span-2 md:col-span-1">
-                            <li class="mb-1 text-md"><a href="./ielts.html"
-                                    class="text-slate-300 hover:text-white">IELTS</a></li>
-                            <li class="my-1 text-md"><a href="./gre.html"
-                                    class="text-slate-300 hover:text-white">GRE</a></li>
-                            <li class="my-1 text-md"><a href="./pte.html" class="text-slate-300 hover:text-white">
-                                    PTE</a></li>
-                            <li class="my-1 text-md"><a href="./oet.html" class="text-slate-300 hover:text-white">
-                                    OET</a></li>
-
-                        </ol>
-                        <ol class="col-span-2 md:col-span-1">
-                            <li class="mb-2 text-md"><a href="./sat.html" class="text-slate-300 hover:text-white">
-                                    SAT</a></li>
-                            <li class="mt-2 text-md"><a href="./det.html" class="text-slate-300 hover:text-white">
-                                    DET</a></li>
-                        </ol>
-
-                    </div>
-                </div>
-
-                <!--services-->
-                <div class="col-span-2 my-1 sm:col-span-1">
-                    <h2 class="mb-4 font-sans text-xl font-semibold text-white">Services</h2>
-                    <ol>
-                        <li class="my-1 text-md"><a href="#" class="text-slate-300 hover:text-white">UG
-                                Admissions</a></li>
-                        <li class="my-1 text-md"><a href="#" class="text-slate-300 hover:text-white">Masters</a>
-                        </li>
-                        <li class="my-1 text-md"><a href="./downloads.html" class="text-slate-300 hover:text-white">
-                                Downloads</a></li>
+                    <ol class="col-span-2 md:col-span-1">
+                        <li class="mb-1 text-md"><a href="./sat.html"
+                            class="text-slate-300 hover:text-white"> SAT</a></li>
+                    <li class="mt-1 text-md"><a href="./det.html"
+                            class="text-slate-300 hover:text-white"> DET</a></li>
                     </ol>
-                </div>
 
-                <!--material-->
-                <div class="col-span-2 my-1 sm:col-span-1">
-                    <h2 class="mb-4 font-sans text-xl font-semibold text-white">Material</h2>
-                    <ol>
-                        <li class="my-1 text-md"><a href="#" class="text-slate-300 hover:text-white">Test Portal</a>
-                        </li>
-                        <li class="my-1 text-md"><a href="./reading.html"
-                                class="text-slate-300 hover:text-white">IELTS Big
-                                Book</a></li>
-                        <li class="my-1 text-md"><a href="#" class="text-slate-300 hover:text-white"> GRE
-                                Reading</a></li>
-                        <li class="my-1 text-md"><a href="#" class="text-slate-300 hover:text-white"> Blog</a></li>
-                    </ol>
                 </div>
-
+                </div>
+        
+                <div>
+                  <h5 class="mb-4 text-lg font-bold text-white">Services</h5>
+                  <ul class="flex flex-col space-y-1 text-white">
+                    <li class=" text-md"><a href="#" class="text-slate-300 hover:text-white">UG
+                        Admissions</a></li>
+                <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white">Masters</a>
+                </li>
+                <li class="my-2 text-md"><a href="./downloads.html"
+                        class="text-slate-300 hover:text-white"> Downloads</a></li>
+                  </ul>
+                </div>
+        
+                <div class="mx-2 sm:mx-12 md:mx-0">
+                  <h5 class="mb-4 text-lg font-bold text-white">Material</h5>
+                  <ul class="flex flex-col space-y-1 text-white">
+                    <li class=" text-md"><a href="#" class="text-slate-300 hover:text-white">Test Portal</a>
+                    </li>
+                    <li class="my-2 text-md"><a href="./reading.html" class="text-slate-300 hover:text-white">IELTS Big
+                            Book</a></li>
+                    <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white"> GRE
+                            Reading</a></li>
+                    <li class="my-2 text-md"><a href="#" class="text-slate-300 hover:text-white"> Blog</a></li>
+                
+                  </ul>
+                </div>
+              </div>
             </div>
+      
+            
+          </div>
+          <hr>
 
-            <hr>
+          <!--links and policy-->
+          <div class="justify-between mt-4 md:flex">
+              <div class="grid grid-cols-7 my-2 sm:w-1/2">
+                  <div class="col-span-2 text-start">
+                      <a href="./policy.html" class="text-sm duration-200 ease-in hover:text-gray-300">Privacy
+                          Policy</a>
+                  </div>
+                  <div class="col-span-2">
+                      <a href="./terms.html" class="text-sm duration-200 ease-in hover:text-gray-300">Terms &
+                          Services</a>
+                  </div>
+                  <div class="col-span-3 pl-8">
+                      <a href="./refund.html" class="text-sm duration-200 ease-in hover:text-gray-300">Refund &
+                          Cancellation</a>
+                  </div>
+              </div>
 
-            <!--links and policy-->
-            <div class="justify-between mt-4 md:flex">
-                <div class="grid grid-cols-7 my-2 sm:w-1/2">
-                    <div class="col-span-2 text-start">
-                        <a href="./policy.html" class="text-sm duration-200 ease-in hover:text-gray-300">Privacy
-                            Policy</a>
-                    </div>
-                    <div class="col-span-2">
-                        <a href="./terms.html" class="text-sm duration-200 ease-in hover:text-gray-300">Terms &
-                            Services</a>
-                    </div>
-                    <div class="col-span-3 pl-8">
-                        <a href="./refund.html" class="text-sm duration-200 ease-in hover:text-gray-300">Refund &
-                            Cancellation</a>
-                    </div>
-                </div>
+              <div
+                  class="flex flex-wrap justify-center col-span-6 my-2 my-auto place-content-end sm:gap-4 md:justify-end">
+                  <a href="#" target="_blank" aria-label="facebook"
+                      class="duration-200 ease-in-out hover:scale-105">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                          <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                          <path
+                              d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                              fill="white" />
+                      </svg>
+                  </a>
+                  <a href="#" target="_blank" aria-label="instagram"
+                      class="duration-200 ease-in-out ms-2 hover:scale-105">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
+                          <path
+                              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                              fill="white" />
+                      </svg>
+                  </a>
+                  <a href="#" target="_blank" aria-label="Telegram"
+                      class="duration-200 ease-in-out ms-2 hover:scale-105">
+                      <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                          fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                          <path
+                              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
+                              fill="white"></path>
+                      </svg>
+                  </a>
+                  <a href="#" target="_blank" aria-label="youtube"
+                      class="duration-200 ease-in-out ms-2 hover:scale-105">
+                      <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                          fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                          <path
+                              d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                              fill="white"></path>
+                      </svg>
+                  </a>
+              </div>
 
-                <div
-                    class="flex flex-wrap justify-center col-span-6 my-2 place-content-end sm:sm:gap-4 sm:justify-end">
-                    <a href="#" target="_blank" aria-label="facebook"
-                        class="duration-200 ease-in-out hover:scale-105">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
-                            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
-                                fill="white" />
-                        </svg>
-                    </a>
-                    <a href="#" target="_blank" aria-label="instagram"
-                        class="duration-200 ease-in-out ms-2 hover:scale-105">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
-                            <path
-                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                                fill="white" />
-                        </svg>
-                    </a>
-                    <a href="#" target="_blank" aria-label="Telegram"
-                        class="duration-200 ease-in-out ms-2 hover:scale-105">
-                        <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em"
-                            fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
-                            <path
-                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
-                                fill="white"></path>
-                        </svg>
-                    </a>
-                    <a href="#" target="_blank" aria-label="youtube"
-                        class="duration-200 ease-in-out ms-2 hover:scale-105">
-                        <svg style="color: white" xmlns="http://www.w3.org/2000/svg" height="1.5em"
-                            fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
-                            <path
-                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
-                                fill="white"></path>
-                        </svg>
-                    </a>
-                </div>
+          </div>
 
-            </div>
+          <!--info-->
+          <p class="mt-4 mb-2 font-sans text-sm text-center text-gray-200">
+              © 2021 First Academy. All rights reserved.
+          </p>
+          <p class="px-4 mx-auto text-sm text-center sm:px-16">When you visit or interact with our sites, services
+              or tools, we or our authorised service providers may use cookies for storing information to help
+              provide you with a better, faster and safer experience and for marketing purposes.</p>
 
-            <!--info-->
-            <p class="mt-4 mb-2 font-sans text-sm text-center text-gray-200">
-                © 2021 First Academy. All rights reserved.
-            </p>
-            <p class="px-4 mx-auto text-sm text-center sm:px-16">When you visit or interact with our sites, services
-                or tools, we or our authorised service providers may use cookies for storing information to help
-                provide you with a better, faster and safer experience and for marketing purposes.</p>
+      </div>
+  </div>
 
         </div>
-    </div>
+    </div>    
 
 </footer>
 
