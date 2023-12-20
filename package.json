@@ -5,7 +5,7 @@
     "minify": "minify ./src/js/input.js > ./dist/output.js"
   },
   "devDependencies": {
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.4.0"
   },
   "dependencies": {
     "bootstrap": "^5.3.1",
