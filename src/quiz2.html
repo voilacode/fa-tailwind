@@ -3,26 +3,297 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description"
-        content="Excellent training to help you crack a technical job in top MNC where you pay the fee only after placement.">
-    <meta property="og:title" content="Job Guaranteed Java Training | Pay after placement | PacketPrep">
-    <meta property="og:image" content="../assets/favicon-min.webp">
-    <link rel="shortcut icon" href="../assets/favicon-min.webp" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+        }
+    
+        #instructions-container,
+        #quiz-info-container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+    
+        #instructions {
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+    
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+    
+        button#next-button {
+            background-color: #007BFF;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .hide {
+            display: none;
+        }
+    
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        .number-of-count {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    
+        p {
+            margin-bottom: 10px;
+        }
+    
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+    
+        /* Styles for feedback */
+        .feedback {
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+    
+        /* Styling for correct feedback */
+        .correct-feedback {
+            background-color: #E8F5E9;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
+    
+        /* Styling for incorrect feedback */
+        .incorrect-feedback {
+            background-color: #FFEBEE;
+            color: #FF5252;
+            border: 2px solid #FF5252;
+        }
+    
+    </style>
+    
+    
 </head>
 
-<body class="bg-gray-200">
-    <section class="max-w-3xl p-2 mx-auto mt-5 ">
-        <div class="p-5 bg-white rounded-xl">
-            Hello...this is empty container...
+<body>
+    <div id="instructions-container">
+        <h2>Quiz Instructions</h2>
+        <div id="instructions">
+            <!-- The content from the JSON instructions field will be inserted here -->
         </div>
-    </section>
-</body>
-<script>
-    /** write the javascript here **/
+        <button id="start-button" class="start-button-style">Start Quiz</button>
+    </div>
+    
+    <div id="quiz-info-container" class="hide">
+        <div class="header">
+            <div class="number-of-count">
+                <span id="number-of-question">1 of 5 questions</span>
+            </div>
+            <div class="feedback" id="feedback"></div> <!-- Added Feedback Section -->
+        </div>
+        <div id="question-container"></div>
+        <button id="next-button" class="hide next-button-style">Next Question</button>
+        <button id="submit-button" class="hide submit-button-style">Submit Quiz</button>
+        <div id="results-container" class="hide">
+            <h2>Quiz Results</h2>
+            <p>Your total score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
+        </div>
+    </div>
+    
+    
+    
 
-</script>
+    <script>
+        const quizApiUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json';
+        const instructionsApiUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json';
+    
+        const instructionsContainer = document.getElementById('instructions-container');
+        const quizInfoContainer = document.getElementById('quiz-info-container');
+        const nextButton = document.getElementById('next-button');
+        const questionContainer = document.getElementById('question-container');
+        let questionCount = 0;
+        let questionsData = [];
+    
+        const fetchData = async (url) => {
+            try {
+                const response = await fetch(url);
+                return await response.json();
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        };
+    
+    const displayInstructions = (instructionsHtml) => {
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = instructionsHtml;
+
+    const instructionItems = tempElement.textContent.trim().split('.');
+    let instructionList = '<ul style="text-align: justify;">'; 
+    instructionItems.forEach(instruction => {
+        if (instruction) {
+            instructionList += `<li>${instruction.trim()}.</li>`;
+        }
+    });
+    instructionList += '</ul>';
+
+    document.getElementById('instructions').innerHTML = instructionList;
+};
+
+    
+        const displayQuestion = (questionData) => {
+            const parsedQuestionData = questionData;
+    
+            let questionHtml = `<strong>${parsedQuestionData.question}</strong><br>`;
+            if (parsedQuestionData.type === 'mcq' || parsedQuestionData.type === 'maq') {
+                const optionsHtml = ['a', 'b', 'c', 'd'].map(key => `
+                    <label>
+                        <input type="${parsedQuestionData.type === 'mcq' ? 'radio' : 'checkbox'}" name="option" value="${key}">
+                        ${parsedQuestionData[key]}
+                    </label><br>
+                `).join('');
+                questionHtml += `<div>${optionsHtml}</div>`;
+            } else if (parsedQuestionData.type === 'fillup') {
+                questionHtml += `<input type="text" id="fillup-answer" placeholder="Enter your answer">`;
+            }
+            questionContainer.innerHTML = questionHtml;
+    
+            document.getElementById('number-of-question').innerText = `${questionCount + 1} of ${questionsData.length} questions`;
+    
+            if (questionCount < questionsData.length - 1) {
+                nextButton.classList.remove('hide');
+                document.getElementById('submit-button').classList.add('hide');
+            } else {
+                nextButton.classList.add('hide');
+                document.getElementById('submit-button').classList.remove('hide');
+            }
+    
+            if (questionCount >= questionsData.length) {
+                showResults();
+            }
+        };
+    
+        const validateAnswer = (selectedOption, correctAnswer, questionType) => {
+            if (questionType === 'fillup') {
+                return selectedOption.trim().toLowerCase() === correctAnswer.trim().toLowerCase();
+            }
+            return selectedOption === correctAnswer;
+        };
+    
+        const showResults = () => {
+            let correctAnswers = 0;
+            questionsData.forEach(question => {
+                if (question.selectedOption !== null && validateAnswer(question.selectedOption, question.answer, question.type)) {
+                    correctAnswers++;
+                }
+            });
+            const totalQuestions = questionsData.length;
+            document.getElementById('score').innerText = correctAnswers;
+            document.getElementById('total-questions').innerText = totalQuestions;
+            quizInfoContainer.classList.add('hide');
+            document.getElementById('results-container').classList.remove('hide');
+        };
+    
+        fetchData(instructionsApiUrl).then(data => displayInstructions(data.settings.instructions));
+    
+        fetchData(quizApiUrl).then(data => {
+            questionsData = data.questions.map(q => {
+                const parsedQData = JSON.parse(q.qdata)[0];
+                parsedQData.answerIndex = parsedQData.answer.charCodeAt(0) - 97;
+                return parsedQData;
+            });
+            displayQuestion(questionsData[0]);
+    
+            nextButton.addEventListener('click', () => {
+    let selectedOptionElem;
+    const fillupAnswer = document.getElementById('fillup-answer');
+    if (fillupAnswer) {
+        selectedOptionElem = fillupAnswer; 
+    } else {
+        const checkedRadio = document.querySelector('input[name="option"]:checked');
+        selectedOptionElem = checkedRadio; 
+    }
+
+    questionsData[questionCount].selectedOption = selectedOptionElem ? selectedOptionElem.value : null;
+
+    if (selectedOptionElem) {
+        const currentQuestion = questionsData[questionCount];
+        const isCorrect = validateAnswer(selectedOptionElem.value, currentQuestion.answer, currentQuestion.type);
+        handleAnswerFeedback(isCorrect, selectedOptionElem, currentQuestion);
+        questionCount++;
+        if (questionCount < questionsData.length) {
+            displayQuestion(questionsData[questionCount]);
+        }
+    } else {
+        alert('Please select an option or fill in the answer before proceeding.');
+    }
+});
+
+    
+            document.getElementById('start-button').addEventListener('click', () => {
+                instructionsContainer.classList.add('hide');
+                quizInfoContainer.classList.remove('hide');
+            });
+        });
+    
+        const handleAnswerFeedback = (isCorrect, selectedOptionElem, currentQuestion) => {
+    const feedbackElement = document.getElementById('feedback');
+
+    if (isCorrect) {
+        feedbackElement.innerText = 'Correct!';
+        feedbackElement.classList.add('correct-feedback');
+        if (selectedOptionElem) {
+            selectedOptionElem.parentNode.classList.add('correct');
+        }
+    } else {
+        feedbackElement.innerText = `Incorrect! The correct answer is: ${currentQuestion.answer}`;
+        feedbackElement.classList.add('incorrect-feedback');
+        if (selectedOptionElem) {
+            selectedOptionElem.parentNode.classList.add('incorrect');
+        }
+    }
+};
+
+    
+        const removeFeedbackStyles = () => {
+            const feedbackElement = document.getElementById('feedback');
+            feedbackElement.classList.remove('correct-feedback', 'incorrect-feedback');
+        };
+    
+    </script>
+    
+    
+</body>
 
 </html>
