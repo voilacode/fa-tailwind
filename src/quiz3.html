@@ -61,33 +61,28 @@
     <script>
         const questionsUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json';
 
-        let totalScore = 0; // Variable to store the total score
-        let isQuizSubmitted = false; // Flag to track if the quiz has been submitted
+        let totalScore = 0;
+        let isQuizSubmitted = false;
 
-        // Function to display popup
         const displayPopup = (popupId) => {
             const popup = document.getElementById(popupId);
             popup.classList.remove('hidden');
         };
 
-        // Close popup
         const closePopup = (popupId) => {
             const popup = document.getElementById(popupId);
             popup.classList.add('hidden');
         };
 
-        // Event listener for the Start Quiz button
         const startButton = document.getElementById('start-button');
         startButton.addEventListener('click', () => {
             displayPopup('questions-popup');
 
-            // Fetch and Display Questions
             fetch(questionsUrl)
                 .then(response => response.json())
                 .then(data => {
                     const questionsContent = document.getElementById('questions-content');
 
-                    // Display questions
                     data.questions.forEach((questionData, index) => {
                         const questionElement = document.createElement('div');
                         const qData = JSON.parse(questionData.qdata)[0];
@@ -129,7 +124,6 @@
                                         feedback.textContent = isCorrect ? 'Correct' : 'Wrong';
                                         feedback.classList.add(isCorrect ? 'text-green-500' : 'text-red-500');
 
-                                        // Update total score
                                         if (isCorrect) {
                                             totalScore++;
                                             document.getElementById('score').textContent = `Score: ${totalScore}`;
@@ -142,14 +136,12 @@
                                     const userAnswer = document.getElementById(`user-answer-${index}`).value.trim();
                                     const correctAnswers = answer.split(',').map(option => option.trim());
 
-                                    // Check if the user's answer matches any of the correct answers
                                     const isCorrect = correctAnswers.some(correctAnswer => userAnswer === correctAnswer);
 
                                     if (isCorrect) {
                                         feedback.textContent = 'Correct';
                                         feedback.classList.add('text-green-500');
 
-                                        // Update total score
                                         totalScore++;
                                         document.getElementById('score').textContent = `Score: ${totalScore}`;
                                     } else {
@@ -159,7 +151,10 @@
                                 }
 
                                 if (index === data.questions.length - 1) {
-                                    isQuizSubmitted = true; // Set the flag to true once the quiz is submitted
+                                    isQuizSubmitted = true;
+                                    submitButton.textContent = 'Retry Quiz';
+                                    submitButton.removeEventListener('click', null);
+                                    submitButton.addEventListener('click', retryQuiz);
                                 }
                             }
                         });
@@ -170,12 +165,24 @@
                 });
         });
 
-        // Function to close questions popup
         document.getElementById('cancel-questions').addEventListener('click', () => {
             closePopup('questions-popup');
         });
 
-        // Additional code for handling results popup remains the same
+        const retryQuiz = () => {
+            totalScore = 0;
+            isQuizSubmitted = false;
+            document.getElementById('score').textContent = 'Score: 0';
+
+            const questionsContent = document.getElementById('questions-content');
+            questionsContent.innerHTML = '';
+
+            const submitButton = document.getElementById('submit-quiz');
+            submitButton.textContent = 'Submit Quiz';
+            submitButton.removeEventListener('click', retryQuiz);
+
+            startButton.click();
+        };
     </script>
 </body>
 
