@@ -28,8 +28,8 @@
     </style>
 </head>
 
-<body class="bg-gray-200 flex justify-center items-center h-screen">
-    <!-- Start Button -->
+<body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
+   <h1 class="text-4xl font-semibold text-blue-900 mb-4 ">Welcome To the Quiz App</h1>
     <button id="start-button"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
         Start Quiz
@@ -38,10 +38,10 @@
     <!-- Popup for Instructions -->
     <div id="instructions-popup"
         class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
-        <div class="bg-white rounded-lg p-8 max-w-md popup-container">
+        <div class="bg-white rounded-lg p-8 max-w-3xl popup-container">
             <button id="cancel-instructions"
                 class="cancel-button  hover:text-red-700 text-gray-500 font-bold py-2 px-4 rounded focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M6 18L18 6M6 6l12 12"></path>
@@ -59,10 +59,10 @@
     <!-- Popup for Questions -->
     <div id="questions-popup"
         class="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
-        <div class="bg-white rounded-lg p-8 max-w-md overflow-y-auto max-h-screen popup-container">
+        <div class="bg-white rounded-lg p-8 max-w-2xl overflow-y-auto max-h-screen popup-container">
             <button id="cancel-questions"
                 class="cancel-button hover:text-red-500  text-gray-500  font-bold py-2 px-4 rounded focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M6 18L18 6M6 6l12 12"></path>
@@ -95,90 +95,119 @@
     </div>
 
     <!-- Script-->
-    <script>
-        const instructionsUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json';
-        const questionsUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json';
-    
-        let totalScore = 0; // Variable to store the total score
-    
-        // Function to display popup
-        const displayPopup = (popupId) => {
-            const popup = document.getElementById(popupId);
-            popup.classList.remove('hidden');
-        };
-    
-        // Close popup
-        const closePopup = (popupId) => {
-            const popup = document.getElementById(popupId);
-            popup.classList.add('hidden');
-        };
-    
-        // Fetch instructions
-        fetch(instructionsUrl)
-            .then(response => response.json())
-            .then(data => {
-                const instructionsContent = document.getElementById('instructions-content');
-                const instructions = data.settings.instructions.replace(/<\/?li>/g, '\n').replace(/<[^>]*>/g, '');
-                instructionsContent.innerHTML = `<ul>${instructions.split('\n').filter(Boolean).map(point => `<li>${point}</li>`).join('')}</ul>`;
-    
-                // Display Instructions Popup on button click
-                const startButton = document.getElementById('start-button');
-                const startQuizButton = document.getElementById('start-quiz');
-    
-                startButton.addEventListener('click', () => {
-                    displayPopup('instructions-popup');
+    <!-- Script-->
+<script>
+    const instructionsUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json';
+    const questionsUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json';
+
+    let totalScore = 0; // Variable to store the total score
+    let isQuizSubmitted = false; // Flag to track if the quiz has been submitted
+
+    // Function to display popup
+    const displayPopup = (popupId) => {
+        const popup = document.getElementById(popupId);
+        popup.classList.remove('hidden');
+    };
+
+    // Close popup
+    const closePopup = (popupId) => {
+        const popup = document.getElementById(popupId);
+        popup.classList.add('hidden');
+    };
+
+    // Fetch instructions
+    fetch(instructionsUrl)
+    .then(response => response.json())
+    .then(data => {
+        const instructionsContent = document.getElementById('instructions-content');
+        const instructions = data.settings.instructions.replace(/<\/?li>/g, '\n').replace(/<[^>]*>/g, '');
+
+        // Create an ordered list with arrow markers
+        const instructionsList = document.createElement('ol');
+        instructionsList.classList.add('list-inside', 'list-decimal'); // Adding Tailwind CSS classes for styling
+        instructionsList.innerHTML = instructions
+            .split('\n')
+            .filter(Boolean)
+            .map(point => `<li>${point}</li>`)
+            .join('');
+
+        // Append the list to the instructions container
+        instructionsContent.appendChild(instructionsList);
+
+        // Display Instructions Popup on button click
+        const startButton = document.getElementById('start-button');
+        const startQuizButton = document.getElementById('start-quiz');
+
+        startButton.addEventListener('click', () => {
+            displayPopup('instructions-popup');
+        });
+
+        startQuizButton.addEventListener('click', () => {
+            displayPopup('questions-popup');
+
+            // Fetch and Display Questions
+            fetch(questionsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // ... (rest of the code for displaying questions)
+                })
+                .catch(error => {
+                    console.error('Error fetching questions:', error);
                 });
+      
+    })
     
-                startQuizButton.addEventListener('click', () => {
-                    displayPopup('questions-popup');
-    
-                    // Fetch and Display Questions
-                    fetch(questionsUrl)
-                        .then(response => response.json())
-                        .then(data => {
-                            const questionsContent = document.getElementById('questions-content');
-    
-                            // Display questions
-                            data.questions.forEach((questionData, index) => {
-                                const questionElement = document.createElement('div');
-                                const qData = JSON.parse(questionData.qdata)[0];
-                                const answer = qData.answer.toLowerCase().trim();
-    
-                                let optionsHtml = '';
-    
-                                if (qData.type === 'mcq' || qData.type === 'maq') {
-                                    const options = ['a', 'b', 'c', 'd'];
-                                    optionsHtml += `<ul>`;
-                                    options.forEach(option => {
-                                        optionsHtml += `<li><input type="${qData.type === 'mcq' ? 'radio' : 'checkbox'}" id="option-${option}-${index}" name="question-${index}" value="${option}">
-                                            <label for="option-${option}-${index}" class="ml-2">${qData[option]}</label></li>`;
-                                    });
-                                    optionsHtml += `</ul>`;
-                                } else {
-                                    optionsHtml += `<input type="text" id="user-answer-${index}" placeholder="Your Answer" class="border border-gray-300 rounded-md p-1 w-full mb-2">`;
-                                }
-    
-                                questionElement.innerHTML = `
-                                    <p><strong>Question ${index + 1}:</strong> ${qData.question}</p>
-                                    ${optionsHtml}
-                                    <div id="feedback-${index}" class="text-sm font-bold"></div>
-                                    <hr class="my-4">
-                                `;
-                                questionsContent.appendChild(questionElement);
-    
-                                const submitButton = document.getElementById('submit-quiz');
-                                submitButton.addEventListener('click', () => {
+            startQuizButton.addEventListener('click', () => {
+                displayPopup('questions-popup');
+
+                // Fetch and Display Questions
+                fetch(questionsUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const questionsContent = document.getElementById('questions-content');
+
+                        // Display questions
+                        data.questions.forEach((questionData, index) => {
+                            const questionElement = document.createElement('div');
+                            const qData = JSON.parse(questionData.qdata)[0];
+                            const answer = qData.answer.toLowerCase().trim();
+
+                            let optionsHtml = '';
+
+                            if (qData.type === 'mcq' || qData.type === 'maq') {
+                                const options = ['a', 'b', 'c', 'd'];
+                                optionsHtml += `<ul>`;
+                                options.forEach(option => {
+                                    optionsHtml += `<li><input type="${qData.type === 'mcq' ? 'radio' : 'checkbox'}" id="option-${option}-${index}" name="question-${index}" value="${option}">
+                                        <label for="option-${option}-${index}" class="ml-2">${qData[option]}</label></li>`;
+                                });
+                                optionsHtml += `</ul>`;
+                            } else {
+                                optionsHtml += `<input type="text" id="user-answer-${index}" placeholder="Your Answer" class="border border-gray-300 rounded-md p-1 w-full mb-2">`;
+                            }
+
+                            questionElement.innerHTML = `
+                                <p><strong>Question ${index + 1}:</strong> ${qData.question}</p>
+                                ${optionsHtml}
+                                <div id="feedback-${index}" class="text-sm font-bold"></div>
+                                <hr class="my-4">
+                            `;
+                            questionsContent.appendChild(questionElement);
+
+                            const submitButton = document.getElementById('submit-quiz');
+                            submitButton.addEventListener('click', () => {
+                                if (!isQuizSubmitted) {
                                     const feedback = document.getElementById(`feedback-${index}`);
-    
+
                                     if (qData.type === 'mcq' || qData.type === 'maq') {
                                         const userAnswers = document.querySelectorAll(`input[name="question-${index}"]:checked`);
-    
+
                                         if (userAnswers.length > 0) {
                                             const selectedAnswers = Array.from(userAnswers).map(checkbox => checkbox.value);
                                             const isCorrect = selectedAnswers.sort().toString() === answer.split('|').sort().toString();
                                             feedback.textContent = isCorrect ? 'Correct' : 'Wrong';
                                             feedback.classList.add(isCorrect ? 'text-green-500' : 'text-red-500');
-    
+
                                             // Update total score
                                             if (isCorrect) {
                                                 totalScore++;
@@ -189,66 +218,63 @@
                                             feedback.classList.add('text-red-500');
                                         }
                                     } else {
-                                        const userAnswer = document.getElementById(`user-answer-${index}`).value.toLowerCase().trim();
-    
-                                        if (userAnswer === answer) {
-                                            feedback.textContent = 'Correct';
-                                            feedback.classList.add('text-green-500');
-    
-                                            // Update total score
-                                            totalScore++;
-                                            document.getElementById('score').textContent = `Score: ${totalScore}`;
-                                        } else {
-                                            feedback.textContent = 'Wrong';
-                                            feedback.classList.add('text-red-500');
-                                        }
+    const userAnswer = document.getElementById(`user-answer-${index}`).value.trim();
+    const correctAnswers = answer.split(',').map(option => option.trim());
+
+    // Check if the user's answer matches any of the correct answers
+    const isCorrect = correctAnswers.some(correctAnswer => userAnswer === correctAnswer);
+
+    if (isCorrect) {
+        feedback.textContent = 'Correct';
+        feedback.classList.add('text-green-500');
+
+        // Update total score
+        totalScore++;
+        document.getElementById('score').textContent = `Score: ${totalScore}`;
+    } else {
+        feedback.textContent = 'Wrong';
+        feedback.classList.add('text-red-500');
+    }
+}
+                                    if (index === data.questions.length - 1) {
+                                        isQuizSubmitted = true; // Set the flag to true once the quiz is submitted
                                     }
-                                });
+                                }
                             });
-                        })
-                        .catch(error => {
-                            console.error('Error fetching questions:', error);
                         });
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching instructions:', error);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching questions:', error);
+                    });
             });
-    
-        document.getElementById('cancel-instructions').addEventListener('click', () => {
-            closePopup('instructions-popup');
-        });
-    
-        document.getElementById('cancel-questions').addEventListener('click', () => {
-            closePopup('questions-popup');
-        });
-    
-        // Additional code for handling results popup and retry
-        const showResultsPopup = () => {
-            const resultsPopup = document.getElementById('results-popup');
-            resultsPopup.classList.remove('hidden');
-    
-            // Display the total score in the results popup
-            document.getElementById('results-content').textContent = `Total Score: ${totalScore}`;
-        };
-    
-        const hideResultsPopup = () => {
-            const resultsPopup = document.getElementById('results-popup');
-            resultsPopup.classList.add('hidden');
-        };
-    
-        const retryQuizButton = document.getElementById('retry-quiz');
-        retryQuizButton.addEventListener('click', () => {
-            hideResultsPopup();
-            // Reset the total score and any other quiz state if needed
-            totalScore = 0;
-            document.getElementById('score').textContent = `Score: ${totalScore}`;
-    
-            // Clear questions content
-            document.getElementById('questions-content').innerHTML = '';
+        })
+        .catch(error => {
+            console.error('Error fetching instructions:', error);
         });
 
-    </script>
+    document.getElementById('cancel-instructions').addEventListener('click', () => {
+        closePopup('instructions-popup');
+    });
+
+    document.getElementById('cancel-questions').addEventListener('click', () => {
+        closePopup('questions-popup');
+    });
+
+    // Additional code for handling results popup
+    const showResultsPopup = () => {
+        const resultsPopup = document.getElementById('results-popup');
+        resultsPopup.classList.remove('hidden');
+
+        // Display the total score in the results popup
+        document.getElementById('results-content').textContent = `Total Score: ${totalScore}`;
+    };
+
+    const hideResultsPopup = () => {
+        const resultsPopup = document.getElementById('results-popup');
+        resultsPopup.classList.add('hidden');
+    };
+</script>
+
 
 </body>
 
