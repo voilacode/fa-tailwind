@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .full-screen {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .popup-container {
+            position: relative;
+        }
+
+        .cancel-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
+    <div>
+        <h1 class="text-5xl font-semibold text-cyan-800 mb-6">Welcome To the Quiz App</h1>
+
+        <div class="mb-6">
+            <label for="username" class="block text-xl font-medium mb-3 text-cyan-700">Enter Your Name:</label>
+            <input type="text" id="username" placeholder="Your Name" class="border-2 border-cyan-400 rounded-lg p-3 w-full text-lg">
+        </div>
+
+        <button 
+            id="start-button" 
+            data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json"
+            class="bg-blue-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
+            Start Quiz
+        </button>
+
+        <div id="instructions-container" class="hidden">
+            <h2 class="text-2xl font-semibold mb-5 text-cyan-800">Instructions</h2>
+            <div id="instructions" class="font-sans text-lg text-cyan-700"></div>
+        </div>
+
+        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden">
+            <div class="bg-white rounded-lg p-9 max-w-3xl overflow-y-auto max-h-screen popup-container">
+                <button id="cancel-questions" class="cancel-button hover:text-red-600 text-gray-600 font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h2 class="text-2xl font-semibold mb-6 text-cyan-800">Questions</h2>
+                <div id="questions-content" class="font-sans text-lg text-cyan-700"></div>
+                <button id="submit-quiz" class="mt-6 bg-blue-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
+                    Submit Quiz
+                </button>
+                <div id="score" class="text-xl font-semibold mt-6 text-cyan-800">Score: 0</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ... [The JavaScript code you provided for quiz functionality] ...
+
+        // Start Button Event Listener
+        const startButton = document.getElementById('start-button');
+        startButton.addEventListener('click', () => {
+            displayPopup('questions-popup');
+            const questionsUrl = startButton.getAttribute('data-url'); 
+
+            fetch(questionsUrl)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('instructions-container').classList.remove('hidden');
+                    document.getElementById('instructions').textContent = data.instructions; 
+
+                    const questions = data.questions;
+                    displayQuestion(questions, currentQuestionIndex);
+                })
+                .catch(error => {
+                    console.error('Error fetching questions:', error);
+                });
+        });
+
+        // ... [The rest of your JavaScript code] ...
+    </script>
+</body>
+
+</html>

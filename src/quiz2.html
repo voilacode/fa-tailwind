@@ -108,20 +108,29 @@
 </head>
 
 <body>
+    <div>
     <div id="instructions-container">
-        <h2>Quiz Instructions</h2>
+        
         <div id="instructions">
             <!-- The content from the JSON instructions field will be inserted here -->
         </div>
-        <button id="start-button" class="start-button-style">Start Quiz</button>
+        <button 
+            id="start-button" 
+            data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json" 
+            data-score="false" 
+            data-answers="true" 
+            class="start-button-style bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+        >
+            Start Quiz
+        </button>
     </div>
-    
+
     <div id="quiz-info-container" class="hide">
         <div class="header">
             <div class="number-of-count">
-                <span id="number-of-question">1 of 5 questions</span>
+                <span id="number-of-question"></span>
             </div>
-            <div class="feedback" id="feedback"></div> <!-- Added Feedback Section -->
+            <div class="feedback" id="feedback"></div>
         </div>
         <div id="question-container"></div>
         <button id="next-button" class="hide next-button-style">Next Question</button>
@@ -131,13 +140,19 @@
             <p>Your total score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
         </div>
     </div>
+    </div>
     
     
     
 
     <script>
-        const quizApiUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json';
-        const instructionsApiUrl = 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json';
+        const startButton = document.getElementById('start-button');
+    
+        // Accessing the data attributes
+        const quizApiUrl = startButton.getAttribute('data-url');
+        const instructionsApiUrl = startButton.getAttribute('data-instructions-url');
+        const scoreRequired = startButton.getAttribute('data-score') === "true";
+        const answersRequired = startButton.getAttribute('data-answers') === "true";
     
         const instructionsContainer = document.getElementById('instructions-container');
         const quizInfoContainer = document.getElementById('quiz-info-container');
@@ -155,22 +170,21 @@
             }
         };
     
-    const displayInstructions = (instructionsHtml) => {
-    const tempElement = document.createElement('div');
-    tempElement.innerHTML = instructionsHtml;
-
-    const instructionItems = tempElement.textContent.trim().split('.');
-    let instructionList = '<ul style="text-align: justify;">'; 
-    instructionItems.forEach(instruction => {
-        if (instruction) {
-            instructionList += `<li>${instruction.trim()}.</li>`;
-        }
-    });
-    instructionList += '</ul>';
-
-    document.getElementById('instructions').innerHTML = instructionList;
-};
-
+        const displayInstructions = (instructionsHtml) => {
+            const tempElement = document.createElement('div');
+            tempElement.innerHTML = instructionsHtml;
+    
+            const instructionItems = tempElement.textContent.trim().split('.');
+            let instructionList = '<ul style="text-align: justify;">';
+            instructionItems.forEach(instruction => {
+                if (instruction) {
+                    instructionList += `<li>${instruction.trim()}.</li>`;
+                }
+            });
+            instructionList += '</ul>';
+    
+            document.getElementById('instructions').innerHTML = instructionList;
+        };
     
         const displayQuestion = (questionData) => {
             const parsedQuestionData = questionData;
@@ -236,30 +250,29 @@
             displayQuestion(questionsData[0]);
     
             nextButton.addEventListener('click', () => {
-    let selectedOptionElem;
-    const fillupAnswer = document.getElementById('fillup-answer');
-    if (fillupAnswer) {
-        selectedOptionElem = fillupAnswer; 
-    } else {
-        const checkedRadio = document.querySelector('input[name="option"]:checked');
-        selectedOptionElem = checkedRadio; 
-    }
-
-    questionsData[questionCount].selectedOption = selectedOptionElem ? selectedOptionElem.value : null;
-
-    if (selectedOptionElem) {
-        const currentQuestion = questionsData[questionCount];
-        const isCorrect = validateAnswer(selectedOptionElem.value, currentQuestion.answer, currentQuestion.type);
-        handleAnswerFeedback(isCorrect, selectedOptionElem, currentQuestion);
-        questionCount++;
-        if (questionCount < questionsData.length) {
-            displayQuestion(questionsData[questionCount]);
-        }
-    } else {
-        alert('Please select an option or fill in the answer before proceeding.');
-    }
-});
-
+                let selectedOptionElem;
+                const fillupAnswer = document.getElementById('fillup-answer');
+                if (fillupAnswer) {
+                    selectedOptionElem = fillupAnswer;
+                } else {
+                    const checkedRadio = document.querySelector('input[name="option"]:checked');
+                    selectedOptionElem = checkedRadio;
+                }
+    
+                questionsData[questionCount].selectedOption = selectedOptionElem ? selectedOptionElem.value : null;
+    
+                if (selectedOptionElem) {
+                    const currentQuestion = questionsData[questionCount];
+                    const isCorrect = validateAnswer(selectedOptionElem.value, currentQuestion.answer, currentQuestion.type);
+                    handleAnswerFeedback(isCorrect, selectedOptionElem, currentQuestion);
+                    questionCount++;
+                    if (questionCount < questionsData.length) {
+                        displayQuestion(questionsData[questionCount]);
+                    }
+                } else {
+                    alert('Please select an option or fill in the answer before proceeding.');
+                }
+            });
     
             document.getElementById('start-button').addEventListener('click', () => {
                 instructionsContainer.classList.add('hide');
@@ -268,23 +281,22 @@
         });
     
         const handleAnswerFeedback = (isCorrect, selectedOptionElem, currentQuestion) => {
-    const feedbackElement = document.getElementById('feedback');
-
-    if (isCorrect) {
-        feedbackElement.innerText = 'Correct!';
-        feedbackElement.classList.add('correct-feedback');
-        if (selectedOptionElem) {
-            selectedOptionElem.parentNode.classList.add('correct');
-        }
-    } else {
-        feedbackElement.innerText = `Incorrect! The correct answer is: ${currentQuestion.answer}`;
-        feedbackElement.classList.add('incorrect-feedback');
-        if (selectedOptionElem) {
-            selectedOptionElem.parentNode.classList.add('incorrect');
-        }
-    }
-};
-
+            const feedbackElement = document.getElementById('feedback');
+    
+            if (isCorrect) {
+                feedbackElement.innerText = 'Correct!';
+                feedbackElement.classList.add('correct-feedback');
+                if (selectedOptionElem) {
+                    selectedOptionElem.parentNode.classList.add('correct');
+                }
+            } else {
+                feedbackElement.innerText = `Incorrect! The correct answer is: ${currentQuestion.answer}`;
+                feedbackElement.classList.add('incorrect-feedback');
+                if (selectedOptionElem) {
+                    selectedOptionElem.parentNode.classList.add('incorrect');
+                }
+            }
+        };
     
         const removeFeedbackStyles = () => {
             const feedbackElement = document.getElementById('feedback');
@@ -292,6 +304,7 @@
         };
     
     </script>
+    
     
     
 </body>
