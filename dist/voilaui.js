@@ -120,6 +120,7 @@ for (i = 0; i < acc.length; i++) {
             panel.style.display = "block";
             toggleIcon(this);
         }
+
     });
 }
 
@@ -136,3 +137,20 @@ function toggleIcon(element) {
         icon.innerHTML = '-';
     }
 }
+
+// scroll to top
+window.addEventListener('scroll', function () {
+    var scrollToTopButton = document.getElementById('scrollToTop');
+    if (window.scrollY > 200) {
+        scrollToTopButton.classList.remove('opacity-0');
+    } else {
+        scrollToTopButton.classList.add('opacity-0');
+    }
+});
+
+document.getElementById('scrollToTop').addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

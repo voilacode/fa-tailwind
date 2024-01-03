@@ -11,8 +11,11 @@ module.exports = {
     ]
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        play: ['Playfair Display', 'serif'],
+        afacad: ['Afacad', 'sans-serif'],
+    }
   },
   plugins: [],
 }
-
