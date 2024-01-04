@@ -314,7 +314,15 @@
                     <div class="hidden p-1 overflow-hidden duration-300 ease-in-out panel transition-height">
                         <div class="grid grid-cols-2 md:gap-x-4 ps-8">
                             <ol class="col-span-2  font-afacad text-lg md:col-span-1"  >
-                                <li class="mb-0 text-md"><a href="./ielts.html"
+                                <li class="mt-1.5 text-md"><a href="./ielts-band9-training.html"
+                                    class="text-slate-300 hover:text-white"> IELTS Band 9 Training</a></li>
+                            <li class="mt-1.5 text-md"><a href="./pteonline.html"
+                                    class="text-slate-300 hover:text-white"> PTE Personalized</a></li>
+                            <li class="mt-1.5 text-md"><a href="./custom.html"
+                                    class="text-slate-300 hover:text-white"> Corporate Training</a></li>
+                            <li class="mt-1.5 text-md"><a href="./spokenenglish.html"
+                                    class="text-slate-300 hover:text-white"> English Language Training</a></li>
+                                <li class="mt-1.5 text-md"><a href="./ielts.html"
                                     class="text-slate-300 hover:text-white">IELTS</a></li>
                                 <li class="my-1.5 text-md"><a href="./gre.html"
                                         class="text-slate-300 hover:text-white">GRE</a></li>
@@ -328,14 +336,7 @@
                                         class="text-slate-300 hover:text-white"> DET</a></li>
                                 <li class="mt-1.5 text-md"><a href="./toefl.html"
                                         class="text-slate-300 hover:text-white"> TOEFL</a></li>
-                                <li class="mt-1.5 text-md"><a href="./ielts-band9-training.html"
-                                        class="text-slate-300 hover:text-white"> IELTS Band 9 Training</a></li>
-                                <li class="mt-1.5 text-md"><a href="./pteonline.html"
-                                        class="text-slate-300 hover:text-white"> PTE Personalized</a></li>
-                                <li class="mt-1.5 text-md"><a href="./custom.html"
-                                        class="text-slate-300 hover:text-white"> Corporate Training</a></li>
-                                <li class="mt-1.5 text-md"><a href="./spokenenglish.html"
-                                        class="text-slate-300 hover:text-white"> English Language Training</a></li>
+                                
                             </ol>
 
                         </div>
@@ -413,6 +414,53 @@
 
     </footer>
     
-    <script src="../dist/voilaui.js"></script>
+    <!-- <script src="../dist/voilaui.js"></script> -->
+    <script>
+        let acc = document.getElementsByClassName("accordion");
+        let i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                let panel = this.nextElementSibling;
+
+                // Close all other panels
+                let allPanels = document.getElementsByClassName("panel");
+                for (let j = 0; j < allPanels.length; j++) {
+                    if (allPanels[j] !== panel) {
+                        allPanels[j].style.display = "none";
+                        // Remove "active" class from other buttons
+                        acc[j].classList.remove("active");
+                        // Reset the icon for other buttons
+                        resetIcon(acc[j]);
+                    }
+                }
+
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    resetIcon(this);
+                } else {
+                    panel.style.display = "block";
+                    toggleIcon(this);
+                }
+
+            });
+        }
+
+        function resetIcon(element) {
+            let icon = element.querySelector('.icon');
+            if (icon) {
+                icon.innerHTML = '+';
+            }
+        }
+
+        function toggleIcon(element) {
+            let icon = element.querySelector('.icon');
+            if (icon) {
+                icon.innerHTML = '-';
+            }
+        }
+
+    </script>
 </body>
 </html>
