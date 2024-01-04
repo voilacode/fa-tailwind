@@ -15,7 +15,9 @@ module.exports = {
       fontFamily: {
         play: ['Playfair Display', 'serif'],
         afacad: ['Afacad', 'sans-serif'],
+        spartan: ['League Spartan', 'sans-serif'],
     }
   },
   plugins: [],
+}
 }
