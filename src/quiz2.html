@@ -27,13 +27,13 @@
             width: 80%;
             max-width: 600px;
         }
-
+    
         #instructions {
             margin-bottom: 20px;
             font-size: 18px;
             text-align: justify;
         }
-
+    
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -43,7 +43,7 @@
             border: none;
             border-radius: 4px;
         }
-
+    
         button#next-button {
             background-color: #007BFF;
             margin-top: 20px;
@@ -102,7 +102,48 @@
             border: 2px solid #FF5252;
         }
     
+        /* Styles for options */
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .option {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color:white;
+            color: black;
+            border:#4caf50;
+            border-radius: 4px;
+        }
+    
+        .option.selected {
+            background-color: #007BFF;
+        }
+    
+        .option.show-correct-answer {
+            background-color: #4CAF50 !important;
+        }
+    
+        /* Styles for questions */
+        .question {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    
+        /* Styles for fillup answer input */
+        #fillup-answer {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+        }
     </style>
+    
     
     
 </head>
@@ -135,6 +176,7 @@
         <div id="question-container"></div>
         <button id="next-button" class="hide next-button-style">Next Question</button>
         <button id="submit-button" class="hide submit-button-style">Submit Quiz</button>
+        
         <div id="results-container" class="hide">
             <h2>Quiz Results</h2>
             <p>Your total score: <span id="score">0</span> out of <span id="total-questions">0</span></p>
@@ -147,7 +189,7 @@
 
     <script>
         const startButton = document.getElementById('start-button');
-    
+        
         // Accessing the data attributes
         const quizApiUrl = startButton.getAttribute('data-url');
         const instructionsApiUrl = startButton.getAttribute('data-instructions-url');
@@ -158,6 +200,7 @@
         const quizInfoContainer = document.getElementById('quiz-info-container');
         const nextButton = document.getElementById('next-button');
         const questionContainer = document.getElementById('question-container');
+        const showAnswersButton = document.getElementById('show-answers-button');
         let questionCount = 0;
         let questionsData = [];
     
@@ -189,34 +232,53 @@
         const displayQuestion = (questionData) => {
             const parsedQuestionData = questionData;
     
-            let questionHtml = `<strong>${parsedQuestionData.question}</strong><br>`;
+            let questionHtml = `<div class="question"><strong>${parsedQuestionData.question}</strong></div>`;
             if (parsedQuestionData.type === 'mcq' || parsedQuestionData.type === 'maq') {
-                const optionsHtml = ['a', 'b', 'c', 'd'].map(key => `
-                    <label>
-                        <input type="${parsedQuestionData.type === 'mcq' ? 'radio' : 'checkbox'}" name="option" value="${key}">
-                        ${parsedQuestionData[key]}
-                    </label><br>
-                `).join('');
-                questionHtml += `<div>${optionsHtml}</div>`;
+                const optionsContainer = document.createElement('div');
+                optionsContainer.classList.add('options-container');
+                ['a', 'b', 'c', 'd'].forEach(key => {
+                    const option = document.createElement('button');
+                    option.classList.add('option');
+                    option.dataset.value = key;
+                    option.innerHTML = parsedQuestionData[key];
+                    option.addEventListener('click', () => handleOptionClick(option, parsedQuestionData));
+                    optionsContainer.appendChild(option);
+                });
+                questionHtml += optionsContainer.outerHTML;
             } else if (parsedQuestionData.type === 'fillup') {
                 questionHtml += `<input type="text" id="fillup-answer" placeholder="Enter your answer">`;
             }
             questionContainer.innerHTML = questionHtml;
     
-            document.getElementById('number-of-question').innerText = `${questionCount + 1} of ${questionsData.length} questions`;
+            document.getElementById('number-of-question').innerText = `${questionCount + 1} of ${questionsData.length}`;
     
             if (questionCount < questionsData.length - 1) {
                 nextButton.classList.remove('hide');
-                document.getElementById('submit-button').classList.add('hide');
             } else {
                 nextButton.classList.add('hide');
-                document.getElementById('submit-button').classList.remove('hide');
             }
     
             if (questionCount >= questionsData.length) {
                 showResults();
             }
         };
+    
+        const handleOptionClick = (option, currentQuestion) => {
+    if (currentQuestion.type === 'mcq') {
+        const selectedOptionElem = document.querySelector('.option.selected');
+        if (selectedOptionElem) {
+            selectedOptionElem.classList.remove('selected');
+        }
+        option.classList.add('selected');
+    } else if (currentQuestion.type === 'maq') {
+        option.classList.toggle('selected');
+    }
+
+    // Update the selected options in the data
+    const selectedOptions = Array.from(document.querySelectorAll('.option.selected')).map(opt => opt.dataset.value);
+    questionsData[questionCount].selectedOptions = selectedOptions;
+};
+
     
         const validateAnswer = (selectedOption, correctAnswer, questionType) => {
             if (questionType === 'fillup') {
@@ -228,8 +290,13 @@
         const showResults = () => {
             let correctAnswers = 0;
             questionsData.forEach(question => {
-                if (question.selectedOption !== null && validateAnswer(question.selectedOption, question.answer, question.type)) {
-                    correctAnswers++;
+                if (question.selectedOptions && question.selectedOptions.length > 0) {
+                    const isCorrect = question.selectedOptions.every(option =>
+                        validateAnswer(option, question.answer, question.type)
+                    );
+                    if (isCorrect) {
+                        correctAnswers++;
+                    }
                 }
             });
             const totalQuestions = questionsData.length;
@@ -239,71 +306,111 @@
             document.getElementById('results-container').classList.remove('hide');
         };
     
-        fetchData(instructionsApiUrl).then(data => displayInstructions(data.settings.instructions));
+        fetchData(instructionsApiUrl).then(data => {
+            if (data && data.settings && data.settings.instructions) {
+                displayInstructions(data.settings.instructions);
+            }
+        });
     
-        fetchData(quizApiUrl).then(data => {
-            questionsData = data.questions.map(q => {
-                const parsedQData = JSON.parse(q.qdata)[0];
-                parsedQData.answerIndex = parsedQData.answer.charCodeAt(0) - 97;
-                return parsedQData;
-            });
-            displayQuestion(questionsData[0]);
-    
-            nextButton.addEventListener('click', () => {
-                let selectedOptionElem;
-                const fillupAnswer = document.getElementById('fillup-answer');
-                if (fillupAnswer) {
-                    selectedOptionElem = fillupAnswer;
-                } else {
-                    const checkedRadio = document.querySelector('input[name="option"]:checked');
-                    selectedOptionElem = checkedRadio;
+        startButton.addEventListener('click', () => {
+            instructionsContainer.classList.add('hide');
+            quizInfoContainer.classList.remove('hide');
+            fetchData(quizApiUrl).then(data => {
+                if (data && data.questions) {
+                    questionsData = data.questions.map(q => {
+                        const parsedQData = JSON.parse(q.qdata)[0];
+                        parsedQData.answerIndex = parsedQData.answer.charCodeAt(0) - 97;
+                        return parsedQData;
+                    });
+                    displayQuestion(questionsData[0]);
                 }
-    
-                questionsData[questionCount].selectedOption = selectedOptionElem ? selectedOptionElem.value : null;
-    
-                if (selectedOptionElem) {
-                    const currentQuestion = questionsData[questionCount];
-                    const isCorrect = validateAnswer(selectedOptionElem.value, currentQuestion.answer, currentQuestion.type);
-                    handleAnswerFeedback(isCorrect, selectedOptionElem, currentQuestion);
-                    questionCount++;
-                    if (questionCount < questionsData.length) {
-                        displayQuestion(questionsData[questionCount]);
-                    }
-                } else {
-                    alert('Please select an option or fill in the answer before proceeding.');
-                }
-            });
-    
-            document.getElementById('start-button').addEventListener('click', () => {
-                instructionsContainer.classList.add('hide');
-                quizInfoContainer.classList.remove('hide');
             });
         });
     
-        const handleAnswerFeedback = (isCorrect, selectedOptionElem, currentQuestion) => {
-            const feedbackElement = document.getElementById('feedback');
+        nextButton.addEventListener('click', () => {
+            let selectedOptionElem;
+            const fillupAnswer = document.getElementById('fillup-answer');
+            if (fillupAnswer) {
+                selectedOptionElem = fillupAnswer;
+            } else {
+                const checkedRadio = document.querySelector('.option.selected');
+                selectedOptionElem = checkedRadio;
+            }
     
-            if (isCorrect) {
-                feedbackElement.innerText = 'Correct!';
-                feedbackElement.classList.add('correct-feedback');
-                if (selectedOptionElem) {
-                    selectedOptionElem.parentNode.classList.add('correct');
+            questionsData[questionCount].selectedOption = selectedOptionElem ? selectedOptionElem.value : null;
+    
+            if (selectedOptionElem || questionsData[questionCount].type === 'fillup') {
+                const currentQuestion = questionsData[questionCount];
+                handleAnswerFeedback(currentQuestion);
+                questionCount++;
+                if (questionCount < questionsData.length) {
+                    displayQuestion(questionsData[questionCount]);
                 }
             } else {
-                feedbackElement.innerText = `Incorrect! The correct answer is: ${currentQuestion.answer}`;
-                feedbackElement.classList.add('incorrect-feedback');
+                alert('Please select an option or fill in the answer before proceeding.');
+            }
+        });
+    
+        showAnswersButton.addEventListener('click', () => {
+            showCorrectAnswers();
+        });
+    
+        const handleAnswerFeedback = (currentQuestion) => {
+            const feedbackElement = document.getElementById('feedback');
+            feedbackElement.innerHTML = '';
+    
+            if (currentQuestion.type === 'fillup') {
+                const fillupAnswer = document.getElementById('fillup-answer').value.trim().toLowerCase();
+                const isCorrect = validateAnswer(fillupAnswer, currentQuestion.answer, currentQuestion.type);
+                appendFeedback(isCorrect, fillupAnswer, currentQuestion.answer);
+            } else {
+                const selectedOptionElem = document.querySelector('.option.selected');
                 if (selectedOptionElem) {
-                    selectedOptionElem.parentNode.classList.add('incorrect');
+                    const isCorrect = validateAnswer(selectedOptionElem.dataset.value, currentQuestion.answer, currentQuestion.type);
+                    appendFeedback(isCorrect, selectedOptionElem.innerHTML, currentQuestion.answer);
                 }
             }
+        };
+    
+        const appendFeedback = (isCorrect, selectedOption, correctAnswer) => {
+            const feedbackElement = document.getElementById('feedback');
+            const feedbackContainer = document.createElement('div');
+            feedbackContainer.classList.add('feedback-container');
+    
+            if (isCorrect) {
+                feedbackContainer.innerHTML = 'Correct!';
+                feedbackContainer.classList.add('correct-feedback');
+                if (selectedOption) {
+                    feedbackContainer.innerHTML += ` Your answer: ${selectedOption}`;
+                }
+            } else {
+                feedbackContainer.innerHTML = `Incorrect! The correct answer is: ${correctAnswer}`;
+                feedbackContainer.classList.add('incorrect-feedback');
+                if (selectedOption) {
+                    feedbackContainer.innerHTML += ` Your answer: ${selectedOption}`;
+                }
+            }
+    
+            feedbackElement.appendChild(feedbackContainer);
+        };
+    
+        const showCorrectAnswers = () => {
+            questionsData.forEach(question => {
+                const selectedOptionElem = document.querySelector(`.options-container .option[data-value="${question.selectedOption}"]`);
+                if (selectedOptionElem && !validateAnswer(question.selectedOption, question.answer, question.type)) {
+                    selectedOptionElem.classList.add('show-correct-answer');
+                }
+            });
         };
     
         const removeFeedbackStyles = () => {
             const feedbackElement = document.getElementById('feedback');
             feedbackElement.classList.remove('correct-feedback', 'incorrect-feedback');
         };
-    
     </script>
+    
+    
+    
     
     
     
