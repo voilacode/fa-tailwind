@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        /* Additional CSS */
         .full-screen {
             width: 100vw;
             height: 100vh;
         }
 
+        /* Positioning the cancel buttons */
         .popup-container {
             position: relative;
         }
@@ -22,72 +23,225 @@
             right: 0;
             margin: 1rem;
         }
+        /* CSS Styles for Feedback */
+.correct {
+    background-color: #d4edda; /* A light green color */
+    border-color: #c3e6cb; /* A darker green border */
+}
+
+.incorrect {
+    background-color: #f8d7da; /* A light red color */
+    border-color: #f5c2c7; /* A darker red border */
+}
+
     </style>
 </head>
-
 <body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
     <div>
-        <h1 class="text-5xl font-semibold text-cyan-800 mb-6">Welcome To the Quiz App</h1>
-
-        <div class="mb-6">
-            <label for="username" class="block text-xl font-medium mb-3 text-cyan-700">Enter Your Name:</label>
-            <input type="text" id="username" placeholder="Your Name" class="border-2 border-cyan-400 rounded-lg p-3 w-full text-lg">
+        <h1 class="text-4xl font-semibold text-blue-900 mb-4">Welcome To the Quiz App</h1>
+        <!-- User Name Input -->
+        <div class="mb-4">
+            <label for="username" class="block text-xl font-bold mb-2">Enter Your Name:</label>
+            <input type="text" id="username" placeholder="Your Name" class="border border-gray-300 rounded-md p-2 w-full">
         </div>
-
-        <button 
-            id="start-button" 
-            data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json"
-            class="bg-blue-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
+        <button id="start-button" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=2"
+            data-score="false" data-answers="true"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none mb-4">
             Start Quiz
         </button>
-
+        <!-- Instructions Display -->
         <div id="instructions-container" class="hidden">
-            <h2 class="text-2xl font-semibold mb-5 text-cyan-800">Instructions</h2>
-            <div id="instructions" class="font-sans text-lg text-cyan-700"></div>
+            <h2 class="text-xl font-bold mb-4"></h2>
+            <div id="instructions" class="font-serif"></div>
         </div>
-
-        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden">
-            <div class="bg-white rounded-lg p-9 max-w-3xl overflow-y-auto max-h-screen popup-container">
-                <button id="cancel-questions" class="cancel-button hover:text-red-600 text-gray-600 font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- Popup for Questions -->
+        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
+            <div class="bg-white rounded-lg p-8 max-w-2xl overflow-y-auto max-h-screen popup-container">
+                <button id="cancel-questions" class="cancel-button hover:text-red-500 text-gray-500 font-bold py-2 px-4 rounded focus:outline-none">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-                <h2 class="text-2xl font-semibold mb-6 text-cyan-800">Questions</h2>
-                <div id="questions-content" class="font-sans text-lg text-cyan-700"></div>
-                <button id="submit-quiz" class="mt-6 bg-blue-500 hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none mb-6">
+                <h2 id="question-title" class="text-xl font-bold mb-4">Questions</h2>
+                <div id="question-content" class="popup-content font-serif"></div>
+<div id="quiz-feedback" class="font-bold mt-4"></div> <!-- Add this line -->
+
+                <button id="next-button" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    Next
+                </button>
+                <button id="submit-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                     Submit Quiz
                 </button>
-                <div id="score" class="text-xl font-semibold mt-6 text-cyan-800">Score: 0</div>
+                
             </div>
         </div>
     </div>
-
+    
+    <!-- Script -->
     <script>
-        // ... [The JavaScript code you provided for quiz functionality] ...
-
-        // Start Button Event Listener
+        // Define Variables
+        let totalScore = 0;
+        let isQuizSubmitted = false;
+        let data;
+        let currentQuestionIndex = 0;
+    
+        // Function to Display Popup
+        const displayPopup = (popupId) => {
+            const popup = document.getElementById(popupId);
+            popup.classList.remove('hidden');
+        };
+    
+        // Function to Close Popup
+        const closePopup = (popupId) => {
+            const popup = document.getElementById(popupId);
+            popup.classList.add('hidden');
+        };
+    
+        // Function to Display Current Question
+        const displayCurrentQuestion = () => {
+            const questionData = data.questions[currentQuestionIndex];
+            const qData = JSON.parse(questionData.qdata)[0];
+            let questionContent = `<h3>${qData.question}</h3>`;
+    
+            if (qData.type === 'mcq' || qData.type === 'maq') {
+                questionContent += '<ul>';
+                ['a', 'b', 'c', 'd'].forEach((option) => {
+                    questionContent += `
+                        <li>
+                            <input type="${qData.type === 'mcq' ? 'radio' : 'checkbox'}" id="option-${option}-${currentQuestionIndex}" name="question-${currentQuestionIndex}" value="${option}">
+                            <label for="option-${option}-${currentQuestionIndex}">${qData[option]}</label>
+                        </li>`;
+                });
+                questionContent += '</ul>';
+            } else {
+                questionContent += `<input type="text" id="user-answer-${currentQuestionIndex}" placeholder="Your Answer">`;
+            }
+            document.getElementById('question-content').innerHTML = questionContent;
+    
+            // Toggle visibility of buttons based on the current question
+            const nextButton = document.getElementById('next-button');
+            const submitButton = document.getElementById('submit-quiz');
+    
+            if (currentQuestionIndex < data.questions.length - 1) {
+                nextButton.style.display = 'block';
+                submitButton.style.display = 'none';
+            } else {
+                nextButton.style.display = 'none';
+                submitButton.style.display = 'block';
+            }
+    
+            // Add event listeners for each option to check user's answer immediately
+            const options = document.querySelectorAll(`input[name="question-${currentQuestionIndex}"]`);
+            options.forEach((option) => {
+                option.addEventListener('change', checkUserAnswer);
+            });
+        };
+    
+        // Function to Check User's Answer immediately after selecting an option or typing in a fill-in-the-blank
+        const checkUserAnswer = () => {
+            const userAnswer = getUserAnswer();
+            const questionData = data.questions[currentQuestionIndex];
+            const qData = JSON.parse(questionData.qdata)[0];
+            const correctAnswer = qData.answer;
+    
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            
+            if (qData.type === 'fillup') {
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                } else {
+                    feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
+                }
+            } else {
+                if (userAnswer === correctAnswer) {
+                    feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                } else {
+                    feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
+                }
+            }
+        };
+    
+        // Function to Get User's Answer
+        const getUserAnswer = () => {
+            const questionData = data.questions[currentQuestionIndex];
+            const qData = JSON.parse(questionData.qdata)[0];
+    
+            let userAnswer = null;
+    
+            if (qData.type === 'mcq' || qData.type === 'maq') {
+                const userAnswers = document.querySelectorAll(`input[name="question-${currentQuestionIndex}"]:checked`);
+                const selectedAnswers = Array.from(userAnswers).map(checkbox => checkbox.value);
+                userAnswer = selectedAnswers.sort().toString();
+            } else {
+                userAnswer = document.getElementById(`user-answer-${currentQuestionIndex}`).value.trim().toLowerCase();
+            }
+    
+            return userAnswer;
+        };
+    
+        // Function to Move to Next Question
+        const moveToNextQuestion = () => {
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            feedbackDiv.innerHTML = ''; // Clear previous feedback
+    
+            const userAnswer = getUserAnswer();
+            const questionData = data.questions[currentQuestionIndex];
+            const qData = JSON.parse(questionData.qdata)[0];
+            const correctAnswer = qData.answer;
+    
+            if (userAnswer === correctAnswer) {
+                totalScore++;
+            }
+    
+            if (currentQuestionIndex < data.questions.length - 1) {
+                currentQuestionIndex++;
+                displayCurrentQuestion();
+            } else {
+                // Feedback for the last question
+                feedbackDiv.innerHTML = `Quiz Submitted! Your Score: ${totalScore}/${data.questions.length}`;
+            }
+        };
+    
+        // Event Listener for Start Button
         const startButton = document.getElementById('start-button');
         startButton.addEventListener('click', () => {
             displayPopup('questions-popup');
-            const questionsUrl = startButton.getAttribute('data-url'); 
-
+            const questionsUrl = startButton.getAttribute('data-url');
             fetch(questionsUrl)
                 .then(response => response.json())
-                .then(data => {
+                .then(fetchedData => {
+                    data = fetchedData;
                     document.getElementById('instructions-container').classList.remove('hidden');
-                    document.getElementById('instructions').textContent = data.instructions; 
-
-                    const questions = data.questions;
-                    displayQuestion(questions, currentQuestionIndex);
+                    document.getElementById('instructions').textContent = data.instructions;
+                    displayCurrentQuestion();
                 })
                 .catch(error => {
                     console.error('Error fetching questions:', error);
                 });
         });
-
-        // ... [The rest of your JavaScript code] ...
+    
+        // Event Listener for Next Button
+        document.getElementById('next-button').addEventListener('click', moveToNextQuestion);
+    
+        // Event Listener for Submit Button
+        const submitButton = document.getElementById('submit-quiz');
+        submitButton.addEventListener('click', () => {
+            // Handle the score submission and feedback here
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            feedbackDiv.innerHTML = `Quiz Submitted! Your Score: ${totalScore}/${data.questions.length}`;
+        });
+    
+        // Event Listener for Cancel Button
+        document.getElementById('cancel-questions').addEventListener('click', () => {
+            closePopup('questions-popup');
+        });
     </script>
-</body>
+    
+    
+    
+    
 
+
+    
+</body>
 </html>
