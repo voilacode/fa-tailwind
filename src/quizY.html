@@ -6,13 +6,13 @@
     <title>Quiz App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Additional CSS */
+        
         .full-screen {
             width: 100vw;
             height: 100vh;
         }
 
-        /* Positioning the cancel buttons */
+        
         .popup-container {
             position: relative;
         }
@@ -23,20 +23,21 @@
             right: 0;
             margin: 1rem;
         }
-        /* CSS Styles for Feedback */
+        
 .correct {
-    background-color: #d4edda; /* A light green color */
-    border-color: #c3e6cb; /* A darker green border */
+    background-color: #d4edda; 
+    border-color: #c3e6cb; 
 }
 
 .incorrect {
-    background-color: #f8d7da; /* A light red color */
-    border-color: #f5c2c7; /* A darker red border */
+    background-color: #f8d7da; 
+    border-color: #f5c2c7; 
 }
 
     </style>
 </head>
 <body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
+    
     <div>
         <h1 class="text-4xl font-semibold text-blue-900 mb-4">Welcome To the Quiz App</h1>
         <!-- User Name Input -->
@@ -45,7 +46,7 @@
             <input type="text" id="username" placeholder="Your Name" class="border border-gray-300 rounded-md p-2 w-full">
         </div>
         <button id="start-button" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=2"
-            data-score="false" data-answers="true"
+            data-score="true" data-answers="true"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none mb-4">
             Start Quiz
         </button>
@@ -81,9 +82,10 @@
     <script>
         // Define Variables
         let totalScore = 0;
-        let isQuizSubmitted = false;
         let data;
         let currentQuestionIndex = 0;
+        let displayScore = true;  // By default, display the score functionality
+        let displayFeedback = true;  // By default, display the feedback functionality
     
         // Function to Display Popup
         const displayPopup = (popupId) => {
@@ -99,6 +101,9 @@
     
         // Function to Display Current Question
         const displayCurrentQuestion = () => {
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            feedbackDiv.innerHTML = '';  // Clear the feedback
+    
             const questionData = data.questions[currentQuestionIndex];
             const qData = JSON.parse(questionData.qdata)[0];
             let questionContent = `<h3>${qData.question}</h3>`;
@@ -137,7 +142,7 @@
             });
         };
     
-        // Function to Check User's Answer immediately after selecting an option or typing in a fill-in-the-blank
+        // Function to Check User's Answer
         const checkUserAnswer = () => {
             const userAnswer = getUserAnswer();
             const questionData = data.questions[currentQuestionIndex];
@@ -145,18 +150,20 @@
             const correctAnswer = qData.answer;
     
             const feedbackDiv = document.getElementById('quiz-feedback');
-            
-            if (qData.type === 'fillup') {
-                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-                    feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+    
+            if (displayFeedback) {
+                if (qData.type === 'fillup') {
+                    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                        feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                    } else {
+                        feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
+                    }
                 } else {
-                    feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
-                }
-            } else {
-                if (userAnswer === correctAnswer) {
-                    feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
-                } else {
-                    feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
+                    if (userAnswer === correctAnswer) {
+                        feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                    } else {
+                        feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
+                    }
                 }
             }
         };
@@ -182,22 +189,23 @@
         // Function to Move to Next Question
         const moveToNextQuestion = () => {
             const feedbackDiv = document.getElementById('quiz-feedback');
-            feedbackDiv.innerHTML = ''; // Clear previous feedback
+            feedbackDiv.innerHTML = '';  // Clear the feedback
     
-            const userAnswer = getUserAnswer();
-            const questionData = data.questions[currentQuestionIndex];
-            const qData = JSON.parse(questionData.qdata)[0];
-            const correctAnswer = qData.answer;
+            if (displayScore) {
+                const userAnswer = getUserAnswer();
+                const questionData = data.questions[currentQuestionIndex];
+                const qData = JSON.parse(questionData.qdata)[0];
+                const correctAnswer = qData.answer;
     
-            if (userAnswer === correctAnswer) {
-                totalScore++;
+                if (userAnswer === correctAnswer) {
+                    totalScore++;
+                }
             }
     
             if (currentQuestionIndex < data.questions.length - 1) {
                 currentQuestionIndex++;
                 displayCurrentQuestion();
             } else {
-                // Feedback for the last question
                 feedbackDiv.innerHTML = `Quiz Submitted! Your Score: ${totalScore}/${data.questions.length}`;
             }
         };
@@ -207,6 +215,11 @@
         startButton.addEventListener('click', () => {
             displayPopup('questions-popup');
             const questionsUrl = startButton.getAttribute('data-url');
+    
+            // Update displayScore and displayFeedback based on the button's data attributes
+            displayScore = startButton.getAttribute('data-score') === 'true';
+            displayFeedback = startButton.getAttribute('data-answers') === 'true';
+    
             fetch(questionsUrl)
                 .then(response => response.json())
                 .then(fetchedData => {
@@ -238,10 +251,6 @@
     </script>
     
     
-    
-    
-
-
-    
+     
 </body>
 </html>
