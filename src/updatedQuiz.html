@@ -49,24 +49,24 @@
     
         <!-- Instructions Display -->
         <div id="instructions-container" class="hidden">
-            <h2 class="text-xl font-bold mb-4">Instructions</h2>
+            <h2 class="text-xl font-bold mb-4"></h2>
             <div id="instructions" class="font-serif"></div>
         </div>
     
         <!-- Popup for Questions -->
-        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
-            <div class="bg-white rounded-lg p-8 max-w-2xl overflow-y-auto max-h-screen popup-container">
-                <button id="cancel-questions" class="cancel-button hover:text-red-500 text-gray-500 font-bold py-2 px-4 rounded focus:outline-none">
+        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-75 flex justify-center  hidden">
+            <div class="bg-white rounded-lg p-8 max-w-2xl m-8 overflow-y-auto max-h-screen popup-container">
+                <button id="cancel-questions" class="cancel-button hover:text-red-500  font-bold  pl-5 mb-2  rounded focus:outline-none">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
-                <h2 class="text-xl font-bold mb-4">Questions</h2>
+                <h2 class="text-3xl font-semibold font-sans  mb-4 bg-blue-100 h-20 flex justify-center  items-center text-blue-500">Questions</h2>
                 <div id="questions-content" class="popup-content font-serif"></div>
                 <button id="submit-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                     Submit Quiz
                 </button>
-                <div id="score" class="text-lg font-bold mt-4">Score: 0</div>
+                <div id="score" class="text-lg font-bold mt-4"></div>
             </div>
         </div>
     </div>
@@ -119,14 +119,15 @@ startButton.addEventListener('click', () => {
           });
           optionsHtml += `</ul>`;
         } else {
-          optionsHtml += `<input type="text" id="user-answer-${index}" placeholder="Your Answer" class="border border-gray-300 rounded-md p-1 w-full mb-2">`;
+          optionsHtml += `<input type="text" id="user-answer-${index}" placeholder="Your Answer" class="border border-gray-300 rounded-md p-1 w-full mb-2 mt-1 hover:border-blue-500">`;
         }
 
         questionElement.innerHTML = `
-            <p><strong>Question ${index + 1}:</strong> ${qData.question}</p>
+    <div class="flex m-1.5 gap-2 text-gray-700">  <p class="bg-yellow-200 border  border-yellow-600 h-8 flex justify-center item-center rounded-md px-3 py-1 ">${index + 1}</p><p class=""> ${qData.question}</p></div>
+           
             ${optionsHtml}
             <div id="feedback-${index}" class="text-sm font-bold"></div>
-            <hr class="my-4">
+            <hr class="my-5">
         `;
         questionsContent.appendChild(questionElement);
 
