@@ -6,13 +6,11 @@
     <title>Quiz App</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        
         .full-screen {
             width: 100vw;
             height: 100vh;
         }
 
-        
         .popup-container {
             position: relative;
         }
@@ -23,21 +21,19 @@
             right: 0;
             margin: 1rem;
         }
-        
-.correct {
-    background-color: #d4edda; 
-    border-color: #c3e6cb; 
-}
 
-.incorrect {
-    background-color: #f8d7da; 
-    border-color: #f5c2c7; 
-}
+        .correct {
+            background-color: #d4edda; 
+            border-color: #c3e6cb; 
+        }
 
+        .incorrect {
+            background-color: #f8d7da; 
+            border-color: #f5c2c7; 
+        }
     </style>
 </head>
 <body class="bg-gray-200 flex flex-col justify-center items-center h-screen">
-    
     <div>
         <h1 class="text-4xl font-semibold text-blue-900 mb-4">Welcome To the Quiz App</h1>
         <!-- User Name Input -->
@@ -46,10 +42,11 @@
             <input type="text" id="username" placeholder="Your Name" class="border border-gray-300 rounded-md p-2 w-full">
         </div>
         <button id="start-button" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=2"
-            data-score="true" data-answers="true"
+            data-score="false" data-answers="true"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none mb-4">
             Start Quiz
         </button>
+        
         <!-- Instructions Display -->
         <div id="instructions-container" class="hidden">
             <h2 class="text-xl font-bold mb-4"></h2>
@@ -65,49 +62,48 @@
                 </button>
                 <h2 id="question-title" class="text-xl font-bold mb-4">Questions</h2>
                 <div id="question-content" class="popup-content font-serif"></div>
-<div id="quiz-feedback" class="font-bold mt-4"></div> <!-- Add this line -->
-
+                <div id="quiz-feedback" class="font-bold mt-4"></div>
                 <button id="next-button" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                     Next
+                </button>
+                <button id="check-button" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                    check 
                 </button>
                 <button id="submit-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
                     Submit Quiz
                 </button>
-                
+                <button id="retry-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none hidden">
+                    Retry Quiz
+                </button>
             </div>
         </div>
     </div>
-    
     <!-- Script -->
     <script>
-        // Define Variables
         let totalScore = 0;
         let data;
         let currentQuestionIndex = 0;
-        let displayScore = true;  // By default, display the score functionality
-        let displayFeedback = true;  // By default, display the feedback functionality
-    
-        // Function to Display Popup
+        let displayScore = true;
+        let displayFeedback = true;
+
         const displayPopup = (popupId) => {
             const popup = document.getElementById(popupId);
             popup.classList.remove('hidden');
         };
-    
-        // Function to Close Popup
+
         const closePopup = (popupId) => {
             const popup = document.getElementById(popupId);
             popup.classList.add('hidden');
         };
-    
-        // Function to Display Current Question
+
         const displayCurrentQuestion = () => {
             const feedbackDiv = document.getElementById('quiz-feedback');
-            feedbackDiv.innerHTML = '';  // Clear the feedback
-    
+            feedbackDiv.innerHTML = '';
+
             const questionData = data.questions[currentQuestionIndex];
             const qData = JSON.parse(questionData.qdata)[0];
             let questionContent = `<h3>${qData.question}</h3>`;
-    
+
             if (qData.type === 'mcq' || qData.type === 'maq') {
                 questionContent += '<ul>';
                 ['a', 'b', 'c', 'd'].forEach((option) => {
@@ -122,59 +118,69 @@
                 questionContent += `<input type="text" id="user-answer-${currentQuestionIndex}" placeholder="Your Answer">`;
             }
             document.getElementById('question-content').innerHTML = questionContent;
-    
-            // Toggle visibility of buttons based on the current question
+
             const nextButton = document.getElementById('next-button');
             const submitButton = document.getElementById('submit-quiz');
-    
+            const retryButton = document.getElementById('retry-quiz');
+
             if (currentQuestionIndex < data.questions.length - 1) {
                 nextButton.style.display = 'block';
                 submitButton.style.display = 'none';
+                retryButton.style.display = 'none';
             } else {
                 nextButton.style.display = 'none';
                 submitButton.style.display = 'block';
+                retryButton.style.display = 'none';
             }
-    
-            // Add event listeners for each option to check user's answer immediately
+
             const options = document.querySelectorAll(`input[name="question-${currentQuestionIndex}"]`);
             options.forEach((option) => {
                 option.addEventListener('change', checkUserAnswer);
             });
+
+            // Add event listener for fill-in-the-blank question to check user's answer after leaving the input box
+            if (qData.type === 'fillup') {
+                const userAnswerInput = document.getElementById(`user-answer-${currentQuestionIndex}`);
+                userAnswerInput.addEventListener('blur', checkUserAnswer);
+            }
         };
-    
-        // Function to Check User's Answer
+
         const checkUserAnswer = () => {
             const userAnswer = getUserAnswer();
             const questionData = data.questions[currentQuestionIndex];
             const qData = JSON.parse(questionData.qdata)[0];
-            const correctAnswer = qData.answer;
-    
+            const correctAnswer = qData.answer.toLowerCase();
+
             const feedbackDiv = document.getElementById('quiz-feedback');
-    
+
             if (displayFeedback) {
                 if (qData.type === 'fillup') {
-                    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    if (userAnswer.toLowerCase() === correctAnswer) {
                         feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                        if (displayScore) {
+                            totalScore++;
+                        }
                     } else {
                         feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
                     }
                 } else {
                     if (userAnswer === correctAnswer) {
                         feedbackDiv.innerHTML = '<span class="correct">Correct!</span>';
+                        if (displayScore) {
+                            totalScore++;
+                        }
                     } else {
                         feedbackDiv.innerHTML = '<span class="incorrect">Incorrect!</span>';
                     }
                 }
             }
         };
-    
-        // Function to Get User's Answer
+
         const getUserAnswer = () => {
             const questionData = data.questions[currentQuestionIndex];
             const qData = JSON.parse(questionData.qdata)[0];
-    
             let userAnswer = null;
-    
+
             if (qData.type === 'mcq' || qData.type === 'maq') {
                 const userAnswers = document.querySelectorAll(`input[name="question-${currentQuestionIndex}"]:checked`);
                 const selectedAnswers = Array.from(userAnswers).map(checkbox => checkbox.value);
@@ -182,44 +188,43 @@
             } else {
                 userAnswer = document.getElementById(`user-answer-${currentQuestionIndex}`).value.trim().toLowerCase();
             }
-    
+
             return userAnswer;
         };
-    
-        // Function to Move to Next Question
+
         const moveToNextQuestion = () => {
             const feedbackDiv = document.getElementById('quiz-feedback');
-            feedbackDiv.innerHTML = '';  // Clear the feedback
-    
+            feedbackDiv.innerHTML = '';
+
             if (displayScore) {
                 const userAnswer = getUserAnswer();
                 const questionData = data.questions[currentQuestionIndex];
                 const qData = JSON.parse(questionData.qdata)[0];
-                const correctAnswer = qData.answer;
-    
+                const correctAnswer = qData.answer.toLowerCase();
+
                 if (userAnswer === correctAnswer) {
                     totalScore++;
                 }
             }
-    
+
             if (currentQuestionIndex < data.questions.length - 1) {
                 currentQuestionIndex++;
                 displayCurrentQuestion();
             } else {
                 feedbackDiv.innerHTML = `Quiz Submitted! Your Score: ${totalScore}/${data.questions.length}`;
+                document.getElementById('submit-quiz').style.display = 'none';
+                document.getElementById('retry-quiz').style.display = 'block';
             }
         };
-    
-        // Event Listener for Start Button
+
         const startButton = document.getElementById('start-button');
         startButton.addEventListener('click', () => {
             displayPopup('questions-popup');
             const questionsUrl = startButton.getAttribute('data-url');
-    
-            // Update displayScore and displayFeedback based on the button's data attributes
+
             displayScore = startButton.getAttribute('data-score') === 'true';
             displayFeedback = startButton.getAttribute('data-answers') === 'true';
-    
+
             fetch(questionsUrl)
                 .then(response => response.json())
                 .then(fetchedData => {
@@ -232,25 +237,29 @@
                     console.error('Error fetching questions:', error);
                 });
         });
-    
-        // Event Listener for Next Button
+
         document.getElementById('next-button').addEventListener('click', moveToNextQuestion);
-    
-        // Event Listener for Submit Button
+
         const submitButton = document.getElementById('submit-quiz');
         submitButton.addEventListener('click', () => {
-            // Handle the score submission and feedback here
             const feedbackDiv = document.getElementById('quiz-feedback');
             feedbackDiv.innerHTML = `Quiz Submitted! Your Score: ${totalScore}/${data.questions.length}`;
+            submitButton.style.display = 'none';
+            document.getElementById('retry-quiz').style.display = 'block';
         });
-    
-        // Event Listener for Cancel Button
+
+        const retryQuizButton = document.getElementById('retry-quiz');
+        retryQuizButton.addEventListener('click', () => {
+            totalScore = 0;
+            currentQuestionIndex = 0;
+            retryQuizButton.style.display = 'none';
+            submitButton.style.display = 'block';
+            displayCurrentQuestion();
+        });
+
         document.getElementById('cancel-questions').addEventListener('click', () => {
             closePopup('questions-popup');
         });
     </script>
-    
-    
-     
 </body>
 </html>
