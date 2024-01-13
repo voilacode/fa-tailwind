@@ -29,62 +29,65 @@
 </head>
 
 <body class="bg-gray-200 flex flex-col justify-center items-center h-screen from-neutral-800">
-    <div>
-        <h1 class="text-4xl  text-blue-900 mb-4">Welcome To the Quiz App</h1>
-
-        <!-- User Name Input -->
-        <div class="mb-4">
-            <label for="username" class="block text-xl font-bold mb-2">Enter Your Name</label>
-            <input type="text" id="username" placeholder="Your Name" class="border border-gray-300 rounded-md p-2 w-full">
-        </div>
-
-        <!-- Quiz Buttons -->
-        <div class="flex mb-4">
-            <button 
-                id="start-button-1" 
-                data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1"
-                data-score="tru"
-                data-answers="true"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none mr-4">
-                Start Quiz 1
-            </button>
-
-            <button 
-                id="start-button-2" 
-                data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json"
-                data-score="true"
-                data-answers="true"
-                class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none mr-4">
-                Start Quiz 2
-            </button>
-
-            <button 
-                id="start-button-3" 
-                data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json"
-                data-score="true"
-                data-answers="true"
-                class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                Start Quiz 3
-            </button>
-        </div>
-
-        <!-- Popup for Questions -->
-        <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-75 flex justify-center hidden">
-            <div class="bg-white mt-10 mb-10 rounded-lg p-8 max-w-2xl overflow-y-auto max-h-screen popup-container">
-                <button id="cancel-questions" class="cancel-button hover:text-red-500 text-gray-600 font-bold pl-4 rounded focus:outline-none">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+    <div class="flex h-full max-w-screen-xl mx-auto sm:px-16">
+        <div class="w-full p-4">
+            <h1 class="text-4xl text-blue-900 mb-4">Welcome To the Quiz App</h1>
+    
+            <!-- User Name Input -->
+            <div class="mb-4">
+                <label for="username" class="block text-xl font-bold mb-2">Enter Your Name</label>
+                <input type="text" id="username" placeholder="Your Name" class="border border-gray-300 rounded-md p-2 w-full">
+            </div>
+    
+            <!-- Quiz Buttons -->
+            <div class="flex flex-col sm:flex-row mb-4">
+                <button 
+                    id="start-button-1" 
+                    data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1"
+                    data-score="tru"
+                    data-answers="true"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-4">
+                    Start Quiz 1
                 </button>
-                <h2 class="text-3xl font-semibold mb-4 bg-blue-100 h-20 flex justify-center items-center text-blue-500 m-2">Questions</h2>
-                <div id="questions-content" class="popup-content text-black"></div>
-                <button id="submit-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
-                    Submit Quiz
+    
+                <button 
+                    id="start-button-2" 
+                    data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json"
+                    data-score="true"
+                    data-answers="true"
+                    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:mr-4">
+                    Start Quiz 2
                 </button>
-                <div id="score" class="text-lg font-bold mt-4"></div>
+    
+                <button 
+                    id="start-button-3" 
+                    data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_info.json"
+                    data-score="true"
+                    data-answers="true"
+                    class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                    Start Quiz 3
+                </button>
+            </div>
+    
+            <!-- Popup for Questions -->
+            <div id="questions-popup" class="absolute inset-0 bg-black bg-opacity-75 flex justify-center hidden">
+                <div class="bg-white mt-10 mb-10 rounded-lg p-8 max-w-2xl overflow-y-auto max-h-screen w-full sm:w-auto popup-container">
+                    <button id="cancel-questions" class="cancel-button hover:text-red-500 text-gray-600 font-bold pl-4 rounded focus:outline-none">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <h2 class="text-3xl font-semibold mb-4 bg-blue-100 h-20 flex justify-center items-center text-blue-500 m-2">Questions</h2>
+                    <div id="questions-content" class="popup-content text-black"></div>
+                    <button id="submit-quiz" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+                        Submit Quiz
+                    </button>
+                    <div id="score" class="text-lg font-bold mt-4"></div>
+                </div>
             </div>
         </div>
     </div>
+    
 
     <!-- Script -->
     <script>
