@@ -229,7 +229,7 @@
     
                                             // Show correct answer if data-answers is true and the answer is incorrect
                                             if (showAnswers && !isCorrect) {
-                                                feedback.textContent += `. Correct answer: ${getCorrectAnswer(qData, answer)}`;
+                                                feedback.textContent += `. The Correct answer is: ${getCorrectAnswer(qData, answer)}`;
                                             }
                                         } else {
                                             feedback.textContent = 'Please select an answer.';
@@ -242,7 +242,7 @@
     
                                         // Show correct answer if data-answers is true and the answer is incorrect
                                         if (showAnswers && !isCorrect) {
-                                            feedback.textContent += `. Correct answer: ${getCorrectAnswer(qData, answer)}`;
+                                            feedback.textContent += `. The Correct answer is: ${getCorrectAnswer(qData, answer)}`;
                                         }
                                     }
                                 } else {
