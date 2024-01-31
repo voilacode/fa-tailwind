@@ -139,7 +139,6 @@
                               <div class="inline-block px-4 py-2 text-white transition-all duration-300 rounded shadow bg-sky-700 hover:bg-sky-600">Job Openings</div>
                               <div class="inline-block px-4 py-2 text-white transition-all duration-300 rounded shadow bg-sky-700 hover:bg-sky-600">Hackathons</div>
                               <div class="inline-block px-4 py-2 text-white transition-all duration-300 rounded shadow bg-sky-700 hover:bg-sky-600">Interview Prep</div>
-                              <div class="inline-block px-4 py-2 text-white transition-all duration-300 rounded shadow bg-sky-700 hover:bg-sky-600">Mock Tests</div>
                               </div>
                       </div>
                       <div class="grid grid-cols-1 gap-3 md:grid-cols-2 animate__animated animate__fadeIn animate__delay-3s">
@@ -326,7 +325,7 @@
           <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
               <h2 class="pb-4 font-serif text-3xl font-bold text-center text-sky-900 animate__animated animate__rubberBand">Why Choose FresherBot?</h2>
       
-              <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:mt-8">
+              <div class="grid grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:mt-8">
                   <!-- Card 1 -->
                   <div class="duration-300 ease-in-out transform bg-white shadow-xl rounded-xl hover:-translate-y-2">
                       <div class="flex flex-col items-center p-6">
@@ -371,7 +370,7 @@
       
               <div class="grid max-w-screen-xl grid-cols-12 mx-auto mt-8 sm:gap-8 place-items-between">
                   <!--first-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-6 lg:col-span-4 sm:p-8 border-sky-200">
+                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
                       <img src="../assets/studymaterial.avif" class="m-auto rounded-lg " style="width: 100px; height: 70px;" alt="">
                       <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Study Material</h2>
       
@@ -428,7 +427,7 @@
                   </div>
       
                   <!--second-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-6 lg:col-span-4 sm:p-8 border-sky-200">
+                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
                       <img src="../assets/videolessons.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
                       <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Video Lessons</h2>
       
@@ -485,7 +484,7 @@
                   </div>
       
                   <!--third-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-6 lg:col-span-4 sm:p-8 border-sky-200">
+                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
                       <img src="../assets/practice.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
                       <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Practice Tests</h2>
       
@@ -910,17 +909,7 @@
         gtag('js', new Date());
 
         gtag('config', 'G-E3Q48CYWJG');
-        document.addEventListener('DOMContentLoaded', function () {
-  // Add event listeners for accordion buttons
-  const accordionButtons = document.querySelectorAll('.accordion');
-  accordionButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      // Toggle visibility of the corresponding answer section
-      const panel = this.nextElementSibling;
-      panel.classList.toggle('hidden');
-    });
-  });
-});
+       
 
 function toggleFAQ(index) {
         // Hide all FAQs
