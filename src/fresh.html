@@ -796,6 +796,26 @@
             });
         });
 
+        function toggleFAQ(faqNumber) {
+        var faq = document.getElementById('faq' + faqNumber);
+        
+        // Close all other FAQs
+        var allFaqs = document.querySelectorAll('[id^="faq"]');
+        allFaqs.forEach(function (otherFaq) {
+            if (otherFaq.id !== 'faq' + faqNumber) {
+                otherFaq.style.display = 'none';
+            }
+        });
+
+        // Toggle the selected FAQ
+        if (faq.style.display === 'block') {
+            faq.style.display = 'none';
+        } else {
+            faq.style.display = 'block';
+        }
+    }
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     
