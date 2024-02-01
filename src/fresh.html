@@ -203,7 +203,7 @@
       <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
           <h2 class="pb-4 font-serif text-4xl font-bold text-center text-black animate__animated animate__rubberBand">Why Choose FresherBot?</h2>
   
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:mt-8">
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 md:mt-8">
               <!-- Card 1 -->
               <div class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
                   <div class="flex flex-col items-center p-6">
@@ -796,26 +796,6 @@
             });
         });
 
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-        // Get references to buttons and content sections
-        var jobOpeningsButton = document.getElementById("b1");
-        var hackathonButton = document.getElementById("b2");
-        var jobOpeningsSection = document.getElementById("p1");
-        var hackathonSection = document.getElementById("p2");
-
-        // Set up click event listeners
-        jobOpeningsButton.addEventListener("click", function () {
-            jobOpeningsSection.classList.remove("hidden");
-            hackathonSection.classList.add("hidden");
-        });
-
-        hackathonButton.addEventListener("click", function () {
-            jobOpeningsSection.classList.add("hidden");
-            hackathonSection.classList.remove("hidden");
-        });
-    });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     
