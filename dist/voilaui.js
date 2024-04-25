@@ -65,6 +65,24 @@ document.addEventListener('click', function (event) {
     }
 });
 
+// appear on hover
+function showDropdown(id) {
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function hideDropdown(id) {
+    document.getElementById(id).classList.add("hidden");
+}
+function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    if (dropdown.classList.contains("hidden")) {
+        showDropdown(id);
+    } else {
+        hideDropdown(id);
+    }
+}
+
+
 // modal
 document.addEventListener('click', function (event) {
     const target = event.target;
