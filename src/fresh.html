@@ -1,648 +1,719 @@
-       
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
-    <style>
-        @keyframes fadeInRight {
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    @keyframes fadeInRight {
       from {
         opacity: 0;
         transform: translateX(25px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
       }
     }
+
     @keyframes fadeInLeft {
       from {
         opacity: 0;
         transform: translateX(25px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
       }
     }
-    
+
     .animate__animated.animate__bounce {
-  --animate-duration: 2s;
-}
-@keyframes fadeInUp {
+      --animate-duration: 2s;
+    }
+
+    @keyframes fadeInUp {
       from {
         opacity: 0;
         transform: translateY(0);
       }
+
       to {
         opacity: 1;
         transform: translateY(15px);
       }
     }
+
     @keyframes rubberBand {
       from {
         opacity: 0;
         transform: translateX(10px);
       }
+
       to {
         opacity: 1;
         transform: translateY(10px);
       }
     }
-    
-   
-    
-      </style>
-      
-    
+  </style>
+
+
 </head>
 
 <body>
 
-  
+
 
   <header>
     <!--navbar-->
     <nav class="w-full shadow">
       <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 px-4 py-2 mx-auto sm:px-20">
-          <a href="./" class="flex items-center py-2 rounded logo">
-              <img src="../assets/fresherbot_logo_dark.png" class="h-8 " alt="Logo" />
-          </a>
-          <button data-collapse-toggle="navbar-sticky" type="button"
-              class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm bg-gray-100 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-sticky" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 17 14">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M1 1h15M1 7h15M1 13h15" />
-              </svg>
-          </button>
+        <a href="./" class="flex items-center py-2 rounded logo">
+          <img src="../assets/fresherbot_logo_dark.png" class="h-8 " alt="Logo" />
+        </a>
+        <button data-collapse-toggle="navbar-sticky" type="button"
+          class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm bg-gray-100 rounded-lg lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
 
-          <div class="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1" id="navbar-sticky">
-              <ul
-                  class="flex flex-col mt-2 font-medium md:p-0 md:flex-row md:space-x-4 lg:space-x-6 md:mt-0 md:border-0 ">
-                  <li class="my-0 md:my-auto">
-                      <a href="./"
-                          class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
-                          For Candidate
-                      </a>
-                  </li>
-                  <li class="my-0 md:my-auto">
-                      <a href="./employer"
-                          class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
-                          For Employer
-                      </a>
-                  </li>
-                  <li class="my-0 md:my-auto">
-                      <a href="./college"
-                          class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
-                          For College
-                      </a>
-                  </li>
-                  <li class="my-0 md:my-auto">
-                      <a href=" /login "
-                          class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
-                           Login                             </a>
-                  </li>
-                  <li class="my-0 md:my-auto">
-                      <a href=" /register "
-                          class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
-                           Register                             </a>
-                  </li>
+        <div class="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul class="flex flex-col mt-2 font-medium md:p-0 md:flex-row md:space-x-4 lg:space-x-6 md:mt-0 md:border-0 ">
+            <li class="my-0 md:my-auto">
+              <a href="./"
+                class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
+                For Candidate
+              </a>
+            </li>
+            <li class="my-0 md:my-auto">
+              <a href="./employer"
+                class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
+                For Employer
+              </a>
+            </li>
+            <li class="my-0 md:my-auto">
+              <a href="./college"
+                class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
+                For College
+              </a>
+            </li>
+            <li class="my-0 md:my-auto">
+              <a href=" /login "
+                class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
+                Login </a>
+            </li>
+            <li class="my-0 md:my-auto">
+              <a href=" /register "
+                class="block py-2 pl-2 pr-4 duration-200 ease-in rounded hover:bg-sky-100 md:hover:bg-white text-sky-700 md:border-0 md:p-0 md:hover:scale-110 hover:text-sky-900">
+                Register </a>
+            </li>
 
-              </ul>
-          </div>
+          </ul>
+        </div>
       </div>
-  </nav> 
-</header>
+    </nav>
+  </header>
 
 
-    <main>
-        <!--hero section-->
-       
-        <section class="text-black bg-blue-100 bg-gradient-to-r">
-          <section class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
-          <div class="container p-8 mx-auto">
-              <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
-                  <div class="text-center md:text-left">
-                      <h1 class="mb-4 text-5xl font-extrabold animate__animated animate__fadeIn animate__delay-1s">Unleash Your Potential</h1>
-                      <p class="mb-6 text-lg animate__animated animate__fadeIn animate__delay-2s">Discover a world of opportunities and growth. Your journey to success starts here.</p>
-                      <div class="flex mb-8 space-x-4 animate__animated animate__fadeIn animate__delay-3s">
-                          <a href="/explore" class="px-6 py-2 transition-all duration-300 bg-indigo-700 rounded-full hover:bg-indigo-600">Explore</a>
-                          <a href="/create-account" class="px-6 py-2 transition-all duration-300 bg-green-500 rounded-full hover:bg-green-400">Get Started</a>
-                      </div>
-                  </div>
-                  <div class="text-center">
-                      <img src="../assets/jobpo.jpg" class="rounded-lg" alt="hero section image">
-                  </div>
+  <main>
+    <!--hero section-->
+
+    <section class="text-black bg-blue-100 bg-gradient-to-r">
+      <section class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
+        <div class="container p-8 mx-auto">
+          <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+            <div class="text-center md:text-left">
+              <h1 class="mb-4 text-5xl font-extrabold animate__animated animate__fadeIn animate__delay-1s">Unleash Your
+                Potential</h1>
+              <p class="mb-6 text-lg animate__animated animate__fadeIn animate__delay-2s">Discover a world of
+                opportunities and growth. Your journey to success starts here.</p>
+              <div class="flex mb-8 space-x-4 animate__animated animate__fadeIn animate__delay-3s">
+                <a href="/explore"
+                  class="px-6 py-2 transition-all duration-300 bg-indigo-700 rounded-full hover:bg-indigo-600">Explore</a>
+                <a href="/create-account"
+                  class="px-6 py-2 transition-all duration-300 bg-green-500 rounded-full hover:bg-green-400">Get
+                  Started</a>
               </div>
+            </div>
+            <div class="text-center">
+              <img src="../assets/jobpo.jpg" class="rounded-lg" alt="hero section image">
+            </div>
           </div>
+        </div>
       </section>
-    </section>  
-      
-      
-      
-       
-       
+    </section>
 
 
-<section class="bg-gray-100">
-  <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
-      <h2 class="mb-6 font-serif text-3xl font-bold text-center text-gray-800 animate__animated animate__bounce">Discover Exciting Opportunities</h2>
 
-      <div class="grid gap-4 lg:grid-cols-3">
+
+
+
+
+    <section class="bg-gray-100">
+      <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
+        <h2 class="mb-6 font-serif text-3xl font-bold text-center text-gray-800 animate__animated animate__bounce">
+          Discover Exciting Opportunities</h2>
+
+        <div class="grid gap-4 lg:grid-cols-3">
           <!-- Job Card 1 -->
           <div class="p-4 transition-all duration-300 transform bg-white border rounded-md shadow-md hover:scale-105">
-              <img src="../assets/sony1.jpeg" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo" style="width: 100%; height: 120px;">
-              <a href="https://example.com/job/microsoft" class="text-lg font-bold text-blue-700 hover:underline">Sony : Software Engineer</a>
-              <p class="text-gray-600">Redmond, WA</p>
-              <p class="text-gray-600">Posted 4 days ago</p>
-              <span class="inline-flex px-2 text-white bg-green-500 rounded-md">Active</span>
-              <p class="mt-4 text-gray-700">Join Microsoft and contribute to cutting-edge software development projects.</p>
+            <img src="../assets/sony1.jpeg" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo"
+              style="width: 100%; height: 120px;">
+            <a href="https://example.com/job/microsoft" class="text-lg font-bold text-blue-700 hover:underline">Sony :
+              Software Engineer</a>
+            <p class="text-gray-600">Redmond, WA</p>
+            <p class="text-gray-600">Posted 4 days ago</p>
+            <span class="inline-flex px-2 text-white bg-green-500 rounded-md">Active</span>
+            <p class="mt-4 text-gray-700">Join Microsoft and contribute to cutting-edge software development projects.
+            </p>
           </div>
 
           <!-- Job Card 2 -->
           <div class="p-4 transition-all duration-300 transform bg-white border rounded-md shadow-md hover:scale-105">
-              <img src="../assets/honeywell.png" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo" style="width: 100%; height: 120px;">
-              <a href="https://example.com/job/google" class="text-lg font-bold text-blue-700 hover:underline">Honeywell : Data Scientist</a>
-              <p class="text-gray-600">Mountain View, CA</p>
-              <p class="text-gray-600">Posted 2 days ago</p>
-              <span class="inline-flex px-2 text-white bg-green-500 rounded-md">Active</span>
-              <p class="mt-4 text-gray-700">Explore data science opportunities with Google and make an impact on the tech industry.</p>
+            <img src="../assets/honeywell.png" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo"
+              style="width: 100%; height: 120px;">
+            <a href="https://example.com/job/google" class="text-lg font-bold text-blue-700 hover:underline">Honeywell :
+              Data Scientist</a>
+            <p class="text-gray-600">Mountain View, CA</p>
+            <p class="text-gray-600">Posted 2 days ago</p>
+            <span class="inline-flex px-2 text-white bg-green-500 rounded-md">Active</span>
+            <p class="mt-4 text-gray-700">Explore data science opportunities with Google and make an impact on the tech
+              industry.</p>
           </div>
 
           <!-- Job Card 3 -->
           <div class="p-4 transition-all duration-300 transform bg-white border rounded-md shadow-md hover:scale-105">
-              <img src="../assets/ansys.png" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo" style="width: 100%; height: 120px;">
-              <a href="https://example.com/job/amazon" class="text-lg font-bold text-blue-700 hover:underline">Ansys : UX Designer</a>
-              <p class="text-gray-600">Seattle, WA</p>
-              <p class="text-gray-600">Posted 1 day ago</p>
-              <span class="inline-flex px-2 text-white bg-red-500 rounded-md">Closed</span>
-              <p class="mt-4 text-gray-700">The UX design position at Amazon is now closed. Stay tuned for future opportunities.</p>
+            <img src="../assets/ansys.png" alt="Company Logo" class="object-cover mb-4 rounded-lg company-logo"
+              style="width: 100%; height: 120px;">
+            <a href="https://example.com/job/amazon" class="text-lg font-bold text-blue-700 hover:underline">Ansys : UX
+              Designer</a>
+            <p class="text-gray-600">Seattle, WA</p>
+            <p class="text-gray-600">Posted 1 day ago</p>
+            <span class="inline-flex px-2 text-white bg-red-500 rounded-md">Closed</span>
+            <p class="mt-4 text-gray-700">The UX design position at Amazon is now closed. Stay tuned for future
+              opportunities.</p>
           </div>
-      </div>
+        </div>
 
-      <a href="https://example.com/job" class="flex items-center justify-center mt-8 text-blue-600 hover:text-blue-800">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 mr-2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        <a href="https://example.com/job"
+          class="flex items-center justify-center mt-8 text-blue-600 hover:text-blue-800">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="w-6 h-6 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
           </svg>
           <span class="text-lg font-semibold">Explore More Job Opportunities</span>
-      </a>
-  </div>
-</section>
+        </a>
+      </div>
+    </section>
 
-        
-        <!--why choose-->
-       
-      
-     
-    
+
+    <!--why choose-->
+
+
+
+
     <section class="bg-blue-100">
       <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-16">
-          <h2 class="pb-4 font-serif text-4xl font-bold text-center text-black animate__animated animate__rubberBand">Why Choose FresherBot?</h2>
-  
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 md:mt-8">
-              <!-- Card 1 -->
-              <div class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
-                  <div class="flex flex-col items-center p-6">
-                      <img src="../assets/MB-72720.png" class="mb-4 rounded-lg" style="width: 100px; height: 100px;" alt="Verified Openings">
-                      <h3 class="text-lg font-semibold text-center text-blue-700">Verified Openings</h3>
-                      <p class="mt-2 text-sm text-center text-gray-700">Explore thoroughly vetted and confirmed job opportunities for a reliable experience. Our platform ensures that every job listing is genuine and suitable for fresh graduates.</p>
-                  </div>
-              </div>
-  
-              <!-- Card 2 -->
-              <div class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
-                  <div class="flex flex-col items-center p-6">
-                      <img src="../assets/feedback2.jpg" class="mb-4 rounded-lg" style="width: 100px; height: 100px;" alt="Affirmative Feedback">
-                      <h3 class="text-lg font-semibold text-center text-blue-700">Affirmative Feedback</h3>
-                      <p class="mt-2 text-sm text-center text-gray-700">Positive feedback serves as a catalyst for personal and collective development. Join a community that values and encourages constructive feedback, helping you grow both personally and professionally.</p>
-                  </div>
-              </div>
-  
-              <!-- Card 3 -->
-              <div class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
-                  <div class="flex flex-col items-center p-6">
-                      <img src="../assets/termsconditions.jpg" class="mb-4 rounded-lg" style="width: 100px; height: 100px;" alt="Transparent Terms">
-                      <h3 class="text-lg font-semibold text-center text-blue-700">Transparent Terms</h3>
-                      <p class="mt-2 text-sm text-center text-gray-700">We commit to transparent terms and conditions for a clear and trustworthy partnership. Our goal is to provide you with a seamless experience, ensuring you have all the necessary information for a successful career journey.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
- 
-  
+        <h2 class="pb-4 font-serif text-4xl font-bold text-center text-black animate__animated animate__rubberBand">Why
+          Choose FresherBot?</h2>
 
-
-        <!--interview prep-->
-       
-
-
-        <section class="bg-gray-100 ">
-
-          <div class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
-      
-              <h2 class="font-serif text-2xl font-bold text-center text-sky-800 sm:text-3xl animate__animated animate__bounce animate__delay-1s ">Interview Preparation</h2>
-      
-              <div class="grid max-w-screen-xl grid-cols-12 mx-auto mt-8 sm:gap-8 place-items-between">
-                  <!--first-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
-                      <img src="../assets/studymaterial.avif" class="m-auto rounded-lg " style="width: 100px; height: 70px;" alt="">
-                      <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Study Material</h2>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2 animate__animated animate__fadeInLeft1">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          C Interview Questions
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          Java Interview Questions
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          Cognitive Ability Material
-                      </div>
-                  </div>
-      
-                  <!--second-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
-                      <img src="../assets/videolessons.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
-                      <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Video Lessons</h2>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          Quantitative Aptitude Videos
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          Verbal Ability
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
-                                fill="#bd8728"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
-                                fill="#bd8728"></path>
-                        </g>
-                    </svg>
-                          Problem Solving
-                      </div>
-                  </div>
-      
-                  <!--third-->
-                  <div class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
-                      <img src="../assets/practice.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
-                      <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Practice Tests</h2>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
-                                fill="#b08427"></path>
-                        </g>
-                    </svg>
-                          Mock Interviews
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
-                                fill="#b08427"></path>
-                        </g>
-                    </svg>
-                          Coding Practice
-                      </div>
-      
-                      <div class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
-                        <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path opacity="0.5"
-                                d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
-                                fill="#b08427"></path>
-                            <path
-                                d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
-                                fill="#b08427"></path>
-                        </g>
-                    </svg>
-                          Subject-wise Tests
-                      </div>
-                  </div>
-              </div>
-      
-          </div>
-      
-      </section>
-    
-      <div  class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
-        <div class="container p-8 mx-auto">
-          <h1 class="mb-8 text-4xl font-bold text-center">Meet Our Top Performers</h1>
-      
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Student Card 1 -->
-            <div class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-blue-500 rounded-lg shadow-md hover:scale-105">
-              <img src="../assets/file_ram-sir-min.jpg" alt="Manohar" class="object-cover h-48 mb-4 rounded ">
-              <h2 class="mb-2 text-xl font-semibold text-gray-800">Manohar</h2>
-              <p class="mb-2 text-gray-600">Civil Engineering</p>
-              <p class="text-gray-600">Successfully placed in Google</p>
-              <div class="mt-4">
-                <p class="text-sm text-gray-500">Manohar has shown exceptional skills in civil engineering, leading to his successful placement at Google. His dedication and hard work have set an inspiring example for his peers.</p>
-              </div>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 md:mt-8">
+          <!-- Card 1 -->
+          <div
+            class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
+            <div class="flex flex-col items-center p-6">
+              <img src="../assets/MB-72720.png" class="mb-4 rounded-lg" style="width: 100px; height: 100px;"
+                alt="Verified Openings">
+              <h3 class="text-lg font-semibold text-center text-blue-700">Verified Openings</h3>
+              <p class="mt-2 text-sm text-center text-gray-700">Explore thoroughly vetted and confirmed job
+                opportunities for a reliable experience. Our platform ensures that every job listing is genuine and
+                suitable for fresh graduates.</p>
             </div>
-      
-            <!-- Student Card 2 -->
-            <div class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-green-500 rounded-lg shadow-md hover:scale-105">
-              <img src="../assets/file_hafeez.png" alt="Ramu" class="object-cover h-48 mb-4 rounded ">
-              <h2 class="mb-2 text-xl font-semibold text-gray-800">Ramu</h2>
-              <p class="mb-2 text-gray-600">Electrical Engineering</p>
-              <p class="text-gray-600">Proudly placed in Microsoft</p>
-              <div class="mt-4">
-                <p class="text-sm text-gray-500">Ramu's expertise in electrical engineering has led to a successful placement at Microsoft. His problem-solving abilities and innovation have made him a valuable asset to the team.</p>
-              </div>
-            </div>
-      
-            <!-- Student Card 3 -->
-            <div class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-indigo-500 rounded-lg shadow-md hover:scale-105">
-              <img src="../assets/file_sahithy-min.jpg" alt="Shifa" class="object-cover h-48 mb-4 rounded ">
-              <h2 class="mb-2 text-xl font-semibold text-gray-800">Shifa</h2>
-              <p class="mb-2 text-gray-600">Mechanical Engineering</p>
-              <p class="text-gray-600">Secured a position at Amazon</p>
-              <div class="mt-4">
-                <p class="text-sm text-gray-500">Shifa's strong background in mechanical engineering has earned her a prestigious position at Amazon. Her dedication to learning and adapting has made her a standout performer in her field.</p>
-              </div>
-            </div>
-      
-            <!-- Additional Student Cards... -->
           </div>
-        </div>
-      
-        </div>
-    
-    
 
-      
-<section class="bg-blue-500">
-    <section class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
-      <div class="grid grid-cols-1 gap-4 p-4 text-white bg-blue-500 md:grid-cols-2 md:px-8">
-        <div class="transform animate_left" data-sr-id="57">
-          <h2 class="mb-2 text-2xl font-bold">Join With Us Today &amp; Increase Your Knowledge</h2>
-          <p class="text-sm">This is the best platform for every student to get the skills and placeements with a lot of knowledge on the respected work they are doing.</p>
-        </div>
-        <div class="flex items-center justify-end animate_right">
-          <div class="flex items-center space-x-2">
-            <img src="../assets/1.22.png" alt="Saly" class="w-16 h-auto">
-            <a href="signup.html" class="flex items-center px-4 py-2 text-blue-500 bg-white rounded-full">
-              Sign up free
-              </a>
+          <!-- Card 2 -->
+          <div
+            class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
+            <div class="flex flex-col items-center p-6">
+              <img src="../assets/feedback2.jpg" class="mb-4 rounded-lg" style="width: 100px; height: 100px;"
+                alt="Affirmative Feedback">
+              <h3 class="text-lg font-semibold text-center text-blue-700">Affirmative Feedback</h3>
+              <p class="mt-2 text-sm text-center text-gray-700">Positive feedback serves as a catalyst for personal and
+                collective development. Join a community that values and encourages constructive feedback, helping you
+                grow both personally and professionally.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="transition-transform duration-300 transform bg-white rounded-lg shadow-md hover:shadow-lg hover:-translate-y-2">
+            <div class="flex flex-col items-center p-6">
+              <img src="../assets/termsconditions.jpg" class="mb-4 rounded-lg" style="width: 100px; height: 100px;"
+                alt="Transparent Terms">
+              <h3 class="text-lg font-semibold text-center text-blue-700">Transparent Terms</h3>
+              <p class="mt-2 text-sm text-center text-gray-700">We commit to transparent terms and conditions for a
+                clear and trustworthy partnership. Our goal is to provide you with a seamless experience, ensuring you
+                have all the necessary information for a successful career journey.</p>
+            </div>
           </div>
         </div>
       </div>
-      
-    </section>  
-  </section>    
-    <!-- Faq Questions -->
-        
-      <section class="max-w-screen-xl p-4 mx-auto sm:px-16">
-        <h1 class="my-4 text-2xl font-bold text-center text-pink-600 md:text-3xl">Frequently Asked Questions</h1>
-    
-        <!-- FAQ items -->
-        <div class="mb-4">
-            <!-- 1st FAQ -->
-            <div class="mb-2">
-                <button class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white" onclick="toggleFAQ(1)">
-                    <div> What is FresherBot?</div>
-                    <div class="text-xl font-bold icon">+</div>
-                </button>
-                <div id="faq1" class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
-                    <p class="mb-2">
-                        FresherBot is an innovative platform designed to help freshers excel in interviews. It offers study materials, video lessons, practice tests, and more to boost your interview preparation.
-                    </p>
-                    <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="attend session" data-popup="popup">Attend a Free Session</button>
-                </div>
-            </div>
-    
-            <!-- 2nd FAQ -->
-            <div class="mb-2">
-                <button class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white" onclick="toggleFAQ(2)">
-                    <div>Why choose FresherBot?</div>
-                    <div class="text-xl font-bold icon">+</div>
-                </button>
-                <div id="faq2" class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
-                    <p class="mb-2">
-                        FresherBot is your gateway to numerous placement opportunities. We provide a wide range of resources and support to help freshers secure positions in reputable companies.
-                    </p>
-                    <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="attend session" data-popup="popup">Attend a Free Session</button>
-                </div>
-            </div>
-    
-            <!-- 3rd FAQ -->
-            <div class="mb-2">
-                <button class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white" onclick="toggleFAQ(3)">
-                    <div>What sources are available in FresherBot?</div>
-                    <div class="text-xl font-bold icon">+</div>
-                </button>
-                <div id="faq3" class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
-                    <p class="mb-2">
-                        FresherBot offers various sources, including interview rounds, competitive tests, aptitude rounds, and exciting HackerRank events to enhance your skills.
-                    </p>
-                </div>
-            </div>
-    
-            <!-- 4th FAQ -->
-            <div class="mb-2">
-                <button class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white" onclick="toggleFAQ(4)">
-                    <div>Do you provide personalized/corporate training for other skills?</div>
-                    <div class="text-xl font-bold icon">+</div>
-                </button>
-                <div id="faq4" class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
-                    <p class="mb-2">
-                        Absolutely! FresherBot offers personalized and corporate training in various areas, including English, Life Skills, Aptitude, Mathematics, Vocabulary, and more. Contact us to discuss your specific training needs.
-                    </p>
-                    <button class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400" aria-label="need" data-popup="talk">Tell Us What You Need!</button>
-                </div>
-            </div>
-        </div>
     </section>
-    
 
 
-    
-
-    </main>
 
 
-<footer class="bg-sky-800">
+
+    <!--interview prep-->
+
+
+
+    <section class="bg-gray-100 ">
+
+      <div class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
+
+        <h2
+          class="font-serif text-2xl font-bold text-center text-sky-800 sm:text-3xl animate__animated animate__bounce animate__delay-1s ">
+          Interview Preparation</h2>
+
+        <div class="grid max-w-screen-xl grid-cols-12 mx-auto mt-8 sm:gap-8 place-items-between">
+          <!--first-->
+          <div
+            class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
+            <img src="../assets/studymaterial.avif" class="m-auto rounded-lg " style="width: 100px; height: 70px;"
+              alt="">
+            <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Study Material</h2>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2 animate__animated animate__fadeInLeft1">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              C Interview Questions
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              Java Interview Questions
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              Cognitive Ability Material
+            </div>
+          </div>
+
+          <!--second-->
+          <div
+            class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
+            <img src="../assets/videolessons.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
+            <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Video Lessons</h2>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              Quantitative Aptitude Videos
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              Verbal Ability
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M9.052 4.5C9 5.07763 9 5.80355 9 6.72183V17.2781C9 18.1964 9 18.9224 9.05201 19.5H8C5.64298 19.5 4.46447 19.5 3.73223 18.7678C3 18.0355 3 16.857 3 14.5V9.5C3 7.14298 3 5.96447 3.73223 5.23223C4.46447 4.5 5.64298 4.5 8 4.5H9.052Z"
+                    fill="#bd8728"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M9.70725 2.4087C9 3.03569 9 4.18259 9 6.4764V17.5236C9 19.8174 9 20.9643 9.70725 21.5913C10.4145 22.2183 11.4955 22.0297 13.6576 21.6526L15.9864 21.2465C18.3809 20.8288 19.5781 20.62 20.2891 19.7417C21 18.8635 21 17.5933 21 15.0529V8.94711C21 6.40671 21 5.13652 20.2891 4.25826C19.5781 3.37999 18.3809 3.17118 15.9864 2.75354L13.6576 2.34736C11.4955 1.97026 10.4145 1.78171 9.70725 2.4087ZM12.75 10.9535C12.75 10.52 12.4142 10.1686 12 10.1686C11.5858 10.1686 11.25 10.52 11.25 10.9535V13.0465C11.25 13.48 11.5858 13.8314 12 13.8314C12.4142 13.8314 12.75 13.48 12.75 13.0465V10.9535Z"
+                    fill="#bd8728"></path>
+                </g>
+              </svg>
+              Problem Solving
+            </div>
+          </div>
+
+          <!--third-->
+          <div
+            class="col-span-12 p-5 my-2 duration-300 ease-in-out transform bg-white border-2 rounded shadow-xl sm:col-span-12 lg:col-span-4 sm:p-8 border-sky-200">
+            <img src="../assets/practice.jpeg" class="m-auto rounded-lg" style="width: 100px; height: 70px;" alt="">
+            <h2 class="py-2 font-semibold text-center underline text-md md:text-xl text-sky-900">Practice Tests</h2>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
+                    fill="#b08427"></path>
+                </g>
+              </svg>
+              Mock Interviews
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
+                    fill="#b08427"></path>
+                </g>
+              </svg>
+              Coding Practice
+            </div>
+
+            <div
+              class="flex p-2 px-4 my-2 font-semibold duration-200 ease-in-out transform bg-white rounded shadow-xl hover:translate-x-2">
+              <svg viewBox="0 0 24 24" width="28px" class="mx-2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path opacity="0.5"
+                    d="M1 12C1 6.81455 1 4.22183 2.61091 2.61091C4.22183 1 6.81455 1 12 1C17.1854 1 19.7782 1 21.3891 2.61091C23 4.22183 23 6.81455 23 12C23 17.1854 23 19.7782 21.3891 21.3891C19.7782 23 17.1854 23 12 23C6.81455 23 4.22183 23 2.61091 21.3891C1 19.7782 1 17.1854 1 12Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M13.9261 14.3018C14.1711 14.1107 14.3933 13.8885 14.8377 13.4441L20.378 7.90374C20.512 7.7698 20.4507 7.53909 20.2717 7.477C19.6178 7.25011 18.767 6.82414 17.9713 6.02835C17.1755 5.23257 16.7495 4.38186 16.5226 3.72788C16.4605 3.54892 16.2298 3.48761 16.0959 3.62156L10.5555 9.16192C10.1111 9.60634 9.88888 9.82854 9.69778 10.0736C9.47235 10.3626 9.27908 10.6753 9.12139 11.0062C8.98771 11.2867 8.88834 11.5848 8.68959 12.181L8.43278 12.9515L8.02443 14.1765L7.64153 15.3252C7.54373 15.6186 7.6201 15.9421 7.8388 16.1608C8.0575 16.3795 8.38099 16.4559 8.67441 16.3581L9.82308 15.9752L11.0481 15.5668L11.8186 15.31L11.8186 15.31C12.4148 15.1113 12.7129 15.0119 12.9934 14.8782C13.3243 14.7205 13.637 14.5273 13.9261 14.3018Z"
+                    fill="#b08427"></path>
+                  <path
+                    d="M22.1127 6.16905C23.2952 4.98656 23.2952 3.06936 22.1127 1.88687C20.9302 0.704377 19.013 0.704377 17.8306 1.88687L17.6524 2.06499C17.4806 2.23687 17.4027 2.47695 17.4456 2.7162C17.4726 2.8667 17.5227 3.08674 17.6138 3.3493C17.796 3.87439 18.14 4.56368 18.788 5.21165C19.4359 5.85961 20.1252 6.20364 20.6503 6.38581C20.9129 6.4769 21.1329 6.52697 21.2834 6.55399C21.5227 6.59693 21.7627 6.51905 21.9346 6.34717L22.1127 6.16905Z"
+                    fill="#b08427"></path>
+                </g>
+              </svg>
+              Subject-wise Tests
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
+      <div class="container p-8 mx-auto">
+        <h1 class="mb-8 text-4xl font-bold text-center">Meet Our Top Performers</h1>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Student Card 1 -->
+          <div
+            class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-blue-500 rounded-lg shadow-md hover:scale-105">
+            <img src="../assets/file_ram-sir-min.jpg" alt="Manohar" class="object-cover h-48 mb-4 rounded ">
+            <h2 class="mb-2 text-xl font-semibold text-gray-800">Manohar</h2>
+            <p class="mb-2 text-gray-600">Civil Engineering</p>
+            <p class="text-gray-600">Successfully placed in Google</p>
+            <div class="mt-4">
+              <p class="text-sm text-gray-500">Manohar has shown exceptional skills in civil engineering, leading to his
+                successful placement at Google. His dedication and hard work have set an inspiring example for his
+                peers.</p>
+            </div>
+          </div>
+
+          <!-- Student Card 2 -->
+          <div
+            class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-green-500 rounded-lg shadow-md hover:scale-105">
+            <img src="../assets/file_hafeez.png" alt="Ramu" class="object-cover h-48 mb-4 rounded ">
+            <h2 class="mb-2 text-xl font-semibold text-gray-800">Ramu</h2>
+            <p class="mb-2 text-gray-600">Electrical Engineering</p>
+            <p class="text-gray-600">Proudly placed in Microsoft</p>
+            <div class="mt-4">
+              <p class="text-sm text-gray-500">Ramu's expertise in electrical engineering has led to a successful
+                placement at Microsoft. His problem-solving abilities and innovation have made him a valuable asset to
+                the team.</p>
+            </div>
+          </div>
+
+          <!-- Student Card 3 -->
+          <div
+            class="p-6 transition-transform duration-300 transform bg-white border-t-4 border-indigo-500 rounded-lg shadow-md hover:scale-105">
+            <img src="../assets/file_sahithy-min.jpg" alt="Shifa" class="object-cover h-48 mb-4 rounded ">
+            <h2 class="mb-2 text-xl font-semibold text-gray-800">Shifa</h2>
+            <p class="mb-2 text-gray-600">Mechanical Engineering</p>
+            <p class="text-gray-600">Secured a position at Amazon</p>
+            <div class="mt-4">
+              <p class="text-sm text-gray-500">Shifa's strong background in mechanical engineering has earned her a
+                prestigious position at Amazon. Her dedication to learning and adapting has made her a standout
+                performer in her field.</p>
+            </div>
+          </div>
+
+          <!-- Additional Student Cards... -->
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <section class="bg-blue-500">
+      <section class="max-w-screen-xl px-2 py-8 mx-auto sm:px-16">
+        <div class="grid grid-cols-1 gap-4 p-4 text-white bg-blue-500 md:grid-cols-2 md:px-8">
+          <div class="transform animate_left" data-sr-id="57">
+            <h2 class="mb-2 text-2xl font-bold">Join With Us Today &amp; Increase Your Knowledge</h2>
+            <p class="text-sm">This is the best platform for every student to get the skills and placeements with a lot
+              of knowledge on the respected work they are doing.</p>
+          </div>
+          <div class="flex items-center justify-end animate_right">
+            <div class="flex items-center space-x-2">
+              <img src="../assets/1.22.png" alt="Saly" class="w-16 h-auto">
+              <a href="signup.html" class="flex items-center px-4 py-2 text-blue-500 bg-white rounded-full">
+                Sign up free
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
+    <!-- Faq Questions -->
+
+    <section class="max-w-screen-xl p-4 mx-auto sm:px-16">
+      <h1 class="my-4 text-2xl font-bold text-center text-pink-600 md:text-3xl">Frequently Asked Questions</h1>
+
+      <!-- FAQ items -->
+      <div class="mb-4">
+        <!-- 1st FAQ -->
+        <div class="mb-2">
+          <button
+            class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white"
+            onclick="toggleFAQ(1)">
+            <div> What is FresherBot?</div>
+            <div class="text-xl font-bold icon">+</div>
+          </button>
+          <div id="faq1"
+            class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
+            <p class="mb-2">
+              FresherBot is an innovative platform designed to help freshers excel in interviews. It offers study
+              materials, video lessons, practice tests, and more to boost your interview preparation.
+            </p>
+            <button
+              class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400"
+              aria-label="attend session" data-popup="popup">Attend a Free Session</button>
+          </div>
+        </div>
+
+        <!-- 2nd FAQ -->
+        <div class="mb-2">
+          <button
+            class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white"
+            onclick="toggleFAQ(2)">
+            <div>Why choose FresherBot?</div>
+            <div class="text-xl font-bold icon">+</div>
+          </button>
+          <div id="faq2"
+            class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
+            <p class="mb-2">
+              FresherBot is your gateway to numerous placement opportunities. We provide a wide range of resources and
+              support to help freshers secure positions in reputable companies.
+            </p>
+            <button
+              class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400"
+              aria-label="attend session" data-popup="popup">Attend a Free Session</button>
+          </div>
+        </div>
+
+        <!-- 3rd FAQ -->
+        <div class="mb-2">
+          <button
+            class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white"
+            onclick="toggleFAQ(3)">
+            <div>What sources are available in FresherBot?</div>
+            <div class="text-xl font-bold icon">+</div>
+          </button>
+          <div id="faq3"
+            class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
+            <p class="mb-2">
+              FresherBot offers various sources, including interview rounds, competitive tests, aptitude rounds, and
+              exciting HackerRank events to enhance your skills.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4th FAQ -->
+        <div class="mb-2">
+          <button
+            class="flex justify-between w-full px-5 py-3 font-semibold text-left text-gray-700 duration-300 ease-in-out bg-blue-100 rounded-t outline-none cursor-pointer accordion hover:bg-blue-400 focus:bg-blue-400 focus:text-white hover:text-white hover:border-white"
+            onclick="toggleFAQ(4)">
+            <div>Do you provide personalized/corporate training for other skills?</div>
+            <div class="text-xl font-bold icon">+</div>
+          </button>
+          <div id="faq4"
+            class="hidden p-1 p-5 overflow-hidden font-serif duration-300 ease-in-out border border-gray-200 rounded-b shadow-xl panel transition-height">
+            <p class="mb-2">
+              Absolutely! FresherBot offers personalized and corporate training in various areas, including English,
+              Life Skills, Aptitude, Mathematics, Vocabulary, and more. Contact us to discuss your specific training
+              needs.
+            </p>
+            <button
+              class="px-4 py-3 my-2 text-white duration-200 ease-in-out rounded shadow bg-emerald-600 hover:bg-emerald-400"
+              aria-label="need" data-popup="talk">Tell Us What You Need!</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+  </main>
+
+
+  <footer class="bg-sky-800">
     <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16 lg:px-16">
       <div class=" lg:flex lg:items-start">
-       
-  
+
+
         <div class="grid grid-cols-2 gap-8 mt-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
           <div class="col-span-2 ">
             <div>
               <h2 class="text-2xl font-bold text-white">Get the latest news!</h2>
-  
+
               <p class="mt-4 text-white">
-                To know about the FresherBot enter your email and subscribe 
+                To know about the FresherBot enter your email and subscribe
               </p>
             </div>
           </div>
-  
+
           <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
             <form class="w-full ">
               <label for="UserEmail" class="sr-only"> Email </label>
-  
+
               <div class="border order-gray-100 t focus-within:ring sm:flex sm:items-center sm:gap-4">
-                <input type="email" id="UserEmail" placeholder="abc@gmail.com" class="w-full p-2 ml-1 border-none focus:border-transparent focus:ring-transparent sm:text-sm"/>
-  
+                <input type="email" id="UserEmail" placeholder="abc@gmail.com"
+                  class="w-full p-2 ml-1 border-none focus:border-transparent focus:ring-transparent sm:text-sm" />
+
                 <button
-                  class="w-full px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-teal-500 hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0"
-                >
+                  class="w-full px-6 py-3 mt-1 text-sm font-bold tracking-wide text-white uppercase transition-none bg-teal-500 hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
                   Sign Up
                 </button>
               </div>
             </form>
-          
+
           </div>
-  
-          
+
+
           <div class="col-span-2 sm:col-span-1">
             <p class="font-bold text-white text-1xl">COMPANY</p>
-  
+
             <ul class="mt-6 space-y-4 text-sm">
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> About </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Careers </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> News </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Blog </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Contact Us </a>
               </li>
             </ul>
           </div>
-  
+
           <div class="col-span-2 sm:col-span-1">
             <p class="font-bold text-white text-1xl">PRODUCTS</p>
-  
+
             <ul class="mt-6 space-y-4 text-sm">
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Hiring Assessments </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Job Posting </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Campus Hiring </a>
               </li>
@@ -651,19 +722,19 @@
               </li>
             </ul>
           </div>
-  
+
           <div class="col-span-2 sm:col-span-1">
             <p class="font-bold text-white text-1xl">ASSESSMENTS</p>
-  
+
             <ul class="mt-6 space-y-4 text-sm">
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Aptitude Test </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Technical Test </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Coding Test </a>
               </li>
@@ -675,157 +746,123 @@
               </li>
             </ul>
           </div>
-  
+
           <div class="col-span-2 sm:col-span-1">
             <p class="font-bold text-white text-1xl">INTERVIEW PREP</p>
-  
+
             <ul class="mt-6 space-y-4 text-sm">
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Learning Videos </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Practice Questions </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Study Material </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Skill Tests </a>
               </li>
             </ul>
           </div>
-  
+
           <div class="col-span-2 sm:col-span-1">
             <p class="font-bold text-white text-1xl">Legal</p>
-  
+
             <ul class="mt-6 space-y-4 text-sm">
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Privacy & Policy </a>
               </li>
-  
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Security </a>
               </li>
-              
+
               <li>
                 <a href="#" class="text-white transition hover:opacity-75"> Terms & Conditions </a>
               </li>
             </ul>
           </div>
-  
+
           <ul class="flex justify-start col-span-2 gap-6 lg:col-span-5 lg:justify-end">
             <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-white transition hover:opacity-75"
-              >
+              <a href="/" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                 <span class="sr-only">Facebook</span>
-  
+
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill-rule="evenodd"
+                  <path fill-rule="evenodd"
                     d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
               </a>
             </li>
-  
+
             <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-white transition hover:opacity-75"
-              >
+              <a href="/" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                 <span class="sr-only">Instagram</span>
-  
+
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill-rule="evenodd"
+                  <path fill-rule="evenodd"
                     d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
               </a>
             </li>
-  
+
             <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-white transition hover:opacity-75"
-              >
+              <a href="/" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                 <span class="sr-only">Twitter</span>
-  
+
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
-                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
-                  />
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
               </a>
             </li>
-  
+
             <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-white transition hover:opacity-75"
-              >
+              <a href="/" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                 <span class="sr-only">GitHub</span>
-  
+
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill-rule="evenodd"
+                  <path fill-rule="evenodd"
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
               </a>
             </li>
-  
+
             <li>
-              <a
-                href="/"
-                rel="noreferrer"
-                target="_blank"
-                class="text-white transition hover:opacity-75"
-              >
+              <a href="/" rel="noreferrer" target="_blank" class="text-white transition hover:opacity-75">
                 <span class="sr-only">Dribbble</span>
-  
+
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill-rule="evenodd"
+                  <path fill-rule="evenodd"
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                    clip-rule="evenodd"
-                  />
+                    clip-rule="evenodd" />
                 </svg>
               </a>
             </li>
           </ul>
         </div>
       </div>
-  
+
       <div class="pt-8 mt-8 border-t border-gray-100">
         <div class="sm:flex sm:justify-between">
           <p class="text-xs text-white">&copy; 2023 Fresherbot. All rights reserved.</p>
-  
+
           <ul class="flex flex-wrap justify-start gap-4 mt-8 text-xs sm:mt-0 lg:justify-end">
             <li>
               <a href="#" class="text-white transition hover:opacity-75"> Terms & Conditions </a>
             </li>
-  
+
             <li>
               <a href="#" class="text-white transition hover:opacity-75"> Privacy Policy </a>
             </li>
-  
+
             <li>
               <a href="#" class="text-white transition hover:opacity-75"> Cookies </a>
             </li>
@@ -834,55 +871,55 @@
       </div>
     </div>
   </footer>
-   
 
 
-  
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Q48CYWJG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E3Q48CYWJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E3Q48CYWJG');
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navbarSticky = document.getElementById('navbar-sticky');
+
+      mobileMenuBtn.addEventListener('click', function () {
+        navbarSticky.classList.toggle('hidden');
+      });
+    });
+
+    function toggleFAQ(faqNumber) {
+      var faq = document.getElementById('faq' + faqNumber);
+
+      // Close all other FAQs
+      var allFaqs = document.querySelectorAll('[id^="faq"]');
+      allFaqs.forEach(function (otherFaq) {
+        if (otherFaq.id !== 'faq' + faqNumber) {
+          otherFaq.style.display = 'none';
         }
-        gtag('js', new Date());
+      });
 
-        gtag('config', 'G-E3Q48CYWJG');
-       
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const navbarSticky = document.getElementById('navbar-sticky');
-
-            mobileMenuBtn.addEventListener('click', function () {
-                navbarSticky.classList.toggle('hidden');
-            });
-        });
-
-        function toggleFAQ(faqNumber) {
-        var faq = document.getElementById('faq' + faqNumber);
-        
-        // Close all other FAQs
-        var allFaqs = document.querySelectorAll('[id^="faq"]');
-        allFaqs.forEach(function (otherFaq) {
-            if (otherFaq.id !== 'faq' + faqNumber) {
-                otherFaq.style.display = 'none';
-            }
-        });
-
-        // Toggle the selected FAQ
-        if (faq.style.display === 'block') {
-            faq.style.display = 'none';
-        } else {
-            faq.style.display = 'block';
-        }
+      // Toggle the selected FAQ
+      if (faq.style.display === 'block') {
+        faq.style.display = 'none';
+      } else {
+        faq.style.display = 'block';
+      }
     }
 
 
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
-    
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
 </body>
 
 </html>

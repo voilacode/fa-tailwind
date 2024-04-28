@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>Tailwind Navbar</title>  
+  <title>Tailwind Navbar</title>
 </head>
+
 <body class="bg-gray-100">
 
   <!-- Navbar -->
-  <nav class="bg-gray-800 p-4">
-    <div class="container mx-auto flex justify-between items-center">
+  <nav class="p-4 bg-gray-800">
+    <div class="container flex items-center justify-between mx-auto">
       <!-- Brand/logo -->
-      <a href="#" class="text-white text-lg font-bold">Logo</a>
+      <a href="#" class="text-lg font-bold text-white">Logo</a>
 
       <!-- Navbar links -->
-      <div class="hidden md:flex space-x-4">
+      <div class="hidden space-x-4 md:flex">
         <a href="#" class="text-white">Home</a>
         <a href="#" class="text-white">About</a>
 
@@ -23,9 +25,12 @@
         <div class="relative group">
           <button class="text-white focus:outline-none">
             Services
-            <svg class="h-5 w-5 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="inline-block w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
           </button>
-          <div class="absolute hidden mt-2 space-y-2 bg-white text-gray-800 rounded-md shadow-md z-10">
+          <div class="absolute z-10 hidden mt-2 space-y-2 text-gray-800 bg-white rounded-md shadow-md">
             <a href="#" class="block px-4 py-2">Service 1</a>
             <a href="#" class="block px-4 py-2">Service 2</a>
             <a href="#" class="block px-4 py-2">Service 3</a>
@@ -36,34 +41,41 @@
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-20 hidden">
+  <div id="mobile-menu" class="fixed inset-0 z-20 hidden bg-gray-800 bg-opacity-75 md:hidden">
     <div class="flex justify-end p-4">
       <button id="close-mobile-menu" class="text-white focus:outline-none">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
       </button>
     </div>
     <div class="flex flex-col items-center">
-      <a href="#" class="text-white py-2">Home</a>
-      <a href="#" class="text-white py-2">About</a>
+      <a href="#" class="py-2 text-white">Home</a>
+      <a href="#" class="py-2 text-white">About</a>
       <div class="relative group">
-        <button class="text-white focus:outline-none py-2">
+        <button class="py-2 text-white focus:outline-none">
           Services
-          <svg class="h-5 w-5 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="inline-block w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
         </button>
-        <div class="absolute hidden mt-2 space-y-2 bg-white text-gray-800 rounded-md shadow-md z-10">
+        <div class="absolute z-10 hidden mt-2 space-y-2 text-gray-800 bg-white rounded-md shadow-md">
           <a href="#" class="block px-4 py-2">Service 1</a>
           <a href="#" class="block px-4 py-2">Service 2</a>
           <a href="#" class="block px-4 py-2">Service 3</a>
         </div>
       </div>
-      <a href="#" class="text-white py-2">Contact</a>
+      <a href="#" class="py-2 text-white">Contact</a>
     </div>
   </div>
 
@@ -73,11 +85,11 @@
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const closeMobileMenuButton = document.getElementById('close-mobile-menu');
       const mobileMenu = document.getElementById('mobile-menu');
-  
+
       mobileMenuButton.addEventListener('click', function () {
         mobileMenu.classList.toggle('hidden');
       });
-  
+
       closeMobileMenuButton.addEventListener('click', function () {
         mobileMenu.classList.add('mobile-menu-leave-active');
         mobileMenu.classList.remove('mobile-menu-enter');
@@ -87,6 +99,7 @@
       });
     });
   </script>
-  
+
 </body>
+
 </html>
