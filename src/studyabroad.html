@@ -289,8 +289,9 @@
                                     </svg>
                                 </a>
 
-                                <ion-icon name="menu" class="text-3xl lg:hidden"
-                                    onclick="toggleMobileMenu()"></ion-icon>
+                                <ion-icon name="menu" class="text-3xl lg:hidden" onclick="toggleMobileMenu()">
+                                </ion-icon>
+                                </ion-icon>
                             </li>
                         </ul>
                     </div>
@@ -319,11 +320,11 @@
             <div class="justify-center my-5 md:flex">
                 <div class="mx-1 text-center">
                     <button
-                        class="px-28 py-5 md:my-0 my-2 bg-blue-200 text-[16px] font-bold rounded text-indigo-500 ">Masters</button>
+                        class="px-28 py-5 md:my-0 my-2 bg-blue-200 text-[16px] font-bold rounded text-indigo-500 hover:-translate-y-1 duration-300 ease-in-out">Masters</button>
                 </div>
                 <div class="mx-1 text-center">
-                    <button
-                        class="px-20 py-5 bg-blue-200 md:my-0 my-2 text-[16px] font-bold rounded text-indigo-500 ">Undergraduate</button>
+                    <a href="../src/ug.html"
+                        class="px-20 py-5 bg-blue-200 md:my-0 my-2 text-[16px] font-bold inline-block rounded text-indigo-500 hover:-translate-y-1 duration-300 ease-in-out">Undergraduate</a>
                 </div>
             </div>
         </section>
@@ -331,16 +332,16 @@
 
 
     <section class="max-w-screen-xl px-4 py-8 mx-auto sm:px-16">
-        <div class="flex flex-col p-10 mx-4 my-3 rounded-lg md:flex-row md:justify-center bg-yellow-50 md:mx-0 md:my-0">
+        <div class="flex flex-col-reverse rounded-lg y-3 flex-col-re md:flex-row md:justify-center bg-yellow-50 md:mx-0 md:my-0">
 
             <div class="order-3 pr-24 md:order-1">
-                <img src="../assets/kruparao" alt="girl" class="py-5 px-5 md:h-[150px] md:w-[150px] rounded-full   ">
+                <img src="../assets/kruparao" alt="girl" class="py-5 px-5 lg:h-[250px] lg:w-[250px] rounded-full   hidden md:block object-cover">
             </div>
             <div class="order-1 p-5 md:order-3">
-                <h1 class="text-5xl font-semibold text-blue-600">200000+</h1>
-                <p class="text-xl">Happy students</p>
-                <p>Most awarded Coaching</p>
-                <p>Centre</p>
+                <h1 class="text-5xl font-semibold text-center text-blue-600 md:text-start">200000+</h1>
+                <p class="text-xl text-center md:text-start">Happy students</p>
+                <p class="text-center md:text-start">Most awarded Coaching Centre</p>
+                
             </div>
             <div class="order-2 p-5 pr-10 md:order-2">
                 <div>
@@ -352,7 +353,14 @@
                 <p class="text-xl">and supportive through out. They are</p>
                 <p class="text-xl">excellent guides and mentors.</p>
 
-                <p><span class="font-bold text-blue-400">Kruparao Makkena </span> — original google review</p>
+                <div class="flex items-center">
+                    <div>
+                        <img src="../assets/kruparao" alt="girl"
+                            class="object-cover px-5 py-5 rounded-full md:hidden ">
+                    </div>
+
+                    <p class="text-start"><a href="https://www.google.com/maps/contrib/110949138063506017094/place/ChIJx7TARMmQyzsR8BKHnJbVVh4/@17.4325961,78.4479292,17z/data=!4m6!1m5!8m4!1e2!2s110949138063506017094!3m1!1e1?hl=en-IN&entry=ttu" target="_blank" class="font-bold text-blue-400">Kruparao Makkena </a> — original google review</p>
+                </div>
             </div>
 
         </div>
@@ -361,8 +369,8 @@
     <section class="max-w-screen-xl px-4 pt-8 pb-0 mx-auto sm:px-16">
         <div class="grid-cols-3 md:grid">
             <div class="col-span-2 bg-white shadow-lg">
-                <h1 class="p-2 text-xl font-bold md:px-12 md:p-2 ">Help Us Help You!</h1>
-                <p class="p-2 pt-0 font-bold md:p-2 md:px-12 ">Top-class Tailor made suggesstions</p>
+                <h1 class="text-3xl font-bold md:px-12">Help Us Help You!</h1>
+                <p class="pt-0 font-bold md:px-12">Top-class Tailor made suggesstions</p>
                 <p class="p-2 py-2 text-lg font-semibold opacity-75 md:px-12">Choosing a university is not an easy task.
                     Several factors need to be taken in account. Cost, economic stability and, prevailing market
                     conditions all make a difference. We understand the challenges students typically face is making a
@@ -379,17 +387,17 @@
 
                 <!--form-->
                 <form action="" class="px-2 py-4 md:px-12">
-                    <div class="my-2 md:flex">
+                    <div class="gap-2 my-2 md:grid-cols-2 md:grid">
                         <div class="mb-2 md:mr-4">
                             <label for="Name" class="text-lg ">Name</label><br>
                             <input type="text" id="Name" name="Name"
-                                class="px-8 py-3 text-xl font-bold bg-white border-2 border-blue-300 opacity-60"
+                                class="w-full px-8 py-3 text-xl font-bold bg-white border-2 border-blue-300 opacity-60"
                                 placeholder="Full name">
                         </div>
                         <div>
                             <label for="Phone" class="mb-2 text-lg">Phone</label><br>
                             <input type="tel" id="Phone" name="Phone"
-                                class="px-8 py-3 text-xl font-bold bg-white border-2 border-blue-300 opacity-60"
+                                class="w-full px-8 py-3 text-xl font-bold bg-white border-2 border-blue-300 opacity-60"
                                 placeholder="Phone Number">
                         </div>
                     </div>
@@ -481,12 +489,12 @@
                     <input type="text" name="Additional Information" id="Additional Information"
                         class="w-full px-2 py-3 my-2 text-xl font-bold bg-white border-2 border-blue-300 opacity-60"
                         placeholder="Scholorships,Internships,Awards and any other relavant information"><br>
-                    <input type="submit" class="w-full px-2 py-3 font-bold text-white transform bg-red-500 rounded"
+                    <input type="submit" class="w-full px-2 py-3 font-bold text-white duration-300 ease-in-out transform bg-red-500 rounded hover:-translate-y-1 hover:cursor-pointer"
                         value="Submit">
                 </form>
 
             </div>
-            <div class="py-4 bg-red-300 md:h-[700px] h-[800px]">
+            <div class="py-4 bg-red-300 h-fit">
                 <div class="flex justify-center">
                     <img src="../assets/file_review.png" alt="review" width="200px" height="200px">
                 </div>
