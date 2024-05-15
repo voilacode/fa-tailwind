@@ -172,3 +172,66 @@ document.getElementById('scrollToTop').addEventListener('click', function () {
         behavior: 'smooth'
     });
 });
+
+
+// count block
+function animateNumber(id, finalValue, duration) {
+    let startTime = null;
+    const element = document.getElementById(id);
+    const startValue = parseInt(element.textContent);
+    
+    function updateNumber(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      const currentValue = Math.floor(startValue + (finalValue - startValue) * percentage);
+      element.textContent = currentValue.toLocaleString();
+      
+      if (percentage < 1) {
+        requestAnimationFrame(updateNumber);
+      }
+    }
+    
+    requestAnimationFrame(updateNumber);
+  }
+  
+  function startAnimationOnScroll() {
+    const numbersSection = document.getElementById('numbers-section');
+    const sectionTop = numbersSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    const triggerOffset = 100; // Adjust this value if needed to trigger the animation earlier or later
+  
+    if (sectionTop - triggerOffset <= windowHeight) {
+      animateNumber('activeLearners', 15000, 2000);
+      animateNumber('directPlacements', 4000, 2000);
+      animateNumber('collegesNetwork', 300, 2000);
+      animateNumber('corporateClients', 180, 2000);
+      window.removeEventListener('scroll', startAnimationOnScroll); // Remove the event listener once triggered
+    }
+  }
+  
+  window.addEventListener('scroll', startAnimationOnScroll);
+  
+
+// carousel
+const carouselItems = document.querySelectorAll('.carousel-item');
+  let currentSlide = 0;
+
+  function showSlide(slideIndex) {
+    carouselItems.forEach((item, index) => {
+      if (index === slideIndex) {
+        item.classList.remove('hidden');
+        item.classList.add('block');
+      } else {
+        item.classList.add('hidden');
+        item.classList.remove('block');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % carouselItems.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 3000);
