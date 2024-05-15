@@ -13,9 +13,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        play: ['Playfair Display', 'serif'],
-        afacad: ['Afacad', 'sans-serif'],
-        spartan: ['League Spartan', 'sans-serif'],
+        'open': ['Open Sans', 'sans-serif'],
+        'noto': ['Noto Serif', 'serif'],
     }
   },
   plugins: [],
