@@ -1323,6 +1323,10 @@ video {
   width: 350px;
 }
 
+.w-\[600px\] {
+  width: 600px;
+}
+
 .w-\[80\%\] {
   width: 80%;
 }
@@ -1716,6 +1720,10 @@ video {
 .rounded-t-xl {
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
+}
+
+.rounded-br-none {
+  border-bottom-right-radius: 0px;
 }
 
 .rounded-tl-none {
@@ -2297,6 +2305,11 @@ video {
 .bg-yellow-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }
 
 .bg-yellow-50 {
@@ -3524,6 +3537,10 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -4076,9 +4093,9 @@ lite-youtube.lyt-activated>.lty-playbtn {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
-.focus\:bg-purple-500:focus {
+.focus\:bg-sky-500:focus {
   --tw-bg-opacity: 1;
-  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
 }
 
 .focus\:text-white:focus {
@@ -5082,11 +5099,6 @@ lite-youtube.lyt-activated>.lty-playbtn {
     margin-right: 6rem;
   }
 
-  .lg\:my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -5129,6 +5141,10 @@ lite-youtube.lyt-activated>.lty-playbtn {
 
   .lg\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .lg\:mt-4 {
+    margin-top: 1rem;
   }
 
   .lg\:block {
@@ -5498,6 +5514,11 @@ lite-youtube.lyt-activated>.lty-playbtn {
     padding-bottom: 6rem;
   }
 
+  .lg\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -5520,12 +5541,20 @@ lite-youtube.lyt-activated>.lty-playbtn {
     padding-bottom: 5rem;
   }
 
+  .lg\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
   .lg\:pl-1 {
     padding-left: 0.25rem;
   }
 
   .lg\:pr-32 {
     padding-right: 8rem;
+  }
+
+  .lg\:pt-16 {
+    padding-top: 4rem;
   }
 
   .lg\:pt-20 {

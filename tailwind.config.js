@@ -12,6 +12,17 @@ module.exports = {
   },
   theme: {
     extend: {
+      animation: {
+        fade: 'fadeOut 0.5s ease-in-out',
+      },
+
+      // that is actual animation
+      keyframes: theme => ({
+        fadeOut: {
+          '0%': { opacity: 0.5 },
+          '100%': { opacity: 1 },
+        },
+      }),
       fontFamily: {
         'open': ['Open Sans', 'sans-serif'],
         'noto': ['Noto Serif', 'serif'],
