@@ -310,17 +310,18 @@
 
     <main>
         <!--hero-->
-        <section class="max-w-screen-xl px-4 py-4 mx-auto place-content-between sm:px-16 sm:flex lg:pt-16 lg:pb-8">
+        <section class="max-w-screen-xl px-4 py-4 mx-auto sm:px-16 lg:pt-16 lg:pb-8">
             <!--text-->
-            <div class="grid my-5 lg:grid-cols-2 md:grid-cols-1 lg:m-0 ">
-                <div class="my-auto ">
-                        <p class="pb-2 text-gray-700 md:pb-4">Go abroad with India's best prep company</p>
+            <div class="my-5 lg:flex lg:justify-between lg:m-0">
 
-                        <div class="py-4 text-4xl font-extrabold text-teal-600 sm:text-6xl font-noto ">
+                <div class="my-auto ">
+                    <p class="pb-2 text-gray-700 md:pb-4">Go abroad with India's best prep company</p>
+
+                    <div class="py-4 text-4xl font-extrabold text-teal-600 sm:text-6xl font-noto ">
                             <p class="pb-2">50,000+ students </p>
                             <p class="pb-2 md:pb-4">22+ years!</p>
-                        </div>
-                        <ul>
+                    </div>
+                    <ul>
                             <li class="flex text-lg font-semibold text-gray-500">
                                 <svg width="24px" height="24px" class="me-2" viewBox="0 0 24 24" version="1.1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -425,9 +426,9 @@
                                 </svg>
                                 Online + Print Material
                             </li>
-                        </ul>
+                    </ul>
 
-                        <div class="my-4 sm:flex sm:space-x-4 me-auto">
+                    <div class="my-4 sm:flex sm:space-x-4 me-auto">
                             <button
                                 class="block w-full p-3 mx-auto mt-2 font-semibold text-center text-purple-700 duration-200 ease-in transform bg-purple-200 border-2 border-purple-300 rounded-lg sm:w-60 md:w-full hover:bg-purple-500 hover:border-purple-500 hover:text-white hover:-translate-y-1"
                                 aria-label="attend session" data-popup="popup">Attend a Free Session</button>
@@ -435,10 +436,24 @@
                             <a href="#move"
                                 class="block w-full p-3 mx-auto mt-2 font-semibold text-center text-pink-700 duration-200 ease-in transform bg-pink-100 border-2 border-pink-300 rounded-lg sm:w-60 md:w-full hover:bg-pink-500 hover:text-white hover:border-pink-500 hover:-translate-y-1"
                                 aria-label="try test">Try a Free Test</a>
-                        </div>
+                    </div>
 
-                        <!-- Modal -->
-                        <div id="popup"
+                </div>
+
+                <div class="mx-auto my-auto">
+                    <div class="overflow-hidden carousel">
+                        <img src="../assets/2.svg" alt="Image 1" class="carousel-item w-[450px] rounded-full rounded-br-none block mx-auto transition-opacity duration-1000 opacity-0" />
+                        <img src="../assets/3.svg" alt="Image 2" class="hidden carousel-item w-[450px]   block mx-auto transition-opacity duration-1000 opacity-0" style="border-bottom-left-radius: 50%;" />
+                        <img src="../assets/4.svg" alt="Image 3" class="hidden carousel-item w-[450px] rounded-full rounded-br-none block mx-auto transition-opacity duration-1000 opacity-0" />
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="popup"
                             class="fixed inset-0 z-50 flex items-center justify-center hidden w-screen h-full bg-gray-700 bg-opacity-50">
 
                             <div class="p-4 m-8 bg-white rounded-lg sm:p-8 w-92 sm:w-3/5">
@@ -526,21 +541,7 @@
                                 <button type="button"
                                     class="block w-full p-4 mt-3 text-white bg-blue-900 btn btn-block transition-3d-hover contact_button">Submit</button>
                             </div>
-                        </div>
-
-                </div>
-
-                <div class="mx-auto my-auto ms-auto sm:block md:block">
-                    <div class="overflow-hidden carousel">
-                        <img src="https://img.freepik.com/free-vector/reading-glasses-concept-illustration_114360-8514.jpg?size=626&ext=jpg&ga=GA1.1.553209589.1715472000&semt=sph" alt="Image 1" class="carousel-item w-[600px] transition-opacity duration-1000 opacity-0" />
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/001/925/944/small_2x/study-literature-concept-free-vector.jpg" alt="Image 2" class="hidden carousel-item w-[600px] ms-auto transition-opacity duration-1000 opacity-0" />
-                        <img src="https://img.freepik.com/premium-vector/study-success-trending-concept-flat-illustration_720185-438.jpg" alt="Image 3" class="hidden carousel-item w-[600px] ms-auto transition-opacity duration-1000 opacity-0" />
-                    </div>
-                </div>
-                
-                
-            </div>
-        </section>
+        </div>
     
         <!--count blocks-->
         <div class="grid max-w-screen-xl grid-cols-2 gap-2 p-4 pb-8 mx-auto md:grid-cols-4 md:gap-8 sm:px-16">
@@ -1652,7 +1653,7 @@
 
     <footer class="mb-10">
         <!--attend drives-->
-        <div class="p-6 bg-teal-600 text-white">
+        <div class="p-6 text-white bg-teal-600">
             <div class="max-w-screen-xl mx-auto sm:px-16 sm:flex">
 
                 <div class="col-span-2 my-auto sm:col-span-1 sm-text-center">
