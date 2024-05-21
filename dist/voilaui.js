@@ -217,7 +217,7 @@ function animateNumber(id, finalValue, duration) {
 const carouselItems = document.querySelectorAll('.carousel-item');
 let currentSlide = 0;
 const fadeDuration = 1000; 
-const slideInterval = 5000; 
+const slideInterval = 3000; 
 
 function showSlide(slideIndex) {
   carouselItems.forEach((item, index) => {
@@ -246,3 +246,4 @@ function nextSlide() {
 showSlide(currentSlide);
 
 setInterval(nextSlide, slideInterval);
+
