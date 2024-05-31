@@ -30,48 +30,51 @@
 </head>
 <body class="bg-gray-100">
 
-    <section class="max-w-screen-xl px-4 py-2 pb-4 mx-auto sm:px-16">
-    
-    <div class="container fixed inset-0 flex items-center justify-center p-4 mx-auto">
-        <div id="welcome" class="w-full max-w-md px-6 py-10 text-center bg-white rounded-lg shadow-lg sm:w-96">
-            <h1 class="mb-4 text-2xl font-bold">Welcome to the Quiz App</h1>
-            <input id="username" type="text" placeholder="Enter your name" class="w-full p-2 mb-4 border rounded input-field">
-            <div class="mb-4">
-                <button class="w-full mb-2 text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900 sm:w-auto sm:mr-2" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1" data-score="true" data-answers="true">Quiz 1</button>
-                <button class="w-full mb-2 text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900 sm:w-auto sm:mr-2" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/pr/prct1e265601/prct1e265601_questionbank.json" data-score="true" data-answers="true">Quiz 2</button>
-                <button class="w-full text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900 sm:w-auto" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/vc/vcgtwa9b63/vcgtwa9b63_questionbank.json" data-score="true" data-answers="true">Quiz 3</button>
+    <section class="max-w-4xl px-4 py-2 pb-4 mx-auto sm:px-16">
+        <div class="container fixed inset-0 flex items-center justify-center p-4 mx-auto overflow-auto">
+            <div id="welcome" class="w-full max-w-lg px-6 py-10 text-center bg-white rounded-lg shadow-lg sm:w-96">
+                <h1 class="mb-4 text-2xl font-bold">Welcome to the Quiz App</h1>
+                <input id="username" type="text" placeholder="Enter your name" class="w-full p-2 mb-4 border rounded input-field">
+                <div class="grid grid-cols-1 gap-2 mb-4 sm:grid-cols-3">
+                    <button class="w-full text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1" data-score="true" data-answers="true">Quiz 1</button>
+                    <button class="w-full text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/pr/prct1e265601/prct1e265601_questionbank.json" data-score="true" data-answers="true">Quiz 2</button>
+                    <button class="w-full text-white bg-blue-500 rounded quiz-btn btn hover:bg-blue-900" data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/vc/vcgtwa9b63/vcgtwa9b63_questionbank.json" data-score="true" data-answers="true">Quiz 3</button>
+                </div>
             </div>
-        </div>
-        <div id="quiz-modal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
-            <div class="flex flex-col w-full max-w-md p-4 bg-white rounded-lg">
-                <button onclick="cancelQuiz()" class="self-end text-gray-500 rounded btn hover:text-red-600">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-                <div id="quiz" class="p-4">
-                    <div id="question-container" class="mb-3 font-serif"></div>
-                    <div id="options-container" class="mb-3 font-serif"></div>
-                    <div class="flex justify-between mb-4">
-                        <button onclick="prevQuestion()" class="mr-2 text-white bg-gray-500 rounded btn">Previous</button>
-                        <button onclick="nextQuestion()" class="text-white bg-gray-500 rounded btn">Next</button>
+            <div id="quiz-modal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
+                <div class="flex flex-col w-full max-w-md p-4 bg-white rounded-lg">
+                    <button onclick="cancelQuiz()" class="self-end text-gray-500 rounded btn hover:text-red-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                    <div id="quiz" class="p-4">
+                        <div id="question-container" class="mb-3 font-serif"></div>
+                        <div id="options-container" class="mb-3 font-serif"></div>
+                        <div class="flex justify-between mb-4">
+                            <button onclick="prevQuestion()" class="w-1/2 text-white bg-gray-500 rounded btn">Previous</button>
+                            <button onclick="nextQuestion()" class="w-1/2 text-white bg-gray-500 rounded btn">Next</button>
+                        </div>
+                        <button id="show-answer-btn" onclick="showAnswer()" class="mb-4 text-white bg-yellow-500 rounded btn">Show Answer</button>
+                        <button id="submit-btn" onclick="submitQuiz()" class="hidden text-white bg-green-500 rounded btn">Submit Quiz</button>
                     </div>
-                    <button id="show-answer-btn" onclick="showAnswer()" class="mb-4 text-white bg-yellow-500 rounded btn">Show Answer</button>
-                    <button id="submit-btn" onclick="submitQuiz()" class="hidden text-white bg-green-500 rounded btn">Submit Quiz</button>
+                </div>
+            </div>
+            <div id="result" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
+                <div class="w-full max-w-md p-5 bg-white rounded-lg">
+                    <h2 class="mb-4 text-2xl font-bold">Quiz Results</h2>
+                    <div id="score-container" class="mb-4"></div>
+                    <button id="restart-btn" onclick="restartQuiz()" class="w-full mb-2 text-white bg-blue-500 rounded btn">Restart Quiz</button>
+                    <button id="retry-btn" onclick="retryQuiz()" class="w-full text-white bg-blue-500 rounded btn">Retry Quiz</button>
                 </div>
             </div>
         </div>
-        <div id="result" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
-            <div class="w-full max-w-md p-5 bg-white rounded-lg">
-                <h2 class="mb-4 text-2xl font-bold">Quiz Results</h2>
-                <div id="score-container" class="mb-4"></div>
-                <button id="restart-btn" onclick="restartQuiz()" class="w-full mb-2 text-white bg-blue-500 rounded btn">Restart Quiz</button>
-                <button id="retry-btn" onclick="retryQuiz()" class="w-full text-white bg-blue-500 rounded btn">Retry Quiz</button>
-            </div>
-        </div>
-    </div>
-
-</section>
+    </section>
+    
+    
+    
+    
+    
     
     
     
