@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App_1</title>
     <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
     <style>
         .full-screen {
             width: 100vw;
@@ -29,8 +29,8 @@
 
 <body class="flex flex-col items-center justify-center h-screen bg-gray-200 from-neutral-800">
     
-    <div class="flex h-full max-w-screen-xl mx-auto sm:px-16">
-        <div class="w-full p-4">
+    <div class="flex h-full max-w-screen-xl mx-auto sm:px-16  items-center">
+        <div class="w-full p-4 bg-white py-10 px-5 rounded-lg shadow-lg ">
             <h1 class="mb-4 text-4xl text-blue-900">Welcome To the Quiz App</h1>
 
             <!-- User Name Input -->
@@ -45,21 +45,21 @@
                 <button id="start-button-1"
                     data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1"
                     data-score="true" data-answers="true"
-                    class="px-4 py-2 mb-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 sm:mb-0 sm:mr-4">
+                    class="px-4 py-2 mb-2 font-bold text-white bg-cyan-500 rounded hover:bg-cyan-700 sm:mb-0 sm:mr-4">
                     Start Quiz 1
                 </button>
 
                 <button id="start-button-2"
                     data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/pr/prct1e265601/prct1e265601_questionbank.json"
                     data-score="true" data-answers="true"
-                    class="px-4 py-2 mb-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 sm:mb-0 sm:mr-4">
+                    class="px-4 py-2 mb-2 font-bold text-white bg-cyan-500 rounded hover:bg-cyan-700 sm:mb-0 sm:mr-4">
                     Start Quiz 2
                 </button>
 
                 <button id="start-button-3"
                     data-url="https://live-ai.s3.ap-south-1.amazonaws.com/test/vc/vcgtwa9b63/vcgtwa9b63_questionbank.json"
                     data-score="true" data-answers="true"
-                    class="px-4 py-2 font-bold text-white bg-yellow-500 rounded hover:bg-yellow-700">
+                    class="px-4 py-2 font-bold text-white bg-cyan-500 rounded hover:bg-cyan-700">
                     Start Quiz 3
                 </button>
             </div>
