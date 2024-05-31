@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles */
+        .container {
+            max-width: 800px;
+        }
+        .btn {
+            padding: 8px 16px;
+        }
+        .input-field {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        .modal {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        /* Ensure fixed width for the quiz box */
+        #quiz {
+            width: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4 fixed inset-0 flex items-center justify-center">
+        <div id="welcome" class="text-center  bg-white py-10 px-6 rounded-lg shadow-lg w-96">
+            <h1 class="text-2xl font-bold mb-4">Welcome to the Quiz App</h1>
+            <input id="username" type="text" placeholder="Enter your name" class="mb-4 input-field">
+            <div class="mb-4">
+                <button id="quiz1-btn" class="btn bg-blue-500 hover:bg-blue-900 text-white rounded mr-2">Quiz 1</button>
+                <button id="quiz2-btn" class="btn bg-blue-500 hover:bg-blue-900 text-white rounded mr-2">Quiz 2</button>
+                <button id="quiz3-btn" class="btn bg-blue-500 hover:bg-blue-900 text-white rounded">Quiz 3</button>
+            </div>
+        </div>
+        <div id="quiz-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" data-score="true" data-answers="true">
+            <div class="flex flex-col bg-white rounded-lg">
+                <button onclick="cancelQuiz()" class="btn text-gray-500 hover:text-red-600 rounded self-end">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <div id="quiz" class="p-4">
+                  
+                    <div id="question-container" class="mb-3 font-serif"></div>
+                    <div id="options-container" class="font-serif mb-3"></div>
+                    <div class="mb-4 flex justify-between">
+                        <button onclick="prevQuestion()" class="btn bg-gray-500 text-white rounded mr-2">Previous</button>
+                        <button onclick="nextQuestion()" class="btn bg-gray-500 text-white rounded">Next</button>
+                    </div>
+                    <button id="show-answer-btn" onclick="showAnswer()" class="btn bg-yellow-500 text-white rounded mb-4">Show Answer</button>
+                    <button id="submit-btn" onclick="submitQuiz()" class="btn bg-green-500 text-white rounded hidden">Submit Quiz</button>
+                </div>
+            </div>
+        </div>
+        <div id="result" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white w-96 rounded-lg p-5">
+                <h2 class="text-2xl font-bold mb-4">Quiz Results</h2>
+                <div id="score-container" class="mb-4"></div>
+                <button id="restart-btn" onclick="restartQuiz()" class="btn bg-blue-500 text-white rounded">Restart Quiz</button>
+                <button id="retry-btn" onclick="retryQuiz()" class="btn bg-blue-500 text-white rounded">Retry Quiz</button>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const quizAPIs = {
+    quiz1: 'https://live-ai.s3.ap-south-1.amazonaws.com/test/co/coctqse029ed/coctqse029ed_questionbank.json?r=1',
+    quiz2: 'https://live-ai.s3.ap-south-1.amazonaws.com/test/pr/prct1e265601/prct1e265601_questionbank.json',
+    quiz3: 'https://live-ai.s3.ap-south-1.amazonaws.com/test/vc/vcgtwa9b63/vcgtwa9b63_questionbank.json'
+};
+
+let questions = [];
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let currentQuizId = ''; // Variable to store the current quiz ID
+
+document.getElementById('quiz1-btn').onclick = () => startQuiz('quiz1');
+document.getElementById('quiz2-btn').onclick = () => startQuiz('quiz2');
+document.getElementById('quiz3-btn').onclick = () => startQuiz('quiz3');
+
+function startQuiz(quizId) {
+    currentQuizId = quizId; // Store the current quiz ID
+    const username = document.getElementById('username').value;
+    fetch(quizAPIs[quizId])
+        .then(response => response.json())
+        .then(data => {
+            questions = data.questions.map(q => JSON.parse(q.qdata)[0]);
+            currentQuestionIndex = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            document.getElementById('welcome').classList.add('hidden');
+            document.getElementById('quiz-modal').classList.remove('hidden');
+            checkButtonsVisibility();
+            showQuestion();
+        })
+        .catch(error => console.error('Error fetching questions:', error));
+}
+
+
+function showQuestion() {
+    const question = questions[currentQuestionIndex];
+    document.getElementById('question-container').innerHTML = `Q${currentQuestionIndex + 1}: ${question.question}`;
+    const optionsContainer = document.getElementById('options-container');
+    optionsContainer.innerHTML = '';
+
+    if (question.type === 'mcq') {
+        for (const [key, value] of Object.entries(question)) {
+            if (['a', 'b', 'c', 'd'].includes(key)) {
+                const optionWrapper = document.createElement('div');
+                optionWrapper.classList.add('flex', 'items-center', 'mb-2');
+                const optionInput = document.createElement('input');
+                optionInput.type = 'radio';
+                optionInput.name = 'option';
+                optionInput.value = key;
+                optionInput.onclick = () => selectOption(key);
+                if (userAnswers[currentQuestionIndex] === key) {
+                    optionInput.checked = true;
+                }
+                const optionLabel = document.createElement('label');
+                optionLabel.innerHTML = value;
+                optionLabel.classList.add('ml-2');
+                optionWrapper.appendChild(optionInput);
+                optionWrapper.appendChild(optionLabel);
+                optionsContainer.appendChild(optionWrapper);
+            }
+        }
+    } else if (question.type === 'maq') {
+        for (const [key, value] of Object.entries(question)) {
+            if (['a', 'b', 'c', 'd'].includes(key)) {
+                const optionWrapper = document.createElement('div');
+                optionWrapper.classList.add('flex', 'items-center', 'mb-2');
+                const optionInput = document.createElement('input');
+                optionInput.type = 'checkbox';
+                optionInput.value = key;
+                optionInput.onclick = () => selectMultipleOption(key);
+                if (userAnswers[currentQuestionIndex] && userAnswers[currentQuestionIndex].includes(key)) {
+                    optionInput.checked = true;
+                }
+                const optionLabel = document.createElement('label');
+                optionLabel.innerHTML = value;
+                optionLabel.classList.add('ml-2');
+                optionWrapper.appendChild(optionInput);
+                optionWrapper.appendChild(optionLabel);
+                optionsContainer.appendChild(optionWrapper);
+            }
+        }
+    } else if (question.type === 'fillup') {
+        const inputWrapper = document.createElement('div');
+        const fillInput = document.createElement('input');
+        fillInput.type = 'text';
+        fillInput.classList.add('p-2', 'border', 'rounded', 'w-96');
+        fillInput.oninput = () => selectFillOption(fillInput.value.toLowerCase()); // Convert input to lowercase
+        if (userAnswers[currentQuestionIndex]) {
+            fillInput.value = userAnswers[currentQuestionIndex];
+        }
+        inputWrapper.appendChild(fillInput);
+        optionsContainer.appendChild(inputWrapper);
+    }
+
+    if (currentQuestionIndex === questions.length - 1) {
+        document.getElementById('submit-btn').classList.remove('hidden');
+    } else {
+        document.getElementById('submit-btn').classList.add('hidden');
+    }
+}
+
+function selectOption(optionIndex) {
+    userAnswers[currentQuestionIndex] = optionIndex;
+}
+
+function selectMultipleOption(optionIndex) {
+    if (!userAnswers[currentQuestionIndex]) {
+        userAnswers[currentQuestionIndex] = [];
+    }
+    if (userAnswers[currentQuestionIndex].includes(optionIndex)) {
+        userAnswers[currentQuestionIndex] = userAnswers[currentQuestionIndex].filter(opt => opt !== optionIndex);
+    } else {
+        userAnswers[currentQuestionIndex].push(optionIndex);
+    }
+}
+
+function selectFillOption(value) {
+    userAnswers[currentQuestionIndex] = value.toLowerCase(); // Convert answer to lowercase
+}
+
+function prevQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion();
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion();
+    }
+}
+
+function showAnswer() {
+    const showAnswers = document.getElementById('quiz-modal').getAttribute('data-answers') === 'true';
+    if (!showAnswers) return;
+
+    const question = questions[currentQuestionIndex];
+    const correctAnswers = question.answer.split(',').map(ans => ans.trim());
+    const optionsContainer = document.getElementById('options-container');
+
+    if (question.type === 'mcq' || question.type === 'maq') {
+        optionsContainer.childNodes.forEach(optionWrapper => {
+            const inputElement = optionWrapper.querySelector('input');
+            const optionKey = inputElement.value;
+            if (correctAnswers.includes(optionKey)) {
+                optionWrapper.querySelector('label').classList.add('bg-green-200');
+            }
+        });
+    } else if (question.type === 'fillup') {
+        const answerText = document.createElement('p');
+        answerText.innerHTML = `<strong>Correct answer: </strong> ${correctAnswers.join(', ')}`;
+        optionsContainer.appendChild(answerText);
+    }
+}
+
+function submitQuiz() {
+    const showScore = document.getElementById('quiz-modal').getAttribute('data-score') === 'true';
+
+    if (showScore) {
+        let score = 0;
+        questions.forEach((question, index) => {
+            const correctAnswers = question.answer.split(',').map(ans => ans.trim().toLowerCase()); // Convert to lowercase
+            if (question.type === 'fillup') {
+                if (correctAnswers.includes(userAnswers[index])) {
+                    score++;
+                }
+            } else if (question.type === 'mcq' || question.type === 'maq') {
+                if (Array.isArray(userAnswers[index])) {
+                    const sortedUserAnswers = userAnswers[index].sort();
+                    const sortedCorrectAnswers = correctAnswers.sort();
+                    if (JSON.stringify(sortedUserAnswers) === JSON.stringify(sortedCorrectAnswers)) {
+                        score++;
+                    }
+                } else if (correctAnswers.includes(userAnswers[index])) {
+                    score++;
+                }
+            }
+        });
+
+        document.getElementById('score-container').innerHTML = `Your score is: ${score} / ${questions.length}`;
+        document.getElementById('result').classList.remove('hidden');
+        document.getElementById('quiz-modal').classList.add('hidden');
+    } else {
+        const resultSection = document.getElementById('result');
+        resultSection.classList.remove('hidden');
+        document.getElementById('quiz-modal').classList.add('hidden');
+    }
+}
+
+function cancelQuiz() {
+    document.getElementById('quiz-modal').classList.add('hidden');
+    document.getElementById('welcome').classList.remove('hidden');
+}
+
+function restartQuiz() {
+    document.getElementById('result').classList.add('hidden');
+    document.getElementById('welcome').classList.remove('hidden');
+}
+function retryQuiz() {
+    startQuiz(); // Call the startQuiz function again to reset the quiz
+}
+
+function checkButtonsVisibility() {
+    const showAnswers = document.getElementById('quiz-modal').getAttribute('data-answers') === 'true';
+    const showScore = document.getElementById('quiz-modal').getAttribute('data-score') === 'true';
+
+    const showAnswerButton = document.getElementById('show-answer-btn');
+    const submitButton = document.getElementById('submit-btn');
+    const retryButton = document.getElementById('retry-btn'); // New line
+
+    if (showAnswers) {
+        showAnswerButton.classList.remove('hidden');
+    } else {
+        showAnswerButton.classList.add('hidden');
+    }
+
+    if (showScore) {
+        submitButton.classList.remove('hidden');
+    } else {
+        submitButton.classList.add('hidden');
+    }
+
+    // Adjust visibility of Retry Quiz button based on data-score attribute
+    if (showScore) {
+        retryButton.classList.remove('hidden');
+    } else {
+        retryButton.classList.add('hidden');
+    }
+}
+
+function retryQuiz() {
+    document.getElementById('result').classList.add('hidden'); // Hide the result section
+    document.getElementById('quiz-modal').classList.remove('hidden'); // Show the quiz modal
+    currentQuestionIndex = 0; // Reset the current question index
+    userAnswers = new Array(questions.length).fill(null); // Reset user answers
+    checkButtonsVisibility(); // Ensure correct button visibility
+    showQuestion(); // Show the first question
+}
+
+
+// Call this function initially to set the correct button visibility
+checkButtonsVisibility();
+
+
+    </script>
+</body>
+</html>
